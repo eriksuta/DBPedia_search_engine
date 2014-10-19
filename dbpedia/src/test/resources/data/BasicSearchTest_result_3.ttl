@@ -1,0 +1,364 @@
+<http://sk.dbpedia.org/resource/Bioware> <http://purl.org/dc/terms/subject> <http://sk.dbpedia.org/resource/Kategória:Vývojárske_a_vydavateľské_spoločnosti_počítačových_hier_a_videohier> .
+<http://sk.dbpedia.org/resource/Bioware> <http://purl.org/dc/terms/subject> <http://sk.dbpedia.org/resource/Kategória:Podniky_v_Kanade> .
+<http://sk.dbpedia.org/resource/Bioware> <http://purl.org/dc/terms/subject> <http://sk.dbpedia.org/resource/Kategória:Softvérové_podniky> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/wikiPageUsesTemplate> <http://sk.dbpedia.org/resource/Šablóna:Infobox_Spoločnosť> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/wikiPageUsesTemplate> <http://sk.dbpedia.org/resource/Šablóna:Preklad> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageExternalLink> <http://www.bioware.com> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://rdf.freebase.com/ns/m.0j2c3> .
+<http://sk.dbpedia.org/resource/Baldur’s_Gate> <http://sk.dbpedia.org/property/autor> <http://sk.dbpedia.org/resource/Bioware> .
+<http://sk.dbpedia.org/resource/Infinity_Engine> <http://sk.dbpedia.org/property/vývojár> <http://sk.dbpedia.org/resource/Bioware> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/názovSpoločnosti> "BioWare"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/právnaForma> "Sesterská spoločnost spoločnosti EA"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/založená> "Edmonton, Alberta"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/zakladateľ> <http://sk.dbpedia.org/resource/Ray_Muzyka> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/zakladateľ> <http://sk.dbpedia.org/resource/Greg_Zeschuk> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/zakladateľ> <http://sk.dbpedia.org/resource/Augustine_Yip> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/sídlo> "Edmonton"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/štátSídla> "Kanada"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/vedenie> "Ray Muzyka, riaditeľ"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/vedenie> <http://sk.dbpedia.org/resource/Greg_Zeschuk> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/vedenie> <http://sk.dbpedia.org/resource/Viceprezident> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/priemysel> "Vývoj počítačových a konzolových hier"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> <http://sk.dbpedia.org/resource/Infinity_Engine> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> <http://sk.dbpedia.org/resource/Aurora_engine> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> <http://sk.dbpedia.org/resource/Odyssey_engine> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> "Shattered Steel"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> "Baldur’s Gate"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> "MDK2"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> "Sonic Chronicles"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> "Neverwinter Nights"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> "Star Wars: KotOR"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> "Jade Empire"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> "Mass Effect"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> "Dragon Age:Origins"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/početZamestnancov> "~500"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/vlastník> <http://sk.dbpedia.org/resource/Electronic_Arts> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/domácaStránka> <http://www.bioware.com> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/názovSpoločnosti> "BioWare"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/právnaForma> "Sesterská spoločnost spoločnosti EA"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/založená> "Edmonton, Alberta"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/zakladateľ> <http://sk.dbpedia.org/resource/Ray_Muzyka> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/zakladateľ> <http://sk.dbpedia.org/resource/Greg_Zeschuk> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/zakladateľ> <http://sk.dbpedia.org/resource/Augustine_Yip> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/sídlo> "Edmonton"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/štátSídla> "Kanada"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/vedenie> "Ray Muzyka, riaditeľ"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/vedenie> <http://sk.dbpedia.org/resource/Greg_Zeschuk> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/vedenie> <http://sk.dbpedia.org/resource/Viceprezident> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/priemysel> "Vývoj počítačových a konzolových hier"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> <http://sk.dbpedia.org/resource/Infinity_Engine> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> <http://sk.dbpedia.org/resource/Aurora_engine> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> <http://sk.dbpedia.org/resource/Odyssey_engine> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> "Shattered Steel"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> "Baldur’s Gate"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> "MDK2"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> "Sonic Chronicles"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> "Neverwinter Nights"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> "Star Wars: KotOR"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> "Jade Empire"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> "Mass Effect"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> "Dragon Age:Origins"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/početZamestnancov> "~500"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/vlastník> <http://sk.dbpedia.org/resource/Electronic_Arts> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/domácaStránka> <http://www.bioware.com> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://wikidata.org/entity/Q219758> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://wikidata.dbpedia.org/resource/Q219758> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://ar.dbpedia.org/resource/بايوير> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://be.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://bg.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://cs.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://da.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://de.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://es.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://fa.dbpedia.org/resource/بایوور> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://fi.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://fr.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://he.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://hr.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://hu.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://ia.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://it.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://ja.dbpedia.org/resource/バイオウェア> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://ko.dbpedia.org/resource/바이오웨어> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://lt.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://nl.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://no.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://pl.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://pt.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://ro.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://ru.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://simple.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://sr.dbpedia.org/resource/Bajover> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://sv.dbpedia.org/resource/Bioware> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://tr.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://uk.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://zh.dbpedia.org/resource/BioWare> .
+<http://dbpedia.org/resource/BioWare> <http://www.w3.org/2000/01/rdf-schema#label> "Bioware"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2000/01/rdf-schema#label> "Bioware"@sk .
+<http://dbpedia.org/resource/Infinity_Engine> <http://dbpedia.org/ontology/abstract> "Infinity Engine je herný engine umožňujúci vytvárať izometrické počítačové RPG hry. Engine bol vyvinutý firmou Bioware."@sk .
+<http://sk.dbpedia.org/resource/Infinity_Engine> <http://dbpedia.org/ontology/abstract> "Infinity Engine je herný engine umožňujúci vytvárať izometrické počítačové RPG hry. Engine bol vyvinutý firmou Bioware."@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/abstract> "BioWare Corp. je kanadská spoločnosť, sídliaca v Edmontone, Alberte. Zaoberá sa najmä vývojom počítačových a konzolových hier. Bola založená vo februári 1995 tromi kanadskými doktormi, Rayom Muzykom, Gregom Zeschukom, a Augustinom Yipom. Známou sa stala hlavne vďaka svojim úspešným počítačovým RPG hrám, ako napríklad Baldur’s Gate a Neverwinter Nights, ktoré získali niekoľko ocenení. Vytvorili taktiež niekoľko úspešných konzolových hier: Star Wars: Knights of the Old Republic, Jade Empire, Mass Effect, Sonic Chronicles: The Dark Brotherhood, a Dragon Age: Origins. Prvé tri hry boli neskôr adaptované aj na PC, zatiaľ čo Dragon Age bol vyvíjaný pre PC a konzoly súčasne.Muzyka and Zeschuk sú momentálne vo vedení BioWare, zatiaľ čo Augustine Yip sa v roku 1997 vrátil k medicíne."@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageOutDegree> "61"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageID> "297761"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageLength> "3914"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<http://sk.dbpedia.org/resource/Baldur’s_Gate> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Bioware> .
+<http://sk.dbpedia.org/resource/Baldur’s_Gate_(hra)> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Bioware> .
+<http://sk.dbpedia.org/resource/Infinity_Engine> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Bioware> .
+<http://sk.dbpedia.org/resource/Infinity_Engine> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Bioware> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Electronic_Arts> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Edmonton> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Alberta> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/1995> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Ray_Muzyka> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Greg_Zeschuk> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Augustine_Yip> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Viceprezident> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Počítač> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Herná_konzola> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Infinity_Engine> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Aurora_engine> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Odyssey_engine> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Shattered_Steel> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Baldur’s_Gate> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/MDK2> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Sonic_Chronicles> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Neverwinter_Nights> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Star_Wars:_Knights_of_the_Old_Republic> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Jade_Empire> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Mass_Effect> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Dragon_Age:Origins> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Kanada> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/RPG> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Interplay> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Black_Isle_Studios> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Infogrames> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Atari> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/LucasArts> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Microsoft_Corporation> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Pandemic_Studios> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Massively-Multiplayer_Online_Role-Playing_Game> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Star_Wars:_The_Old_Republic> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Mass_Effect_3> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Austin> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Texas> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Gordon_Walton> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Richard_Vogel> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Montreal> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Quebec> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Kategória:Vývojárske_a_vydavateľské_spoločnosti_počítačových_hier_a_videohier> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Kategória:Podniky_v_Kanade> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Kategória:Softvérové_podniky> .
+<http://sk.dbpedia.org/resource/BioWare> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Bioware> .
+<http://sk.dbpedia.org/resource/Infinity_Engine> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Bioware> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Electronic_Arts> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Edmonton> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Alberta> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/1995> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Ray_Muzyka> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Greg_Zeschuk> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Augustine_Yip> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Viceprezident> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Počítač> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Herná_konzola> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Infinity_Engine> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Aurora_engine> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Odyssey_engine> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Shattered_Steel> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Baldur’s_Gate> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/MDK2> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Sonic_Chronicles> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Neverwinter_Nights> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Star_Wars:_Knights_of_the_Old_Republic> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Jade_Empire> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Mass_Effect> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Dragon_Age:Origins> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Kanada> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/RPG> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Interplay> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Black_Isle_Studios> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Infogrames> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Atari> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/LucasArts> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Microsoft> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Pandemic_Studios> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/MMORPG> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Star_Wars:_The_Old_Republic> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Mass_Effect_3> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Austin> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Texas> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Gordon_Walton> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Richard_Vogel> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Montreal> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Quebec> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Kategória:Vývojárske_a_vydavateľské_spoločnosti_počítačových_hier_a_videohier> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Kategória:Podniky_v_Kanade> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Kategória:Softvérové_podniky> .
+<http://sk.dbpedia.org/resource/BioWare> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Bioware> .
+<http://sk.dbpedia.org/resource/BioWare> <http://dbpedia.org/ontology/wikiPageRedirects> <http://sk.dbpedia.org/resource/Bioware> .
+<http://sk.dbpedia.org/resource/BioWare> <http://dbpedia.org/ontology/wikiPageRedirects> <http://sk.dbpedia.org/resource/Bioware> .
+page_links_sk.ttl:<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Mass_Effect> .
+page_links_sk.ttl:<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Mass_Effect_3> .
+page_links_unredirected_sk.ttl:<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Mass_Effect> .
+page_links_unredirected_sk.ttl:<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Mass_Effect_3> .
+<http://sk.dbpedia.org/resource/Bioware> <http://purl.org/dc/terms/subject> <http://sk.dbpedia.org/resource/Kategória:Vývojárske_a_vydavateľské_spoločnosti_počítačových_hier_a_videohier> .
+<http://sk.dbpedia.org/resource/Bioware> <http://purl.org/dc/terms/subject> <http://sk.dbpedia.org/resource/Kategória:Podniky_v_Kanade> .
+<http://sk.dbpedia.org/resource/Bioware> <http://purl.org/dc/terms/subject> <http://sk.dbpedia.org/resource/Kategória:Softvérové_podniky> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/wikiPageUsesTemplate> <http://sk.dbpedia.org/resource/Šablóna:Infobox_Spoločnosť> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/wikiPageUsesTemplate> <http://sk.dbpedia.org/resource/Šablóna:Preklad> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageExternalLink> <http://www.bioware.com> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://rdf.freebase.com/ns/m.0j2c3> .
+<http://sk.dbpedia.org/resource/Baldur’s_Gate> <http://sk.dbpedia.org/property/autor> <http://sk.dbpedia.org/resource/Bioware> .
+<http://sk.dbpedia.org/resource/Infinity_Engine> <http://sk.dbpedia.org/property/vývojár> <http://sk.dbpedia.org/resource/Bioware> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/názovSpoločnosti> "BioWare"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/právnaForma> "Sesterská spoločnost spoločnosti EA"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/založená> "Edmonton, Alberta"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/zakladateľ> <http://sk.dbpedia.org/resource/Ray_Muzyka> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/zakladateľ> <http://sk.dbpedia.org/resource/Greg_Zeschuk> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/zakladateľ> <http://sk.dbpedia.org/resource/Augustine_Yip> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/sídlo> "Edmonton"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/štátSídla> "Kanada"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/vedenie> "Ray Muzyka, riaditeľ"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/vedenie> <http://sk.dbpedia.org/resource/Greg_Zeschuk> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/vedenie> <http://sk.dbpedia.org/resource/Viceprezident> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/priemysel> "Vývoj počítačových a konzolových hier"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> <http://sk.dbpedia.org/resource/Infinity_Engine> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> <http://sk.dbpedia.org/resource/Aurora_engine> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> <http://sk.dbpedia.org/resource/Odyssey_engine> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> "Shattered Steel"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> "Baldur’s Gate"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> "MDK2"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> "Sonic Chronicles"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> "Neverwinter Nights"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> "Star Wars: KotOR"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> "Jade Empire"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> "Mass Effect"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> "Dragon Age:Origins"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/početZamestnancov> "~500"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/vlastník> <http://sk.dbpedia.org/resource/Electronic_Arts> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/domácaStránka> <http://www.bioware.com> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/názovSpoločnosti> "BioWare"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/právnaForma> "Sesterská spoločnost spoločnosti EA"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/založená> "Edmonton, Alberta"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/zakladateľ> <http://sk.dbpedia.org/resource/Ray_Muzyka> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/zakladateľ> <http://sk.dbpedia.org/resource/Greg_Zeschuk> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/zakladateľ> <http://sk.dbpedia.org/resource/Augustine_Yip> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/sídlo> "Edmonton"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/štátSídla> "Kanada"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/vedenie> "Ray Muzyka, riaditeľ"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/vedenie> <http://sk.dbpedia.org/resource/Greg_Zeschuk> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/vedenie> <http://sk.dbpedia.org/resource/Viceprezident> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/priemysel> "Vývoj počítačových a konzolových hier"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> <http://sk.dbpedia.org/resource/Infinity_Engine> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> <http://sk.dbpedia.org/resource/Aurora_engine> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> <http://sk.dbpedia.org/resource/Odyssey_engine> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> "Shattered Steel"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> "Baldur’s Gate"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> "MDK2"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> "Sonic Chronicles"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> "Neverwinter Nights"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> "Star Wars: KotOR"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> "Jade Empire"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> "Mass Effect"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/produkcia> "Dragon Age:Origins"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/početZamestnancov> "~500"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/vlastník> <http://sk.dbpedia.org/resource/Electronic_Arts> .
+<http://sk.dbpedia.org/resource/Bioware> <http://sk.dbpedia.org/property/domácaStránka> <http://www.bioware.com> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://wikidata.org/entity/Q219758> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://wikidata.dbpedia.org/resource/Q219758> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://ar.dbpedia.org/resource/بايوير> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://be.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://bg.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://cs.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://da.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://de.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://es.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://fa.dbpedia.org/resource/بایوور> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://fi.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://fr.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://he.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://hr.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://hu.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://ia.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://it.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://ja.dbpedia.org/resource/バイオウェア> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://ko.dbpedia.org/resource/바이오웨어> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://lt.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://nl.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://no.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://pl.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://pt.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://ro.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://ru.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://simple.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://sr.dbpedia.org/resource/Bajover> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://sv.dbpedia.org/resource/Bioware> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://tr.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://uk.dbpedia.org/resource/BioWare> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2002/07/owl#sameAs> <http://zh.dbpedia.org/resource/BioWare> .
+<http://dbpedia.org/resource/BioWare> <http://www.w3.org/2000/01/rdf-schema#label> "Bioware"@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2000/01/rdf-schema#label> "Bioware"@sk .
+<http://dbpedia.org/resource/Infinity_Engine> <http://dbpedia.org/ontology/abstract> "Infinity Engine je herný engine umožňujúci vytvárať izometrické počítačové RPG hry. Engine bol vyvinutý firmou Bioware."@sk .
+<http://sk.dbpedia.org/resource/Infinity_Engine> <http://dbpedia.org/ontology/abstract> "Infinity Engine je herný engine umožňujúci vytvárať izometrické počítačové RPG hry. Engine bol vyvinutý firmou Bioware."@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/abstract> "BioWare Corp. je kanadská spoločnosť, sídliaca v Edmontone, Alberte. Zaoberá sa najmä vývojom počítačových a konzolových hier. Bola založená vo februári 1995 tromi kanadskými doktormi, Rayom Muzykom, Gregom Zeschukom, a Augustinom Yipom. Známou sa stala hlavne vďaka svojim úspešným počítačovým RPG hrám, ako napríklad Baldur’s Gate a Neverwinter Nights, ktoré získali niekoľko ocenení. Vytvorili taktiež niekoľko úspešných konzolových hier: Star Wars: Knights of the Old Republic, Jade Empire, Mass Effect, Sonic Chronicles: The Dark Brotherhood, a Dragon Age: Origins. Prvé tri hry boli neskôr adaptované aj na PC, zatiaľ čo Dragon Age bol vyvíjaný pre PC a konzoly súčasne.Muzyka and Zeschuk sú momentálne vo vedení BioWare, zatiaľ čo Augustine Yip sa v roku 1997 vrátil k medicíne."@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageOutDegree> "61"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageID> "297761"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageLength> "3914"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<http://sk.dbpedia.org/resource/Baldur’s_Gate> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Bioware> .
+<http://sk.dbpedia.org/resource/Baldur’s_Gate_(hra)> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Bioware> .
+<http://sk.dbpedia.org/resource/Infinity_Engine> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Bioware> .
+<http://sk.dbpedia.org/resource/Infinity_Engine> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Bioware> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Electronic_Arts> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Edmonton> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Alberta> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/1995> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Ray_Muzyka> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Greg_Zeschuk> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Augustine_Yip> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Viceprezident> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Počítač> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Herná_konzola> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Infinity_Engine> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Aurora_engine> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Odyssey_engine> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Shattered_Steel> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Baldur’s_Gate> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/MDK2> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Sonic_Chronicles> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Neverwinter_Nights> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Star_Wars:_Knights_of_the_Old_Republic> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Jade_Empire> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Mass_Effect> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Dragon_Age:Origins> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Kanada> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/RPG> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Interplay> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Black_Isle_Studios> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Infogrames> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Atari> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/LucasArts> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Microsoft_Corporation> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Pandemic_Studios> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Massively-Multiplayer_Online_Role-Playing_Game> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Star_Wars:_The_Old_Republic> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Mass_Effect_3> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Austin> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Texas> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Gordon_Walton> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Richard_Vogel> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Montreal> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Quebec> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Kategória:Vývojárske_a_vydavateľské_spoločnosti_počítačových_hier_a_videohier> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Kategória:Podniky_v_Kanade> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Kategória:Softvérové_podniky> .
+<http://sk.dbpedia.org/resource/BioWare> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Bioware> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageRevisionID> "5355510"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/ns/prov#wasDerivedFrom> <http://sk.wikipedia.org/wiki/Bioware?oldid=5355510> .
+<http://dbpedia.org/resource/Infinity_Engine> <http://www.w3.org/2000/01/rdf-schema#comment> "Infinity Engine je herný engine umožňujúci vytvárať izometrické počítačové RPG hry. Engine bol vyvinutý firmou Bioware."@sk .
+<http://sk.dbpedia.org/resource/Infinity_Engine> <http://www.w3.org/2000/01/rdf-schema#comment> "Infinity Engine je herný engine umožňujúci vytvárať izometrické počítačové RPG hry. Engine bol vyvinutý firmou Bioware."@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://www.w3.org/2000/01/rdf-schema#comment> "BioWare Corp. je kanadská spoločnosť, sídliaca v Edmontone, Alberte. Zaoberá sa najmä vývojom počítačových a konzolových hier. Bola založená vo februári 1995 tromi kanadskými doktormi, Rayom Muzykom, Gregom Zeschukom, a Augustinom Yipom. Známou sa stala hlavne vďaka svojim úspešným počítačovým RPG hrám, ako napríklad Baldur’s Gate a Neverwinter Nights, ktoré získali niekoľko ocenení."@sk .
+<http://sk.dbpedia.org/resource/Bioware> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <http://sk.wikipedia.org/wiki/Bioware> .
+<http://sk.wikipedia.org/wiki/Bioware> <http://xmlns.com/foaf/0.1/primaryTopic> <http://sk.dbpedia.org/resource/Bioware> .
+<http://sk.wikipedia.org/wiki/Bioware> <http://purl.org/dc/elements/1.1/language> "sk"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://sk.wikipedia.org/wiki/Bioware> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Document> .

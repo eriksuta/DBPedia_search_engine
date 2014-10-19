@@ -1,0 +1,17 @@
+<http://sk.dbpedia.org/resource/Sir_Isaac_Newton> <http://www.w3.org/2002/07/owl#sameAs> <http://rdf.freebase.com/ns/m.03s9v> .
+<http://sk.dbpedia.org/resource/Isaac_Newton> <http://www.w3.org/2002/07/owl#sameAs> <http://su.dbpedia.org/resource/Sir_Isaac_Newton> .
+<http://sk.dbpedia.org/resource/Sir_Isaac_Newton> <http://www.w3.org/2000/01/rdf-schema#label> "Sir Isaac Newton"@sk .
+<http://sk.dbpedia.org/resource/Sir_Isaac_Newton> <http://dbpedia.org/ontology/wikiPageOutDegree> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<http://sk.dbpedia.org/resource/Sir_Isaac_Newton> <http://dbpedia.org/ontology/wikiPageID> "47235"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://sk.dbpedia.org/resource/Sir_Isaac_Newton> <http://dbpedia.org/ontology/wikiPageLength> "26"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<http://sk.dbpedia.org/resource/Sir_Isaac_Newton> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Isaac_Newton> .
+<http://sk.dbpedia.org/resource/Sir_Isaac_Newton> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Isaac_Newton> .
+<http://sk.dbpedia.org/resource/Aerodynamika> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Sir_Isaac_Newton> .
+<http://sk.dbpedia.org/resource/Sir_Isaac_Newton> <http://dbpedia.org/ontology/wikiPageRedirects> <http://sk.dbpedia.org/resource/Isaac_Newton> .
+<http://sk.dbpedia.org/resource/Sir_Isaac_Newton> <http://dbpedia.org/ontology/wikiPageRedirects> <http://sk.dbpedia.org/resource/Isaac_Newton> .
+<http://sk.dbpedia.org/resource/Sir_Isaac_Newton> <http://dbpedia.org/ontology/wikiPageRevisionID> "241835"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://sk.dbpedia.org/resource/Sir_Isaac_Newton> <http://www.w3.org/ns/prov#wasDerivedFrom> <http://sk.wikipedia.org/wiki/Sir_Isaac_Newton?oldid=241835> .
+<http://sk.dbpedia.org/resource/Sir_Isaac_Newton> <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> <http://sk.wikipedia.org/wiki/Sir_Isaac_Newton> .
+<http://sk.wikipedia.org/wiki/Sir_Isaac_Newton> <http://xmlns.com/foaf/0.1/primaryTopic> <http://sk.dbpedia.org/resource/Sir_Isaac_Newton> .
+<http://sk.wikipedia.org/wiki/Sir_Isaac_Newton> <http://purl.org/dc/elements/1.1/language> "sk"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://sk.wikipedia.org/wiki/Sir_Isaac_Newton> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Document> .

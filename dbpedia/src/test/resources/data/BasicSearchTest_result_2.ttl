@@ -1,0 +1,4 @@
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Mass_Effect> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Mass_Effect_3> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Mass_Effect> .
+<http://sk.dbpedia.org/resource/Bioware> <http://dbpedia.org/ontology/wikiPageWikiLink> <http://sk.dbpedia.org/resource/Mass_Effect_3> .
