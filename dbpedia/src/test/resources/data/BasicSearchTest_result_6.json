@@ -1,0 +1,37 @@
+{
+    "result": {
+        "query": {
+            "type": "Literal",
+            "value": "Sir_Isaac_Newton"
+        },
+        "retrieved": {
+            "label": "Sir Isaac Newton",
+            "page": {
+                "id": "47235",
+                "length": "26"
+            },
+            "outDegree": "1",
+            "revision": {
+                "id": "241835",
+                "uri": "http://sk.wikipedia.org/wiki/Sir_Isaac_Newton?oldid=241835"
+            },
+            "links": {
+                "wikipedia": {
+                    "link": [
+                        "http://sk.wikipedia.org/wiki/Sir_Isaac_Newton",
+                        "http://sk.dbpedia.org/resource/Sir_Isaac_Newton"
+                    ]
+                },
+                "unredirected": {
+                    "link": [
+                        "http://sk.dbpedia.org/resource/Isaac_Newton",
+                        "http://sk.dbpedia.org/resource/Sir_Isaac_Newton"
+                    ]
+                },
+                "freebase": { "link": "http://rdf.freebase.com/ns/m.03s9v" },
+                "interlanguage": { "link": "http://su.dbpedia.org/resource/Sir_Isaac_Newton" },
+                "other": { "link": "http://sk.dbpedia.org/resource/Isaac_Newton" }
+            }
+        }
+    }
+}

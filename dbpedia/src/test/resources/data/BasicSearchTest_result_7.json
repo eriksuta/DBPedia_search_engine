@@ -1,0 +1,24 @@
+{
+    "result": {
+        "query": {
+            "type": "Literal",
+            "value": "Mass_Effect"
+        },
+        "retrieved": {
+            "links": {
+                "unredirected": {
+                    "link": [
+                        "http://sk.dbpedia.org/resource/Mass_Effect",
+                        "http://sk.dbpedia.org/resource/Mass_Effect_3"
+                    ]
+                },
+                "other": {
+                    "link": [
+                        "http://sk.dbpedia.org/resource/Mass_Effect",
+                        "http://sk.dbpedia.org/resource/Mass_Effect_3"
+                    ]
+                }
+            }
+        }
+    }
+}

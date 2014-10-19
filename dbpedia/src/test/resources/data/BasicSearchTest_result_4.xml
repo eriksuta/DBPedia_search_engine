@@ -1,0 +1,37 @@
+<result>
+    <query>
+        <type>Literal</type>
+        <value>Sir_Isaac_Newton</value>
+    </query>
+    <retrieved>
+        <label>Sir Isaac Newton</label>
+        <page>
+            <id>47235</id>
+            <length>26</length>
+        </page>
+        <outDegree>1</outDegree>
+        <revision>
+            <id>241835</id>
+            <uri>http://sk.wikipedia.org/wiki/Sir_Isaac_Newton?oldid=241835</uri>
+        </revision>
+        <links>
+            <wikipedia>
+                <link>http://sk.wikipedia.org/wiki/Sir_Isaac_Newton</link>
+                <link>http://sk.dbpedia.org/resource/Sir_Isaac_Newton</link>
+            </wikipedia>
+            <unredirected>
+                <link>http://sk.dbpedia.org/resource/Isaac_Newton</link>
+                <link>http://sk.dbpedia.org/resource/Sir_Isaac_Newton</link>
+            </unredirected>
+            <freebase>
+                <link>http://rdf.freebase.com/ns/m.03s9v</link>
+            </freebase>
+            <interlanguage>
+                <link>http://su.dbpedia.org/resource/Sir_Isaac_Newton</link>
+            </interlanguage>
+            <other>
+                <link>http://sk.dbpedia.org/resource/Isaac_Newton</link>
+            </other>
+        </links>
+    </retrieved>
+</result>
