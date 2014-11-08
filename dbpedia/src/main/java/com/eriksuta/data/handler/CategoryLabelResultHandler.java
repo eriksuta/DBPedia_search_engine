@@ -31,7 +31,7 @@ public class CategoryLabelResultHandler extends RDFHandlerBase {
         if(lastSubject != null && lastSubject.equals(subjectValue)){
             sb.append("\t").append(objectValue);
         } else {
-            sb.append("\n").append(subjectValue).append("\t").append(objectValue);
+            sb.append("\n").append(subjectValue).append(":").append(objectValue);
             lastSubject = subjectValue;
             numberOfCategories++;
         }

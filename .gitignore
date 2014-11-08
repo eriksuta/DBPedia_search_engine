@@ -1,8 +1,8 @@
 *.class
 */target/*
+*/parsed/*
 *keystore
 */resources/*.ttl
-*/parsed/*.txt
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/

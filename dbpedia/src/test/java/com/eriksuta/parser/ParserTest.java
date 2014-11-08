@@ -1,7 +1,9 @@
 package com.eriksuta.parser;
 
 
+import com.eriksuta.data.Indexer;
 import com.eriksuta.data.ParserImpl;
+import com.eriksuta.data.SearchUtil;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -28,7 +30,6 @@ public class ParserTest {
     @BeforeClass
     public static void beforeClass(){
         System.out.println("==========|BASIC PARSER TEST SUIT START|==========");
-
     }
 
     @AfterClass
@@ -60,6 +61,12 @@ public class ParserTest {
     public void test(){
         ParserImpl parser = new ParserImpl();
         parser.parseSlovakDBPedia();
+
+        Indexer indexer = new Indexer();
+        indexer.createIndexes();
+
+        SearchUtil searchUtil = new SearchUtil();
+        searchUtil.simpleCategorySearch("Bioware");
     }
 
 

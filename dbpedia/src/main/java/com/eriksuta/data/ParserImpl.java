@@ -6,6 +6,9 @@ import org.openrdf.rio.RDFParser;
 import org.openrdf.rio.Rio;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  *  @author shood
@@ -26,12 +29,12 @@ public class ParserImpl implements IParser{
     private static BufferedWriter bufferedWriter;
     private RDFParser rdfParser = Rio.createParser(RDFFormat.TURTLE);
 
-    /**
-     *
-     * */
     public void parseSlovakDBPedia(){
         parseArticleCategories(new File(TTL_ARTICLE_CATEGORIES_SK), new File(ARTICLE_CATEGORIES_SK));
+        sortStatementsInFile(new File(ARTICLE_CATEGORIES_SK));
+
         parseArticleCategories(new File(TTL_ARTICLE_CATEGORIES_EN_URIS_SK), new File(ARTICLE_CATEGORIES_EN_URIS_SK));
+        sortStatementsInFile(new File(ARTICLE_CATEGORIES_EN_URIS_SK));
     }
 
     public static ParserImpl getParserInstance(){
@@ -66,6 +69,43 @@ public class ParserImpl implements IParser{
             System.out.println("Statements: " + categoryHandler.getNumberOfStatements());
             System.out.println("Unique categories: " + categoryHandler.getNumberOfCategories());
             bufferedWriter.close();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    private void sortStatementsInFile(File fileToSort){
+        if(fileToSort == null){
+            return;
+        }
+
+        try {
+            FileReader fileReader = new FileReader(fileToSort);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            List<String> lines = new ArrayList<String>();
+            String inputLine;
+
+            while((inputLine = bufferedReader.readLine()) != null){
+                lines.add(inputLine);
+            }
+
+            bufferedReader.close();
+            fileReader.close();
+
+            Collections.sort(lines);
+
+            FileWriter fileWriter = new FileWriter(fileToSort);
+            PrintWriter printWriter = new PrintWriter(fileWriter);
+
+            for(String line: lines){
+                printWriter.println(line);
+            }
+
+            printWriter.flush();
+            printWriter.close();
+            fileWriter.close();
+
         } catch (Exception e){
             e.printStackTrace();
         }
