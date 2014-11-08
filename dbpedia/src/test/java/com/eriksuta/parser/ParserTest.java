@@ -1,6 +1,7 @@
 package com.eriksuta.parser;
 
 
+import com.eriksuta.data.ParserImpl;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -20,7 +21,7 @@ import java.util.List;
  * */
 public class ParserTest {
 
-    private static final String DIR = "src/test/resources/rdf/";
+    private static final String DIR = "src/main/resources/rdf/";
 
     private static final String F_CATEGORY_LABELS_SK = DIR + "category_labels_sk.ttl";
 
@@ -52,8 +53,13 @@ public class ParserTest {
             e.printStackTrace();
         }
 
-
         System.out.println(myGraph.size());
+    }
+
+    @Test
+    public void test(){
+        ParserImpl parser = new ParserImpl();
+        parser.parseSlovakDBPedia();
     }
 
 
