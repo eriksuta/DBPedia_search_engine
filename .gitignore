@@ -1,9 +1,7 @@
-*.class
+﻿*.class
 */target/*
 *keystore
-
-# RDF data #
-*/resources/rdf/*
+*/resources/*.ttl
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
