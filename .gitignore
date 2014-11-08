@@ -2,7 +2,7 @@
 */target/*
 *keystore
 */resources/*.ttl
-*/parsed/.txt
+*/parsed/*.txt
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
