@@ -1,4 +1,4 @@
-package com.eriksuta.data;
+package com.eriksuta.data.parser;
 
 import java.io.File;
 import java.util.List;
@@ -6,8 +6,6 @@ import java.util.List;
 /**
  *  @author shood
  *
- *  TODO - add some nice documentation
- *  TODO - add methods returing search result in XML, JSON and other data formats...
  * */
 public interface IParser {
 
