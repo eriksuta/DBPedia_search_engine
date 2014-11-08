@@ -60,6 +60,13 @@
 		</dependency>
 		-->
 
+        <!-- SESAME DEPENDENCIES -->
+        <dependency>
+            <groupId>org.openrdf.sesame</groupId>
+            <artifactId>sesame-runtime</artifactId>
+            <version>2.7.13</version>
+        </dependency>
+
 		<!-- LOGGING DEPENDENCIES - LOG4J -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
