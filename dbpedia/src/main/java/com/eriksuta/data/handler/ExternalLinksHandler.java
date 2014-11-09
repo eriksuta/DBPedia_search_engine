@@ -6,8 +6,8 @@ import org.openrdf.model.Statement;
 /**
  *  @author shood
  * */
-public class CategoryLabelResultHandler extends BasicRdfHandler {
-        
+public class ExternalLinksHandler extends BasicRdfHandler {
+
     private String lastSubject;
     private StringBuilder sb;
 
@@ -16,17 +16,16 @@ public class CategoryLabelResultHandler extends BasicRdfHandler {
         String[] subject = statement.getSubject().stringValue().split("/");
         String subjectValue = subject[subject.length-1];
 
-        String[] object =  statement.getObject().stringValue().split(":");
-        String objectValue = object[object.length-1];
+        String object =  statement.getObject().stringValue();
 
         if(sb == null){
             sb = new StringBuilder();
         }
 
         if(lastSubject != null && lastSubject.equals(subjectValue)){
-            sb.append("\t").append(objectValue);
+            sb.append("\t").append(object);
         } else {
-            sb.append("\n").append(subjectValue).append(":").append(objectValue);
+            sb.append("\n").append(subjectValue).append(":").append(object);
             lastSubject = subjectValue;
             numberOfStatementsAfter++;
         }
@@ -36,4 +35,5 @@ public class CategoryLabelResultHandler extends BasicRdfHandler {
 
         numOfStatements++;
     }
+
 }

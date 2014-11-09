@@ -27,7 +27,7 @@ public class Indexer {
 
     private Directory directory;
     private Analyzer analyzer;
-    private IndexWriter indexWriter;
+    private static IndexWriter indexWriter;
 
     /**
      *  Constructor - performs necessary initialization
@@ -42,9 +42,11 @@ public class Indexer {
         try {
             directory = FSDirectory.open(new File(INDEX_DIR));
 
-            IndexWriterConfig indexWriterConfig = new IndexWriterConfig(Version.LATEST, analyzer);
-            indexWriterConfig.setOpenMode(IndexWriterConfig.OpenMode.CREATE);
-            indexWriter = new IndexWriter(directory, indexWriterConfig);
+            if(indexWriter == null){
+                IndexWriterConfig indexWriterConfig = new IndexWriterConfig(Version.LATEST, analyzer);
+                indexWriterConfig.setOpenMode(IndexWriterConfig.OpenMode.CREATE);
+                indexWriter = new IndexWriter(directory, indexWriterConfig);
+            }
         } catch (Exception e){
             e.printStackTrace();
         }
@@ -74,8 +76,8 @@ public class Indexer {
             String[] content = line.split(":");
 
             Document document = new Document();
-            document.add(new TextField("title", content[0], Field.Store.YES));
-            document.add(new StringField("categories", content[1], Field.Store.YES));
+            document.add(new TextField(IndexLabelNames.ARTICLE_CATEGORY_LABEL, content[0], Field.Store.YES));
+            document.add(new StringField(IndexLabelNames.ARTICLE_CATEGORY_CONTENT, content[1], Field.Store.YES));
             indexWriter.addDocument(document);
         }
 

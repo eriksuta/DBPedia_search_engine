@@ -16,12 +16,14 @@ import org.apache.lucene.store.Directory;
 public class SearchUtil {
 
     public void simpleCategorySearch(String searchQuery){
+        System.out.println("Searching for term: '" + searchQuery + "'.");
+
         Indexer indexer = new Indexer();
         Directory directory = indexer.getDirectory();
 
         try {
             //Create the query
-            Query query = new QueryParser("title", indexer.getAnalyzer()).parse(searchQuery);
+            Query query = new QueryParser(IndexLabelNames.ARTICLE_CATEGORY_LABEL, indexer.getAnalyzer()).parse(searchQuery);
 
             //Perform the search
             int hitsPerPage = 10;
@@ -40,7 +42,7 @@ public class SearchUtil {
                 int docId = hits[i].doc;
                 Document d = indexSearcher.doc(docId);
 
-                System.out.println(i + ". " + d.get("title") + ": " + d.get("categories"));
+                System.out.println(i + ". " + d.get(IndexLabelNames.ARTICLE_CATEGORY_LABEL) + ": " + d.get(IndexLabelNames.ARTICLE_CATEGORY_CONTENT));
             }
 
             indexReader.close();
