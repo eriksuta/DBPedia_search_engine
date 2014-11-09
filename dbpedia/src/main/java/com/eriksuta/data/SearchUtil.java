@@ -22,6 +22,8 @@ import java.util.List;
 public class SearchUtil {
 
     public SearchResultType basicSearch(String searchTerm){
+        long startTime = System.currentTimeMillis();
+
         System.out.println("Searching for term: '" + searchTerm + "'.");
 
         SearchResultType result = new SearchResultType();
@@ -136,6 +138,9 @@ public class SearchUtil {
             e.printStackTrace();
         }
 
+        long endTime = System.currentTimeMillis();
+        result.setSearchTime(endTime - startTime);
+
         return result;
     }
 
@@ -179,7 +184,7 @@ public class SearchUtil {
                     if(propertyFields.length == 2){
                         infoboxProperty = new InfoboxPropertyType();
                         infoboxProperty.setName(propertyFields[0]);
-                        infoboxProperty.setName(propertyFields[1]);
+                        infoboxProperty.setValue(propertyFields[1]);
 
                         infoboxPropertyList.add(infoboxProperty);
                     }

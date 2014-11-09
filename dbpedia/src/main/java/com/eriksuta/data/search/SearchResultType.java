@@ -13,6 +13,7 @@ public class SearchResultType implements Serializable{
      *  The term that was searched
      * */
     private String queryTerm;
+    private long searchTime;
 
     private List<String> labels = new ArrayList<String>();
 
@@ -43,6 +44,14 @@ public class SearchResultType implements Serializable{
 
     public SearchResultType(){
 
+    }
+
+    public long getSearchTime() {
+        return searchTime;
+    }
+
+    public void setSearchTime(long searchTime) {
+        this.searchTime = searchTime;
     }
 
     public String getQueryTerm() {
@@ -212,10 +221,7 @@ public class SearchResultType implements Serializable{
 
         SearchResultType that = (SearchResultType) o;
 
-        if (outDegree != that.outDegree) return false;
-        if (pageId != that.pageId) return false;
-        if (pageLength != that.pageLength) return false;
-        if (revisionId != that.revisionId) return false;
+        if (searchTime != that.searchTime) return false;
         if (articleCategories != null ? !articleCategories.equals(that.articleCategories) : that.articleCategories != null)
             return false;
         if (externalLinks != null ? !externalLinks.equals(that.externalLinks) : that.externalLinks != null)
@@ -229,6 +235,9 @@ public class SearchResultType implements Serializable{
         if (labels != null ? !labels.equals(that.labels) : that.labels != null) return false;
         if (longAbstracts != null ? !longAbstracts.equals(that.longAbstracts) : that.longAbstracts != null)
             return false;
+        if (outDegree != null ? !outDegree.equals(that.outDegree) : that.outDegree != null) return false;
+        if (pageId != null ? !pageId.equals(that.pageId) : that.pageId != null) return false;
+        if (pageLength != null ? !pageLength.equals(that.pageLength) : that.pageLength != null) return false;
         if (pageLinksEnUrisSk != null ? !pageLinksEnUrisSk.equals(that.pageLinksEnUrisSk) : that.pageLinksEnUrisSk != null)
             return false;
         if (pageLinksSk != null ? !pageLinksSk.equals(that.pageLinksSk) : that.pageLinksSk != null) return false;
@@ -236,6 +245,7 @@ public class SearchResultType implements Serializable{
         if (redirects != null ? !redirects.equals(that.redirects) : that.redirects != null) return false;
         if (redirectsTransitive != null ? !redirectsTransitive.equals(that.redirectsTransitive) : that.redirectsTransitive != null)
             return false;
+        if (revisionId != null ? !revisionId.equals(that.revisionId) : that.revisionId != null) return false;
         if (revisionUri != null ? !revisionUri.equals(that.revisionUri) : that.revisionUri != null) return false;
         if (shortAbstracts != null ? !shortAbstracts.equals(that.shortAbstracts) : that.shortAbstracts != null)
             return false;
@@ -250,6 +260,7 @@ public class SearchResultType implements Serializable{
     @Override
     public int hashCode() {
         int result = queryTerm != null ? queryTerm.hashCode() : 0;
+        result = 31 * result + (int) (searchTime ^ (searchTime >>> 32));
         result = 31 * result + (labels != null ? labels.hashCode() : 0);
         result = 31 * result + (articleCategories != null ? articleCategories.hashCode() : 0);
         result = 31 * result + (skosCategories != null ? skosCategories.hashCode() : 0);
@@ -264,10 +275,10 @@ public class SearchResultType implements Serializable{
         result = 31 * result + (infoboxProperties != null ? infoboxProperties.hashCode() : 0);
         result = 31 * result + (longAbstracts != null ? longAbstracts.hashCode() : 0);
         result = 31 * result + (shortAbstracts != null ? shortAbstracts.hashCode() : 0);
-        result = 31 * result + outDegree;
-        result = 31 * result + pageId;
-        result = 31 * result + pageLength;
-        result = 31 * result + revisionId;
+        result = 31 * result + (outDegree != null ? outDegree.hashCode() : 0);
+        result = 31 * result + (pageId != null ? pageId.hashCode() : 0);
+        result = 31 * result + (pageLength != null ? pageLength.hashCode() : 0);
+        result = 31 * result + (revisionId != null ? revisionId.hashCode() : 0);
         result = 31 * result + (revisionUri != null ? revisionUri.hashCode() : 0);
         return result;
     }
@@ -275,11 +286,17 @@ public class SearchResultType implements Serializable{
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
+        sb.append("Results retrieved in: ");
+        sb.append(searchTime);
+        sb.append(" milliseconds\n");
+
         sb.append("Results for search term: ");
         sb.append("'");
         sb.append(queryTerm);
         sb.append("'");
         sb.append(" are:\n");
+
+
 
         sb.append("Labels: ");
         for(String label: labels){

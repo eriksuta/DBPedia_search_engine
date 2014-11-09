@@ -22,7 +22,7 @@ import java.util.List;
 /**
  *  @author shood
  * */
-public class ParserTest {
+public class BasicTest {
 
     private static final String DIR = "src/main/resources/rdf/";
 
@@ -38,12 +38,20 @@ public class ParserTest {
         System.out.println("==========|BASIC PARSER TEST SUIT END|==========");
     }
 
+    /**
+     *  Run this test to perform complete parsing process
+     *  !!WARNING!! - may take long time
+     * */
     @Test
     public void performParseProcess(){
         ParserImpl parser = new ParserImpl();
         parser.parseSlovakDBPedia();
     }
 
+    /**
+     *  Run this test to perform complete indexing process
+     *  !!WARNING!! - may take long time
+     * */
     @Test
     public void performIndexProcess(){
         Indexer indexer = new Indexer();

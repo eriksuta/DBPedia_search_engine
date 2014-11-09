@@ -152,11 +152,11 @@ public class Indexer {
             createIndexes(new File(PAGE_LENGTH_SK), algorithm);
 
             //Redirects
-            algorithm = new SimpleIndexAlgorithm(IndexLabelNames.REDIRECTS_LABEL, IndexLabelNames.REDIRECTS_CONTENT);
+            algorithm = new LinkIndexAlgorithm(IndexLabelNames.REDIRECTS_LABEL, IndexLabelNames.REDIRECTS_CONTENT);
             createIndexes(new File(REDIRECTS_SK), algorithm);
 
             //Redirects - Transitive
-            algorithm = new SimpleIndexAlgorithm(IndexLabelNames.REDIRECTS_TRANSITIVE_LABEL, IndexLabelNames.REDIRECTS_TRANSITIVE_CONTENT);
+            algorithm = new LinkIndexAlgorithm(IndexLabelNames.REDIRECTS_TRANSITIVE_LABEL, IndexLabelNames.REDIRECTS_TRANSITIVE_CONTENT);
             createIndexes(new File(REDIRECTS_TRANSITIVE_SK), algorithm);
 
             //Revision IDs
@@ -164,7 +164,7 @@ public class Indexer {
             createIndexes(new File(REVISION_IDS_SK), algorithm);
 
             //Revision URIs
-            algorithm = new SimpleIndexAlgorithm(IndexLabelNames.REVISION_URI_LABEL, IndexLabelNames.REVISION_URI_CONTENT);
+            algorithm = new LinkIndexAlgorithm(IndexLabelNames.REVISION_URI_LABEL, IndexLabelNames.REVISION_URI_CONTENT);
             createIndexes(new File(REVISION_URIS_SK), algorithm);
 
             //Skos Categories
