@@ -1,8 +1,11 @@
 *.class
 */target/*
-*/parsed/*
 *keystore
-*/resources/*.ttl
+
+# Indexes, source RDF files and parsed files exclusion
+**/resources/rdf/*.ttl
+**/parsed/index/*
+**/parsed/*.txt
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
