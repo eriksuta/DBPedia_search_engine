@@ -25,7 +25,7 @@ public class SimpleLinksHandler extends BasicRdfHandler {
         if(lastSubject != null && lastSubject.equals(subjectValue)){
             sb.append("\t").append(object);
         } else {
-            sb.append("\n").append(subjectValue).append(":").append(object);
+            sb.append("\n").append(subjectValue).append("->").append(object);
             lastSubject = subjectValue;
             numberOfStatementsAfter++;
         }

@@ -4,6 +4,7 @@ package com.eriksuta.parser;
 import com.eriksuta.data.Indexer;
 import com.eriksuta.data.ParserImpl;
 import com.eriksuta.data.SearchUtil;
+import com.eriksuta.data.search.SearchResultType;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -38,38 +39,35 @@ public class ParserTest {
     }
 
     @Test
-    public void test_01_parse_category_labels_sk(){
-        File file = new File(F_CATEGORY_LABELS_SK);
-
-        RDFParser parser = Rio.createParser(RDFFormat.TURTLE);
-        List myGraph = new ArrayList();
-        parser.setRDFHandler(new StatementCollector(myGraph));
-
-        try{
-            FileInputStream fis = new FileInputStream(file);
-            InputStreamReader isr = new InputStreamReader(fis);
-
-            parser.parse(isr, "");
-        } catch (Exception e){
-            e.printStackTrace();
-        }
-
-        System.out.println(myGraph.size());
+    public void performParseProcess(){
+        ParserImpl parser = new ParserImpl();
+        parser.parseSlovakDBPedia();
     }
 
     @Test
-    public void test(){
-        ParserImpl parser = new ParserImpl();
-        parser.parseSlovakDBPedia();
-
+    public void performIndexProcess(){
         Indexer indexer = new Indexer();
-        indexer.createIndexes();
-
-        SearchUtil searchUtil = new SearchUtil();
-        searchUtil.simpleCategorySearch("Bioware");
+        indexer.performIndexing();
     }
 
+    @Test
+    public void testBratislava(){
+        SearchUtil searchUtil = new SearchUtil();
+        SearchResultType result = searchUtil.basicSearch("Bratislava");
+        System.out.println(result.toString());
+    }
 
+    @Test
+    public void testBioware(){
+        SearchUtil searchUtil = new SearchUtil();
+        SearchResultType result = searchUtil.basicSearch("Bioware");
+        System.out.println(result.toString());
+    }
 
-
+    @Test
+    public void testMassEffect(){
+        SearchUtil searchUtil = new SearchUtil();
+        SearchResultType result = searchUtil.basicSearch("Mass Effect");
+        System.out.println(result.toString());
+    }
 }

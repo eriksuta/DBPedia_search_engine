@@ -1,6 +1,8 @@
 package com.eriksuta.data;
 
 import com.eriksuta.data.index.IndexAlgorithm;
+import com.eriksuta.data.index.LinkIndexAlgorithm;
+import com.eriksuta.data.index.PropertyIndexAlgorithm;
 import com.eriksuta.data.index.SimpleIndexAlgorithm;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
@@ -91,25 +93,25 @@ public class Indexer {
             createIndexes(new File(ARTICLE_CATEGORIES_EN_URIS_SK), algorithm);
 
             //External Links
-            algorithm = new SimpleIndexAlgorithm(IndexLabelNames.EXTERNAL_LINK_LABEL, IndexLabelNames.EXTERNAL_LINK_CONTENT);
+            algorithm = new LinkIndexAlgorithm(IndexLabelNames.EXTERNAL_LINK_LABEL, IndexLabelNames.EXTERNAL_LINK_CONTENT);
             createIndexes(new File(EXTERNAL_LINKS_SK), algorithm);
             createIndexes(new File(EXTERNAL_LINKS_EN_URIS_SK), algorithm);
 
             //Freebase Links
-            algorithm = new SimpleIndexAlgorithm(IndexLabelNames.FREEBASE_LINK_LABEL, IndexLabelNames.FREEBASE_LINK_CONTENT);
+            algorithm = new LinkIndexAlgorithm(IndexLabelNames.FREEBASE_LINK_LABEL, IndexLabelNames.FREEBASE_LINK_CONTENT);
             createIndexes(new File(FREEBASE_LINKS_SK), algorithm);
 
             //Interlanguage Links
-            algorithm = new SimpleIndexAlgorithm(IndexLabelNames.INTER_LANGUAGE_LINKS_LABEL, IndexLabelNames.INTER_LANGUAGE_LINKS_CONTENT);
+            algorithm = new LinkIndexAlgorithm(IndexLabelNames.INTER_LANGUAGE_LINKS_LABEL, IndexLabelNames.INTER_LANGUAGE_LINKS_CONTENT);
             createIndexes(new File(INTER_LANGUAGE_LINKS), algorithm);
 
             //Page Links
-            algorithm = new SimpleIndexAlgorithm(IndexLabelNames.PAGE_LINKS_LABEL, IndexLabelNames.PAGE_LINKS_CONTENT);
+            algorithm = new LinkIndexAlgorithm(IndexLabelNames.PAGE_LINKS_LABEL, IndexLabelNames.PAGE_LINKS_CONTENT);
             createIndexes(new File(PAGE_LINKS_SK), algorithm);
             createIndexes(new File(PAGE_LINKS_EN_URIS_SK), algorithm);
 
             //Page Links - Unredirected
-            algorithm = new SimpleIndexAlgorithm(IndexLabelNames.PAGE_LINKS_UNREDIRECTED_LABEL, IndexLabelNames.PAGE_LINKS_UNREDIRECTED_CONTENT);
+            algorithm = new LinkIndexAlgorithm(IndexLabelNames.PAGE_LINKS_UNREDIRECTED_LABEL, IndexLabelNames.PAGE_LINKS_UNREDIRECTED_CONTENT);
             createIndexes(new File(PAGE_LINKS_UNREDIRECTED_SK), algorithm);
             createIndexes(new File(PAGE_LINKS_EN_URIS_UNREDIRECTED_SK), algorithm);
 
@@ -118,7 +120,7 @@ public class Indexer {
             createIndexes(new File(WIKIPEDIA_LINKS_SK), algorithm);
 
             //Infobox Properties
-            algorithm = new SimpleIndexAlgorithm(IndexLabelNames.INFOBOX_PROPERTIES_LABEL, IndexLabelNames.INFOBOX_PROPERTIES_CONTENT);
+            algorithm = new LinkIndexAlgorithm(IndexLabelNames.INFOBOX_PROPERTIES_LABEL, IndexLabelNames.INFOBOX_PROPERTIES_CONTENT);
             createIndexes(new File(INFOBOX_PROPERTIES_SK), algorithm);
             createIndexes(new File(INFOBOX_PROPERTIES_EN_URIS_SK), algorithm);
 
