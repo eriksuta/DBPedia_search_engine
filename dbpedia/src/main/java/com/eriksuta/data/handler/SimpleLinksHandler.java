@@ -6,7 +6,7 @@ import org.openrdf.model.Statement;
 /**
  *  @author shood
  * */
-public class ExternalLinksHandler extends BasicRdfHandler {
+public class SimpleLinksHandler extends BasicRdfHandler {
 
     private String lastSubject;
     private StringBuilder sb;
