@@ -26,7 +26,7 @@ public class SearchUtil {
             Query query = new QueryParser(IndexLabelNames.ARTICLE_CATEGORY_LABEL, indexer.getAnalyzer()).parse(searchQuery);
 
             //Perform the search
-            int hitsPerPage = 10;
+            int hitsPerPage = Integer.MAX_VALUE;
             IndexReader indexReader = DirectoryReader.open(directory);
             IndexSearcher indexSearcher = new IndexSearcher(indexReader);
 
@@ -49,7 +49,5 @@ public class SearchUtil {
         } catch (Exception e){
             e.printStackTrace();
         }
-
-
     }
 }
