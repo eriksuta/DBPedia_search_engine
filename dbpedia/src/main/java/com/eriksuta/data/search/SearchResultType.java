@@ -283,6 +283,12 @@ public class SearchResultType implements Serializable{
         return result;
     }
 
+    public String toStringWithoutTime(){
+        String toString = this.toString();
+
+        return toString.substring(toString.indexOf('\n')+1);
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -295,8 +301,6 @@ public class SearchResultType implements Serializable{
         sb.append(queryTerm);
         sb.append("'");
         sb.append(" are:\n");
-
-
 
         sb.append("Labels: ");
         for(String label: labels){
