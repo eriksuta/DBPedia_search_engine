@@ -1,6 +1,9 @@
 package com.eriksuta.page;
 
+import com.eriksuta.data.search.InfoboxPropertyType;
+import com.eriksuta.data.search.SearchResultType;
 import com.eriksuta.page.component.panel.SearchOptionsPanel;
+import com.eriksuta.page.component.panel.SearchResultPanel;
 import org.apache.wicket.Component;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxLink;
@@ -16,6 +19,10 @@ import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.validation.validator.StringValidator;
 import com.eriksuta.page.component.behavior.VisibleEnableBehavior;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  *  @author shood
@@ -33,11 +40,34 @@ public class SearchPage extends WebPage {
 
     private String searchText;
     private boolean searchOptionsVisible = false;
+    private SearchResultType result;
 
 	public SearchPage(final PageParameters parameters) {
 		super(parameters);
 
+        result = prepareTestSearchResult();
+
         initLayout();
+    }
+
+    private SearchResultType prepareTestSearchResult(){
+        SearchResultType result = new SearchResultType();
+        result.setSearchTime(System.currentTimeMillis());
+        result.setRevisionId(123456);
+        result.setPageLength(123456);
+        result.setPageLength(123456);
+        result.setPageId(123456);
+        result.setArticleCategories(new ArrayList<String>(Arrays.asList("Category1","Category2","Category3")));
+        result.setExternalLinks(new ArrayList<String>(Arrays.asList("Link1","Link2","Link3")));
+
+        List<InfoboxPropertyType> infoboxProperties = new ArrayList<InfoboxPropertyType>();
+        infoboxProperties.add(new InfoboxPropertyType("name","value"));
+        infoboxProperties.add(new InfoboxPropertyType("bubla","asdgasdg"));
+        infoboxProperties.add(new InfoboxPropertyType("tugsdg","valgsduasdgasde"));
+
+        result.setInfoboxProperties(infoboxProperties);
+
+        return result;
     }
 
     private void initLayout(){
@@ -99,7 +129,7 @@ public class SearchPage extends WebPage {
         });
         form.add(searchOptionsPanel);
 
-        WebMarkupContainer searchResultPanel = new WebMarkupContainer(ID_SEARCH_RESULT);
+        WebMarkupContainer searchResultPanel = new SearchResultPanel(ID_SEARCH_RESULT, result);
         searchResultPanel.setOutputMarkupId(true);
         searchResultPanel.setOutputMarkupPlaceholderTag(true);
         add(searchResultPanel);
@@ -115,6 +145,10 @@ public class SearchPage extends WebPage {
 
     private Component getSearchOptionsLink(){
         return get(ID_MAIN_FORM + ":" + ID_SEARCH_OPTIONS_LINK);
+    }
+
+    private SearchResultPanel getSearchResultPanel(){
+        return (SearchResultPanel) get(ID_MAIN_FORM + ":" + ID_SEARCH_RESULT);
     }
 
     private void showSearchOptionsPerformed(AjaxRequestTarget target){

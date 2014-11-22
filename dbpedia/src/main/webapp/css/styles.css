@@ -16,5 +16,10 @@ div.search-options-panel{
 }
 
 dl.dl-horizontal{
-    margin-bottom: 0px;
+    margin-bottom: 0;
+}
+
+div.result-area{
+    padding-left: 0;
+    padding-right: 0;
 }
