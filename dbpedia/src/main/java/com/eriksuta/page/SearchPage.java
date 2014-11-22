@@ -7,10 +7,10 @@ import org.apache.wicket.markup.html.WebPage;
 /**
  *  @author shood
  * */
-public class HomePage extends WebPage {
+public class SearchPage extends WebPage {
 	private static final long serialVersionUID = 1L;
 
-	public HomePage(final PageParameters parameters) {
+	public SearchPage(final PageParameters parameters) {
 		super(parameters);
     }
 }
