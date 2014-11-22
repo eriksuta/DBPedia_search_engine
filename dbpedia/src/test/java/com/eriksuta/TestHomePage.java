@@ -1,6 +1,6 @@
 package com.eriksuta;
 
-import com.eriksuta.page.HomePage;
+import com.eriksuta.page.SearchPage;
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Before;
 import org.junit.Test;
@@ -20,9 +20,9 @@ public class TestHomePage{
 	@Test
 	public void homepageRendersSuccessfully(){
 		//start and render the test page
-		tester.startPage(HomePage.class);
+		tester.startPage(SearchPage.class);
 
 		//assert rendered page class
-		tester.assertRenderedPage(HomePage.class);
+		tester.assertRenderedPage(SearchPage.class);
 	}
 }
