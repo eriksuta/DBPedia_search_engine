@@ -10,3 +10,11 @@ div.search-options{
     margin-left: auto;
     margin-right: 0;
 }
+
+div.search-options-panel{
+    margin-top: 20px;
+}
+
+dl.dl-horizontal{
+    margin-bottom: 0px;
+}

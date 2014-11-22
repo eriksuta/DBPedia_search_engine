@@ -1,4 +1,4 @@
-package com.eriksuta.page.component;
+package com.eriksuta.page.component.behavior;
 
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.Behavior;
