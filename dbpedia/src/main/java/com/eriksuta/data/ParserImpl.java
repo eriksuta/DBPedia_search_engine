@@ -23,28 +23,21 @@ public class ParserImpl implements IParser{
 
     public static final String TTL_ARTICLE_CATEGORIES_EN_URIS_SK = TTL_DIR + "article_categories_en_uris_sk.ttl";
     public static final String TTL_ARTICLE_CATEGORIES_SK = TTL_DIR + "article_categories_sk.ttl";
-    public static final String TTL_EXTERNAL_LINKS_EN_URIS_SK = TTL_DIR + "external_links_en_uris_sk.ttl";
     public static final String TTL_EXTERNAL_LINKS_SK = TTL_DIR + "external_links_sk.ttl";
     public static final String TTL_FREEBASE_LINKS = TTL_DIR + "freebase_links_sk.ttl";
-    public static final String TTL_INFOBOX_PROPERTIES_EN_URIS_SK = TTL_DIR + "infobox_properties_en_uris_sk.ttl";
     public static final String TTL_INFOBOX_PROPERTIES_SK = TTL_DIR + "infobox_properties_sk.ttl";
     public static final String TTL_INTER_LANGUAGE_LINKS = TTL_DIR + "interlanguage_links_sk.ttl";
     public static final String TTL_LABELS_SK = TTL_DIR + "labels_sk.ttl";
-    public static final String TTL_LABELS_EN_URIS_SK = TTL_DIR + "labels_en_uris_sk.ttl";
     public static final String TTL_LONG_ABSTRACTS_SK = TTL_DIR + "long_abstracts_sk.ttl";
-    public static final String TTL_LONG_ABSTRACTS_EN_URIS_SK = TTL_DIR + "long_abstracts_en_uris_sk.ttl";
     public static final String TTL_OUT_DEGREE_SK = TTL_DIR + "out_degree_sk.ttl";
     public static final String TTL_PAGE_IDS_SK = TTL_DIR + "page_ids_sk.ttl";
     public static final String TTL_PAGE_LENGTH_SK = TTL_DIR + "page_length_sk.ttl";
-    public static final String TTL_PAGE_LINKS_EN_URIS_SK = TTL_DIR + "page_links_en_uris_sk.ttl";
-    public static final String TTL_PAGE_LINKS_EN_URIS_UNREDIRECTED_SK = TTL_DIR + "page_links_en_uris_unredirected_sk.ttl";
     public static final String TTL_PAGE_LINKS_SK = TTL_DIR + "page_links_sk.ttl";
     public static final String TTL_PAGE_LINKS_UNREDIRECTED_SK = TTL_DIR + "page_links_unredirected_sk.ttl";
     public static final String TTL_REDIRECTS_SK = TTL_DIR + "redirects_sk.ttl";
     public static final String TTL_REDIRECTS_TRANSITIVE_SK = TTL_DIR + "redirects_transitive_sk.ttl";
     public static final String TTL_REVISION_IDS_SK = TTL_DIR + "revision_ids_sk.ttl";
     public static final String TTL_REVISION_URIS_SK = TTL_DIR + "revision_uris_sk.ttl";
-    public static final String TTL_SHORT_ABSTRACTS_EN_URIS_SK = TTL_DIR + "short_abstracts_en_uris_sk.ttl";
     public static final String TTL_SHORT_ABSTRACTS_SK = TTL_DIR + "short_abstracts_sk.ttl";
     public static final String TTL_WIKIPEDIA_LINKS_SK = TTL_DIR + "wikipedia_links_sk.ttl";
     public static final String TTL_SKOS_CATEGORIES_EN_URIS_SK = TTL_DIR + "skos_categories_en_uris_sk.ttl";
@@ -52,28 +45,21 @@ public class ParserImpl implements IParser{
 
     public static final String ARTICLE_CATEGORIES_EN_URIS_SK = OUT_DIR + "article_categories_en_uris_sk.txt";
     public static final String ARTICLE_CATEGORIES_SK = OUT_DIR + "article_categories_sk.txt";
-    public static final String EXTERNAL_LINKS_EN_URIS_SK = OUT_DIR + "external_links_en_uris_sk.txt";
     public static final String EXTERNAL_LINKS_SK = OUT_DIR + "external_links_sk.txt";
     public static final String FREEBASE_LINKS_SK = OUT_DIR + "freebase_links_sk.txt";
-    public static final String INFOBOX_PROPERTIES_EN_URIS_SK = OUT_DIR + "infobox_properties_en_uris_sk.txt";
     public static final String INFOBOX_PROPERTIES_SK = OUT_DIR + "infobox_properties_sk.txt";
     public static final String INTER_LANGUAGE_LINKS = OUT_DIR + "interlanguage_links_sk.txt";
     public static final String LABELS_SK = OUT_DIR + "labels_sk.txt";
-    public static final String LABELS_EN_URIS_SK = OUT_DIR + "labels_en_uris_sk.txt";
     public static final String LONG_ABSTRACTS_SK = OUT_DIR + "long_abstracts_sk.txt";
-    public static final String LONG_ABSTRACTS_EN_URIS_SK = OUT_DIR + "long_abstracts_en_uris_sk.txt";
     public static final String OUT_DEGREE_SK = OUT_DIR + "out_degree_sk.txt";
     public static final String PAGE_IDS_SK = OUT_DIR + "page_ids_sk.txt";
     public static final String PAGE_LENGTH_SK = OUT_DIR + "page_length_sk.txt";
-    public static final String PAGE_LINKS_EN_URIS_SK = OUT_DIR + "page_links_en_uris_sk.txt";
-    public static final String PAGE_LINKS_EN_URIS_UNREDIRECTED_SK = OUT_DIR + "page_links_en_uris_unredirected_sk.txt";
     public static final String PAGE_LINKS_SK = OUT_DIR + "page_links_sk.txt";
     public static final String PAGE_LINKS_UNREDIRECTED_SK = OUT_DIR + "page_links_unredirected_sk.txt";
     public static final String REDIRECTS_SK = OUT_DIR + "redirects_sk.txt";
     public static final String REDIRECTS_TRANSITIVE_SK = OUT_DIR + "redirects_transitive_sk.txt";
     public static final String REVISION_IDS_SK = OUT_DIR + "revision_ids_sk.txt";
     public static final String REVISION_URIS_SK = OUT_DIR + "revision_uris_sk.txt";
-    public static final String SHORT_ABSTRACTS_EN_URIS_SK = OUT_DIR + "short_abstracts_en_uris_sk.txt";
     public static final String SHORT_ABSTRACTS_SK = OUT_DIR + "short_abstracts_sk.txt";
     public static final String WIKIPEDIA_LINKS_SK = OUT_DIR + "wikipedia_links_sk.txt";
     public static final String SKOS_CATEGORIES_EN_URIS_SK = OUT_DIR + "skos_categories_en_uris_sk.txt";
@@ -94,10 +80,6 @@ public class ParserImpl implements IParser{
         parseArticleCategories(new File(TTL_ARTICLE_CATEGORIES_EN_URIS_SK), new File(ARTICLE_CATEGORIES_EN_URIS_SK));
         sortStatementsInFile(new File(ARTICLE_CATEGORIES_EN_URIS_SK));
 
-        //Infobox Properties
-        parseInfoboxProperties(new File(TTL_INFOBOX_PROPERTIES_EN_URIS_SK), new File(INFOBOX_PROPERTIES_EN_URIS_SK));
-        sortStatementsInFile(new File(INFOBOX_PROPERTIES_EN_URIS_SK));
-
         parseInfoboxProperties(new File(TTL_INFOBOX_PROPERTIES_SK), new File(INFOBOX_PROPERTIES_SK));
         sortStatementsInFile(new File(INFOBOX_PROPERTIES_SK));
 
@@ -105,15 +87,9 @@ public class ParserImpl implements IParser{
         parseLabels(new File(TTL_LABELS_SK), new File(LABELS_SK));
         sortStatementsInFile(new File(LABELS_SK));
 
-        parseLabels(new File(TTL_LABELS_EN_URIS_SK), new File(LABELS_EN_URIS_SK));
-        sortStatementsInFile(new File(LABELS_EN_URIS_SK));
-
         //Long Abstracts
         parseLongAbstracts(new File(TTL_LONG_ABSTRACTS_SK), new File(LONG_ABSTRACTS_SK));
         sortStatementsInFile(new File(LONG_ABSTRACTS_SK));
-
-        parseLongAbstracts(new File(TTL_LONG_ABSTRACTS_EN_URIS_SK), new File(LONG_ABSTRACTS_EN_URIS_SK));
-        sortStatementsInFile(new File(LONG_ABSTRACTS_EN_URIS_SK));
 
         //Out Degree
         parseOutDegree(new File(TTL_OUT_DEGREE_SK), new File(OUT_DEGREE_SK));
@@ -131,22 +107,13 @@ public class ParserImpl implements IParser{
         parseLinks(new File(TTL_EXTERNAL_LINKS_SK), new File(EXTERNAL_LINKS_SK));
         sortStatementsInFile(new File(EXTERNAL_LINKS_SK));
 
-        parseLinks(new File(TTL_EXTERNAL_LINKS_EN_URIS_SK), new File(EXTERNAL_LINKS_EN_URIS_SK));
-        sortStatementsInFile(new File(EXTERNAL_LINKS_EN_URIS_SK));
-
         parseLinks(new File(TTL_FREEBASE_LINKS), new File(FREEBASE_LINKS_SK));
         sortStatementsInFile(new File(FREEBASE_LINKS_SK));
 
         parseLinks(new File(TTL_INTER_LANGUAGE_LINKS), new File(INTER_LANGUAGE_LINKS));
         sortStatementsInFile(new File(INTER_LANGUAGE_LINKS));
 
-          //Links - Page Links
-        parseLinks(new File(TTL_PAGE_LINKS_EN_URIS_SK), new File(PAGE_LINKS_EN_URIS_SK));
-        sortStatementsInFile(new File(PAGE_LINKS_EN_URIS_SK));
-
-        parseLinks(new File(TTL_PAGE_LINKS_EN_URIS_UNREDIRECTED_SK), new File(PAGE_LINKS_EN_URIS_UNREDIRECTED_SK));
-        sortStatementsInFile(new File(PAGE_LINKS_EN_URIS_UNREDIRECTED_SK));
-
+        //Links - Page Links
         parseLinks(new File(TTL_PAGE_LINKS_SK), new File(PAGE_LINKS_SK));
         sortStatementsInFile(new File(PAGE_LINKS_SK));
 
@@ -171,9 +138,6 @@ public class ParserImpl implements IParser{
         //Short Abstracts
         parseShortAbstracts(new File(TTL_SHORT_ABSTRACTS_SK), new File(SHORT_ABSTRACTS_SK));
         sortStatementsInFile(new File(SHORT_ABSTRACTS_SK));
-
-        parseShortAbstracts(new File(TTL_SHORT_ABSTRACTS_EN_URIS_SK), new File(SHORT_ABSTRACTS_EN_URIS_SK));
-        sortStatementsInFile(new File(SHORT_ABSTRACTS_EN_URIS_SK));
 
         //Revision Ids
         parseRevisionIds(new File(TTL_REVISION_IDS_SK), new File(REVISION_IDS_SK));

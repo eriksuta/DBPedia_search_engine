@@ -2,7 +2,6 @@ package com.eriksuta.data;
 
 import com.eriksuta.data.index.IndexAlgorithm;
 import com.eriksuta.data.index.LinkIndexAlgorithm;
-import com.eriksuta.data.index.PropertyIndexAlgorithm;
 import com.eriksuta.data.index.SimpleIndexAlgorithm;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
@@ -25,28 +24,21 @@ public class Indexer {
     public static final String DATA_DIR = "src/main/webapp/parsed/";
     public static final String ARTICLE_CATEGORIES_EN_URIS_SK = DATA_DIR + "article_categories_en_uris_sk.txt";
     public static final String ARTICLE_CATEGORIES_SK = DATA_DIR + "article_categories_sk.txt";
-    public static final String EXTERNAL_LINKS_EN_URIS_SK = DATA_DIR + "external_links_en_uris_sk.txt";
     public static final String EXTERNAL_LINKS_SK = DATA_DIR + "external_links_sk.txt";
     public static final String FREEBASE_LINKS_SK = DATA_DIR + "freebase_links_sk.txt";
-    public static final String INFOBOX_PROPERTIES_EN_URIS_SK = DATA_DIR + "infobox_properties_en_uris_sk.txt";
     public static final String INFOBOX_PROPERTIES_SK = DATA_DIR + "infobox_properties_sk.txt";
     public static final String INTER_LANGUAGE_LINKS = DATA_DIR + "interlanguage_links_sk.txt";
     public static final String LABELS_SK = DATA_DIR + "labels_sk.txt";
-    public static final String LABELS_EN_URIS_SK = DATA_DIR + "labels_en_uris_sk.txt";
     public static final String LONG_ABSTRACTS_SK = DATA_DIR + "long_abstracts_sk.txt";
-    public static final String LONG_ABSTRACTS_EN_URIS_SK = DATA_DIR + "long_abstracts_en_uris_sk.txt";
     public static final String OUT_DEGREE_SK = DATA_DIR + "out_degree_sk.txt";
     public static final String PAGE_IDS_SK = DATA_DIR + "page_ids_sk.txt";
     public static final String PAGE_LENGTH_SK = DATA_DIR + "page_length_sk.txt";
-    public static final String PAGE_LINKS_EN_URIS_SK = DATA_DIR + "page_links_en_uris_sk.txt";
-    public static final String PAGE_LINKS_EN_URIS_UNREDIRECTED_SK = DATA_DIR + "page_links_en_uris_unredirected_sk.txt";
     public static final String PAGE_LINKS_SK = DATA_DIR + "page_links_sk.txt";
     public static final String PAGE_LINKS_UNREDIRECTED_SK = DATA_DIR + "page_links_unredirected_sk.txt";
     public static final String REDIRECTS_SK = DATA_DIR + "redirects_sk.txt";
     public static final String REDIRECTS_TRANSITIVE_SK = DATA_DIR + "redirects_transitive_sk.txt";
     public static final String REVISION_IDS_SK = DATA_DIR + "revision_ids_sk.txt";
     public static final String REVISION_URIS_SK = DATA_DIR + "revision_uris_sk.txt";
-    public static final String SHORT_ABSTRACTS_EN_URIS_SK = DATA_DIR + "short_abstracts_en_uris_sk.txt";
     public static final String SHORT_ABSTRACTS_SK = DATA_DIR + "short_abstracts_sk.txt";
     public static final String WIKIPEDIA_LINKS_SK = DATA_DIR + "wikipedia_links_sk.txt";
     public static final String SKOS_CATEGORIES_EN_URIS_SK = DATA_DIR + "skos_categories_en_uris_sk.txt";
@@ -95,7 +87,6 @@ public class Indexer {
             //External Links
             algorithm = new LinkIndexAlgorithm(IndexLabelNames.EXTERNAL_LINK_LABEL, IndexLabelNames.EXTERNAL_LINK_CONTENT);
             createIndexes(new File(EXTERNAL_LINKS_SK), algorithm);
-            createIndexes(new File(EXTERNAL_LINKS_EN_URIS_SK), algorithm);
 
             //Freebase Links
             algorithm = new LinkIndexAlgorithm(IndexLabelNames.FREEBASE_LINK_LABEL, IndexLabelNames.FREEBASE_LINK_CONTENT);
@@ -108,12 +99,10 @@ public class Indexer {
             //Page Links
             algorithm = new LinkIndexAlgorithm(IndexLabelNames.PAGE_LINKS_LABEL, IndexLabelNames.PAGE_LINKS_CONTENT);
             createIndexes(new File(PAGE_LINKS_SK), algorithm);
-            createIndexes(new File(PAGE_LINKS_EN_URIS_SK), algorithm);
 
             //Page Links - Unredirected
             algorithm = new LinkIndexAlgorithm(IndexLabelNames.PAGE_LINKS_UNREDIRECTED_LABEL, IndexLabelNames.PAGE_LINKS_UNREDIRECTED_CONTENT);
             createIndexes(new File(PAGE_LINKS_UNREDIRECTED_SK), algorithm);
-            createIndexes(new File(PAGE_LINKS_EN_URIS_UNREDIRECTED_SK), algorithm);
 
             //Wikipedia Links
             algorithm = new SimpleIndexAlgorithm(IndexLabelNames.WIKIPEDIA_LINKS_LABEL, IndexLabelNames.WIKIPEDIA_LINKS_CONTENT);
@@ -122,22 +111,18 @@ public class Indexer {
             //Infobox Properties
             algorithm = new LinkIndexAlgorithm(IndexLabelNames.INFOBOX_PROPERTIES_LABEL, IndexLabelNames.INFOBOX_PROPERTIES_CONTENT);
             createIndexes(new File(INFOBOX_PROPERTIES_SK), algorithm);
-            createIndexes(new File(INFOBOX_PROPERTIES_EN_URIS_SK), algorithm);
 
             //Labels
             algorithm = new SimpleIndexAlgorithm(IndexLabelNames.LABEL_LABEL, IndexLabelNames.LABEL_CONTENT);
             createIndexes(new File(LABELS_SK), algorithm);
-            createIndexes(new File(LABELS_EN_URIS_SK), algorithm);
 
             //Long Abstracts
             algorithm = new SimpleIndexAlgorithm(IndexLabelNames.LONG_ABSTRACT_LABEL, IndexLabelNames.LONG_ABSTRACT_CONTENT);
             createIndexes(new File(LONG_ABSTRACTS_SK), algorithm);
-            createIndexes(new File(LONG_ABSTRACTS_EN_URIS_SK), algorithm);
 
             //Short Abstracts
             algorithm = new SimpleIndexAlgorithm(IndexLabelNames.SHORT_ABSTRACT_LABEL, IndexLabelNames.SHORT_ABSTRACT_CONTENT);
             createIndexes(new File(SHORT_ABSTRACTS_SK), algorithm);
-            createIndexes(new File(SHORT_ABSTRACTS_EN_URIS_SK), algorithm);
 
             //Out Degree
             algorithm = new SimpleIndexAlgorithm(IndexLabelNames.OUT_DEGREE_LABEL, IndexLabelNames.OUT_DEGREE_CONTENT);
@@ -206,9 +191,5 @@ public class Indexer {
 
     public Analyzer getAnalyzer() {
         return analyzer;
-    }
-
-    public IndexWriter getIndexWriter() {
-        return indexWriter;
     }
 }

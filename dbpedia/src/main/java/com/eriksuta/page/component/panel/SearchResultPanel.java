@@ -48,8 +48,11 @@ public class SearchResultPanel extends Panel {
         return model;
     }
 
-    public void updateModel(SearchResultType result){
-        //TODO
+    public void updateModel(SearchResultType result, AjaxRequestTarget target){
+        model.setObject(result);
+        showClassicPerformed(target);
+
+        target.add(getResultPanel());
     }
 
     private void initLayout(){

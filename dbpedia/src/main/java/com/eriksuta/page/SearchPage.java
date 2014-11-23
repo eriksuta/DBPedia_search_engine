@@ -1,13 +1,13 @@
 package com.eriksuta.page;
 
-import com.eriksuta.data.search.InfoboxPropertyType;
+import com.eriksuta.data.SearchUtil;
 import com.eriksuta.data.search.SearchResultType;
 import com.eriksuta.page.component.panel.SearchOptionsPanel;
 import com.eriksuta.page.component.panel.SearchResultPanel;
 import org.apache.wicket.Component;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxLink;
-import org.apache.wicket.ajax.markup.html.form.AjaxButton;
+import org.apache.wicket.ajax.markup.html.form.AjaxSubmitLink;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.Form;
@@ -17,12 +17,7 @@ import org.apache.wicket.model.AbstractReadOnlyModel;
 import org.apache.wicket.model.PropertyModel;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.markup.html.WebPage;
-import org.apache.wicket.validation.validator.StringValidator;
 import com.eriksuta.page.component.behavior.VisibleEnableBehavior;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 /**
  *  @author shood
@@ -45,29 +40,7 @@ public class SearchPage extends WebPage {
 	public SearchPage(final PageParameters parameters) {
 		super(parameters);
 
-        result = prepareTestSearchResult();
-
         initLayout();
-    }
-
-    private SearchResultType prepareTestSearchResult(){
-        SearchResultType result = new SearchResultType();
-        result.setSearchTime(System.currentTimeMillis());
-        result.setRevisionId(123456);
-        result.setPageLength(123456);
-        result.setPageLength(123456);
-        result.setPageId(123456);
-        result.setArticleCategories(new ArrayList<String>(Arrays.asList("Category1","Category2","Category3")));
-        result.setExternalLinks(new ArrayList<String>(Arrays.asList("Link1","Link2","Link3")));
-
-        List<InfoboxPropertyType> infoboxProperties = new ArrayList<InfoboxPropertyType>();
-        infoboxProperties.add(new InfoboxPropertyType("name","value"));
-        infoboxProperties.add(new InfoboxPropertyType("bubla","asdgasdg"));
-        infoboxProperties.add(new InfoboxPropertyType("tugsdg","valgsduasdgasde"));
-
-        result.setInfoboxProperties(infoboxProperties);
-
-        return result;
     }
 
     private void initLayout(){
@@ -80,12 +53,17 @@ public class SearchPage extends WebPage {
         form.add(feedback);
 
         TextField searchField = new TextField<String>(ID_SEARCH_TEXT, new PropertyModel<String>(this, "searchText"));
-        searchField.add(StringValidator.minimumLength(3));
         form.add(searchField);
 
-        AjaxButton searchButton = new AjaxButton(ID_SEARCH_BUTTON) {
+        AjaxSubmitLink searchButton = new AjaxSubmitLink(ID_SEARCH_BUTTON) {
             @Override
             protected void onSubmit(AjaxRequestTarget target, Form<?> form) {
+                if(searchText == null || searchText.isEmpty() || searchText.length() <= 3){
+                    error("Short or non-existing search term. Please enter search term and continue.");
+                    target.add(getFeedbackPanel());
+                    return;
+                }
+
                 searchPerformed(target);
             }
 
@@ -132,6 +110,13 @@ public class SearchPage extends WebPage {
         WebMarkupContainer searchResultPanel = new SearchResultPanel(ID_SEARCH_RESULT, result);
         searchResultPanel.setOutputMarkupId(true);
         searchResultPanel.setOutputMarkupPlaceholderTag(true);
+        searchResultPanel.add(new VisibleEnableBehavior(){
+
+            @Override
+            public boolean isVisible() {
+                return result != null;
+            }
+        });
         add(searchResultPanel);
     }
 
@@ -148,7 +133,7 @@ public class SearchPage extends WebPage {
     }
 
     private SearchResultPanel getSearchResultPanel(){
-        return (SearchResultPanel) get(ID_MAIN_FORM + ":" + ID_SEARCH_RESULT);
+        return (SearchResultPanel) get(ID_SEARCH_RESULT);
     }
 
     private void showSearchOptionsPerformed(AjaxRequestTarget target){
@@ -158,6 +143,15 @@ public class SearchPage extends WebPage {
     }
 
     private void searchPerformed(AjaxRequestTarget target){
-        //TODO
+        SearchUtil util = new SearchUtil();
+        SearchResultType result = util.basicSearch(searchText);
+
+        if(result != null){
+            this.result = result;
+
+            getSearchResultPanel().updateModel(result, target);
+        }
+
+        target.add(getFeedbackPanel(), getSearchOptionsLink(), getSearchOptionsContainer(), getSearchResultPanel());
     }
 }

@@ -44,4 +44,13 @@ div.panel-body{
 
 span.search-info{
     text-align: left;
+    font-style: italic;
+}
+
+div.feedback ul{
+    list-style-type: none;
+}
+
+span.feedbackPanelERROR{
+    color: red;
 }

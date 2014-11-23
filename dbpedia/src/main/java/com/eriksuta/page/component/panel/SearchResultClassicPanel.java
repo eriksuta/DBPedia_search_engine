@@ -118,7 +118,24 @@ public class SearchResultClassicPanel extends Panel {
         Label revisionId = new Label(ID_REVISION_ID, new PropertyModel<String>(model, "revisionId"));
         wrapper.add(revisionId);
 
-        Label revisionUri = new Label(ID_REVISION_URI, new PropertyModel<String>(model, "revisionUri"));
+        Label revisionUri = new Label(ID_REVISION_URI, new AbstractReadOnlyModel<String>() {
+
+            @Override
+            public String getObject() {
+                StringBuilder sb = new StringBuilder();
+
+                String uri = model.getObject().getRevisionUri();
+
+                sb.append("<a href=\"");
+                sb.append(uri);
+                sb.append("\">");
+                sb.append(uri);
+                sb.append("</a>");
+
+                return sb.toString();
+            }
+        });
+        revisionUri.setEscapeModelStrings(false);
         wrapper.add(revisionUri);
 
         Label shortAbstracts = new Label(ID_ABSTRACT_SHORT, new AbstractReadOnlyModel<String>() {
@@ -186,24 +203,31 @@ public class SearchResultClassicPanel extends Panel {
         wrapper.add(skosCategories);
 
         Label freebaseLinks = new Label(ID_LINK_FREEBASE, prepareLinksReadOnlyModel(LinkType.FREEBASE));
+        freebaseLinks.setEscapeModelStrings(false);
         wrapper.add(freebaseLinks);
 
         Label wikiLinks = new Label(ID_LINK_WIKI, prepareLinksReadOnlyModel(LinkType.WIKI));
+        wikiLinks.setEscapeModelStrings(false);
         wrapper.add(wikiLinks);
 
         Label externalLinks = new Label(ID_LINK_EXT, prepareLinksReadOnlyModel(LinkType.EXTERNAL));
+        externalLinks.setEscapeModelStrings(false);
         wrapper.add(externalLinks);
 
         Label interLanguageLinks = new Label(ID_LINK_INTER_LANGUAGE, prepareLinksReadOnlyModel(LinkType.INTER_LANGUAGE));
+        interLanguageLinks.setEscapeModelStrings(false);
         wrapper.add(interLanguageLinks);
 
         Label pageLinks = new Label(ID_LINK_PAGE, prepareLinksReadOnlyModel(LinkType.PAGE));
+        pageLinks.setEscapeModelStrings(false);
         wrapper.add(pageLinks);
 
         Label redirects = new Label(ID_REDIRECTS, prepareLinksReadOnlyModel(LinkType.REDIRECT));
+        redirects.setEscapeModelStrings(false);
         wrapper.add(redirects);
 
         Label redirectsTransitive = new Label(ID_REDIRECTS_TRANSITIVE, prepareLinksReadOnlyModel(LinkType.REDIRECT_TRANSITIVE));
+        redirectsTransitive.setEscapeModelStrings(false);
         wrapper.add(redirectsTransitive);
 
         Label infoboxProperties = new Label(ID_INFOBOX, new AbstractReadOnlyModel<String>() {
@@ -216,12 +240,13 @@ public class SearchResultClassicPanel extends Panel {
                     sb.append(propertyType.getName());
                     sb.append("=");
                     sb.append(propertyType.getValue());
-                    sb.append(", ");
+                    sb.append("<br>");
                 }
 
                 return sb.toString();
             }
         });
+        infoboxProperties.setEscapeModelStrings(false);
         wrapper.add(infoboxProperties);
     }
 
@@ -251,8 +276,23 @@ public class SearchResultClassicPanel extends Panel {
                 }
 
                 for(String s: links){
-                    sb.append(s);
-                    sb.append(", ");
+                    if(s.contains("\t")){
+                        String[] separatedLinks = s.split("\t");
+
+                        for(String sLink: separatedLinks){
+                            sb.append("<a href=\"");
+                            sb.append(sLink);
+                            sb.append("\">");
+                            sb.append(sLink);
+                            sb.append("</a><br>");
+                        }
+                    } else {
+                        sb.append("<a href=\"");
+                        sb.append(s);
+                        sb.append("\">");
+                        sb.append(s);
+                        sb.append("</a><br>");
+                    }
                 }
 
                 return sb.toString();
