@@ -1,6 +1,8 @@
 package com.eriksuta.data.handler;
 
 import com.eriksuta.data.ParserImpl;
+import com.eriksuta.data.types.SimpleMultiValueObject;
+import com.google.gson.Gson;
 import org.openrdf.model.Statement;
 
 /**
@@ -8,30 +10,32 @@ import org.openrdf.model.Statement;
  * */
 public class SimpleLinksHandler extends BasicRdfHandler {
 
-    private String lastSubject;
-    private StringBuilder sb;
+    private SimpleMultiValueObject lastObject;
 
     @Override
     public void handleStatement(Statement statement){
         String[] subject = statement.getSubject().stringValue().split("/");
         String subjectValue = subject[subject.length-1];
 
-        String object =  statement.getObject().stringValue();
+        String objectValue =  statement.getObject().stringValue();
 
-        if(sb == null){
-            sb = new StringBuilder();
-        }
+        if(lastObject != null){
+            if(lastObject.getLabel().equals(subjectValue)){
+                lastObject.getValues().add(objectValue);
+            }else{
+                Gson gson = new Gson();
+                ParserImpl.getParserInstance().writeToFile(gson.toJson(lastObject) + "\n");
 
-        if(lastSubject != null && lastSubject.equals(subjectValue)){
-            sb.append("\t").append(object);
+                lastObject = new SimpleMultiValueObject();
+                lastObject.setLabel(subjectValue);
+                lastObject.getValues().add(objectValue);
+                numberOfStatementsAfter++;
+            }
         } else {
-            sb.append("\n").append(subjectValue).append("->").append(object);
-            lastSubject = subjectValue;
-            numberOfStatementsAfter++;
+            lastObject = new SimpleMultiValueObject();
+            lastObject.setLabel(subjectValue);
+            lastObject.getValues().add(objectValue);
         }
-
-        ParserImpl.getParserInstance().writeToFile(sb.toString());
-        sb = null;
 
         numOfStatements++;
     }

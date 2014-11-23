@@ -35,11 +35,11 @@ public class SearchResultType implements Serializable{
     private List<String> longAbstracts = new ArrayList<String>();
     private List<String> shortAbstracts = new ArrayList<String>();
 
-    private Integer outDegree;
-    private Integer pageId;
-    private Integer pageLength;
+    private String outDegree;
+    private String pageId;
+    private String pageLength;
 
-    private Integer revisionId;
+    private String revisionId;
     private String revisionUri;
 
     public SearchResultType(){
@@ -174,35 +174,35 @@ public class SearchResultType implements Serializable{
         this.shortAbstracts = shortAbstracts;
     }
 
-    public Integer getOutDegree() {
+    public String getOutDegree() {
         return outDegree;
     }
 
-    public void setOutDegree(Integer outDegree) {
+    public void setOutDegree(String outDegree) {
         this.outDegree = outDegree;
     }
 
-    public Integer getPageId() {
+    public String getPageId() {
         return pageId;
     }
 
-    public void setPageId(Integer pageId) {
+    public void setPageId(String pageId) {
         this.pageId = pageId;
     }
 
-    public Integer getPageLength() {
+    public String getPageLength() {
         return pageLength;
     }
 
-    public void setPageLength(Integer pageLength) {
+    public void setPageLength(String pageLength) {
         this.pageLength = pageLength;
     }
 
-    public Integer getRevisionId() {
+    public String getRevisionId() {
         return revisionId;
     }
 
-    public void setRevisionId(Integer revisionId) {
+    public void setRevisionId(String revisionId) {
         this.revisionId = revisionId;
     }
 

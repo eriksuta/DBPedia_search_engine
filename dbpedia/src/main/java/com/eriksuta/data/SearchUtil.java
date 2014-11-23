@@ -118,19 +118,19 @@ public class SearchUtil {
             result.setRevisionUri(revisionUri);
 
             ScoreDoc[] outDegreeHits = doQuery(indexSearcher, outDegreeQuery);
-            Integer outDegree = processIntegerProperty(outDegreeHits, indexSearcher, IndexLabelNames.OUT_DEGREE_CONTENT);
+            String outDegree = processIntegerProperty(outDegreeHits, indexSearcher, IndexLabelNames.OUT_DEGREE_CONTENT);
             result.setOutDegree(outDegree);
 
             ScoreDoc[] pageIdHits = doQuery(indexSearcher, pageIdQuery);
-            Integer pageId = processIntegerProperty(pageIdHits, indexSearcher, IndexLabelNames.PAGE_ID_CONTENT);
+            String pageId = processIntegerProperty(pageIdHits, indexSearcher, IndexLabelNames.PAGE_ID_CONTENT);
             result.setPageId(pageId);
 
             ScoreDoc[] pageLengthHits = doQuery(indexSearcher, pageLengthQuery);
-            Integer pageLength = processIntegerProperty(pageLengthHits, indexSearcher, IndexLabelNames.PAGE_LENGTH_CONTENT);
+            String pageLength = processIntegerProperty(pageLengthHits, indexSearcher, IndexLabelNames.PAGE_LENGTH_CONTENT);
             result.setPageLength(pageLength);
 
             ScoreDoc[] revisionIdHits = doQuery(indexSearcher, revisionIdQuery);
-            Integer revisionId = processIntegerProperty(revisionIdHits, indexSearcher, IndexLabelNames.REVISION_ID_CONTENT);
+            String revisionId = processIntegerProperty(revisionIdHits, indexSearcher, IndexLabelNames.REVISION_ID_CONTENT);
             result.setRevisionId(revisionId);
 
             indexReader.close();
@@ -208,16 +208,22 @@ public class SearchUtil {
         return property;
     }
 
-    public Integer processIntegerProperty(ScoreDoc[] hits, IndexSearcher indexSearcher, String contentName) throws IOException {
-        Integer property = null;
+    public String processIntegerProperty(ScoreDoc[] hits, IndexSearcher indexSearcher, String contentName) throws IOException {
+        StringBuilder sb = new StringBuilder();
 
         if(hits.length != 0){
-            int docId = hits[0].doc;
-            Document d = indexSearcher.doc(docId);
+            for(ScoreDoc hit: hits){
+                int docId = hit.doc;
+                Document d = indexSearcher.doc(docId);
 
-            property = Integer.valueOf(d.get(contentName));
+                String actValue = d.get(contentName);
+                String afterTrim = actValue.replaceAll("\t", "");
+
+                sb.append(afterTrim);
+                sb.append(", ");
+            }
         }
 
-        return property;
+        return sb.toString();
     }
 }

@@ -1,5 +1,7 @@
 package com.eriksuta.data.index;
 
+import com.eriksuta.data.types.SimpleMultiValueObject;
+import com.google.gson.Gson;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
 import org.apache.lucene.document.StringField;
@@ -23,10 +25,22 @@ public class SimpleIndexAlgorithm implements IndexAlgorithm{
 
     @Override
     public void createSimpleIndex(String line, IndexWriter indexWriter) throws IOException {
-        String[] content = line.split(":");
+        Gson gson = new Gson();
+        SimpleMultiValueObject object = gson.fromJson(line, SimpleMultiValueObject.class);
+
+        if(object == null){
+            return;
+        }
+
+        StringBuilder sb = new StringBuilder();
+        for(String s: object.getValues()){
+            sb.append(s);
+            sb.append("\t");
+        }
+
         Document document = new Document();
-        document.add(new TextField(labelName, content[0], Field.Store.YES));
-        document.add(new StringField(contentName, content[1], Field.Store.YES));
+        document.add(new TextField(labelName, object.getLabel(), Field.Store.YES));
+        document.add(new StringField(contentName, sb.toString(), Field.Store.YES));
         indexWriter.addDocument(document);
     }
 }

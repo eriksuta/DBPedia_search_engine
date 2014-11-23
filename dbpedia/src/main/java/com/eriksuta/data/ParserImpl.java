@@ -80,6 +80,7 @@ public class ParserImpl implements IParser{
         parseArticleCategories(new File(TTL_ARTICLE_CATEGORIES_EN_URIS_SK), new File(ARTICLE_CATEGORIES_EN_URIS_SK));
         sortStatementsInFile(new File(ARTICLE_CATEGORIES_EN_URIS_SK));
 
+        //Infobox Properties
         parseInfoboxProperties(new File(TTL_INFOBOX_PROPERTIES_SK), new File(INFOBOX_PROPERTIES_SK));
         sortStatementsInFile(new File(INFOBOX_PROPERTIES_SK));
 
@@ -188,7 +189,6 @@ public class ParserImpl implements IParser{
         } catch (Exception e){
             e.printStackTrace();
         }
-
     }
 
     public void parseSkosCategories(File input, File output){

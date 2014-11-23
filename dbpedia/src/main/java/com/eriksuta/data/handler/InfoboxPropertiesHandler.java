@@ -1,6 +1,9 @@
 package com.eriksuta.data.handler;
 
 import com.eriksuta.data.ParserImpl;
+import com.eriksuta.data.search.InfoboxPropertyType;
+import com.eriksuta.data.types.InfoboxObject;
+import com.google.gson.Gson;
 import org.openrdf.model.Statement;
 
 /**
@@ -8,8 +11,7 @@ import org.openrdf.model.Statement;
  * */
 public class InfoboxPropertiesHandler extends BasicRdfHandler{
 
-    private String lastSubject;
-    private StringBuilder sb;
+    InfoboxObject lastObject;
 
     @Override
     public void handleStatement(Statement statement){
@@ -26,29 +28,23 @@ public class InfoboxPropertiesHandler extends BasicRdfHandler{
             objectValue = objectValue.replaceAll("\n", " ");
         }
 
-        if(sb == null){
-            sb = new StringBuilder();
-        }
+        if(lastObject != null){
+            if(lastObject.getLabel().equals(subjectValue)){
+                lastObject.getInfoboxProperties().add(new InfoboxPropertyType(predicateValue, objectValue));
+            } else {
+                Gson gson = new Gson();
+                ParserImpl.getParserInstance().writeToFile(gson.toJson(lastObject) + "\n");
 
-        if(lastSubject != null && lastSubject.equals(subjectValue)){
-            sb.append("\t");
-            sb.append(predicateValue);
-            sb.append(":");
-            sb.append(objectValue);
+                lastObject = new InfoboxObject();
+                lastObject.setLabel(subjectValue);
+                lastObject.getInfoboxProperties().add(new InfoboxPropertyType(predicateValue, objectValue));
+                numberOfStatementsAfter++;
+            }
         } else {
-            sb.append("\n");
-            sb.append(subjectValue);
-            sb.append("->");
-            sb.append("\t");
-            sb.append(predicateValue);
-            sb.append(":");
-            sb.append(objectValue);
-            lastSubject = subjectValue;
-            numberOfStatementsAfter++;
+            lastObject = new InfoboxObject();
+            lastObject.setLabel(subjectValue);
+            lastObject.getInfoboxProperties().add(new InfoboxPropertyType(predicateValue, objectValue));
         }
-
-        ParserImpl.getParserInstance().writeToFile(sb.toString());
-        sb = null;
 
         numOfStatements++;
     }

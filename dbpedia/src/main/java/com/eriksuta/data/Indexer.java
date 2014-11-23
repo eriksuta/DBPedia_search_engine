@@ -2,6 +2,7 @@ package com.eriksuta.data;
 
 import com.eriksuta.data.index.IndexAlgorithm;
 import com.eriksuta.data.index.LinkIndexAlgorithm;
+import com.eriksuta.data.index.PropertyIndexAlgorithm;
 import com.eriksuta.data.index.SimpleIndexAlgorithm;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
@@ -109,7 +110,7 @@ public class Indexer {
             createIndexes(new File(WIKIPEDIA_LINKS_SK), algorithm);
 
             //Infobox Properties
-            algorithm = new LinkIndexAlgorithm(IndexLabelNames.INFOBOX_PROPERTIES_LABEL, IndexLabelNames.INFOBOX_PROPERTIES_CONTENT);
+            algorithm = new PropertyIndexAlgorithm(IndexLabelNames.INFOBOX_PROPERTIES_LABEL, IndexLabelNames.INFOBOX_PROPERTIES_CONTENT);
             createIndexes(new File(INFOBOX_PROPERTIES_SK), algorithm);
 
             //Labels
