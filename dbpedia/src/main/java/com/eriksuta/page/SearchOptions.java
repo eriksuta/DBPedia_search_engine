@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  *  @author shood
  * */
-public class SearchOptionsDto implements Serializable{
+public class SearchOptions implements Serializable{
 
     public static final String F_MATCH_CASE = "matchCase";
     public static final String F_WHOLE_WORD = "wholeWord";
@@ -26,7 +26,7 @@ public class SearchOptionsDto implements Serializable{
     private boolean infoboxProperties;
     private boolean everything = true;
 
-    public SearchOptionsDto(){}
+    public SearchOptions(){}
 
     public boolean isMatchCase() {
         return matchCase;
@@ -95,9 +95,9 @@ public class SearchOptionsDto implements Serializable{
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof SearchOptionsDto)) return false;
+        if (!(o instanceof SearchOptions)) return false;
 
-        SearchOptionsDto that = (SearchOptionsDto) o;
+        SearchOptions that = (SearchOptions) o;
 
         if (abstracts != that.abstracts) return false;
         if (asRegex != that.asRegex) return false;

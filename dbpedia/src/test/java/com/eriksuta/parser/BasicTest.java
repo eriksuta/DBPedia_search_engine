@@ -3,7 +3,8 @@ package com.eriksuta.parser;
 
 import com.eriksuta.data.Indexer;
 import com.eriksuta.data.ParserImpl;
-import com.eriksuta.data.SearchUtil;
+import com.eriksuta.search.SearchService;
+import com.eriksuta.search.SearchServiceImpl;
 import com.eriksuta.data.search.SearchResultType;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -16,6 +17,8 @@ import java.io.*;
  *  @author shood
  * */
 public class BasicTest {
+
+    private SearchService searchService = SearchServiceImpl.getInstance();
 
     private static final String DIR = "src/test/resources/test/";
 
@@ -56,36 +59,31 @@ public class BasicTest {
 
     @Test
     public void testBratislava(){
-        SearchUtil searchUtil = new SearchUtil();
-        SearchResultType result = searchUtil.basicSearch("Bratislava");
+        SearchResultType result = searchService.search("Bratislava");
         System.out.println(result.toString());
     }
 
     @Test
     public void testBioware(){
-        SearchUtil searchUtil = new SearchUtil();
-        SearchResultType result = searchUtil.basicSearch("Bioware");
+        SearchResultType result = searchService.search("Bioware");
         System.out.println(result.toString());
     }
 
     @Test
     public void testMassEffect(){
-        SearchUtil searchUtil = new SearchUtil();
-        SearchResultType result = searchUtil.basicSearch("Mass Effect");
+        SearchResultType result = searchService.search("Mass Effect");
         System.out.println(result.toString());
     }
 
     @Test
     public void testStarWars(){
-        SearchUtil searchUtil = new SearchUtil();
-        SearchResultType result = searchUtil.basicSearch("Star_Wars");
+        SearchResultType result = searchService.search("Star_Wars");
         System.out.println(result.toString());
     }
 
     @Test
     public void test_01_basicSearch_Bratislava(){
-        SearchUtil searchUtil = new SearchUtil();
-        SearchResultType result = searchUtil.basicSearch("Bratislava");
+        SearchResultType result = searchService.search("Bratislava");
 
         String expectedResult = readFile(F_TEST_01_BASIC_SEARCH_BRATISLAVA);
 
@@ -94,8 +92,7 @@ public class BasicTest {
 
     @Test
      public void test_02_basicSearch_Bioware(){
-        SearchUtil searchUtil = new SearchUtil();
-        SearchResultType result = searchUtil.basicSearch("Bioware");
+        SearchResultType result = searchService.search("Bioware");
 
         String expectedResult = readFile(F_TEST_02_BASIC_SEARCH_BIOWARE);
 
@@ -104,8 +101,7 @@ public class BasicTest {
 
     @Test
     public void test_03_basicSearch_MassEffect(){
-        SearchUtil searchUtil = new SearchUtil();
-        SearchResultType result = searchUtil.basicSearch("Mass Effect");
+        SearchResultType result = searchService.search("Mass Effect");
 
         String expectedResult = readFile(F_TEST_03_BASIC_SEARCH_MASS_EFFECT);
 
@@ -114,8 +110,7 @@ public class BasicTest {
 
     @Test
     public void test_04_basicSearch_StarWars(){
-        SearchUtil searchUtil = new SearchUtil();
-        SearchResultType result = searchUtil.basicSearch("Star_Wars");
+        SearchResultType result = searchService.search("Star_Wars");
 
         String expectedResult = readFile(F_TEST_04_BASIC_SEARCH_STAR_WARS);
 
@@ -127,7 +122,7 @@ public class BasicTest {
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader(file));
-            String line = null;
+            String line;
 
             String ls = System.getProperty("line.separator");
 

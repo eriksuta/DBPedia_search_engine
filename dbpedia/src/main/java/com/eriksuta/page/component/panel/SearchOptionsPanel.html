@@ -2,35 +2,35 @@
 <html xmlns:wicket="http://wicket.apache.org">
 <wicket:panel>
 
-    <div class="col-lg-6">
-        <span>Search Type:</span>
-        <dl class="dl-horizontal">
-            <dt>
-                <label>Match Case</label>
-            </dt>
-            <dd>
-                <input wicket:id="matchCase" type="checkbox" class="input-sm"/>
-            </dd>
-        </dl>
+    <!--<div class="col-lg-6">-->
+        <!--<span>Search Type:</span>-->
+        <!--<dl class="dl-horizontal">-->
+            <!--<dt>-->
+                <!--<label>Match Case</label>-->
+            <!--</dt>-->
+            <!--<dd>-->
+                <!--<input wicket:id="matchCase" type="checkbox" class="input-sm"/>-->
+            <!--</dd>-->
+        <!--</dl>-->
 
-        <dl class="dl-horizontal">
-            <dt>
-                <label>Whole Word</label>
-            </dt>
-            <dd>
-                <input wicket:id="wholeWord" type="checkbox" class="input-sm"/>
-            </dd>
-        </dl>
+        <!--<dl class="dl-horizontal">-->
+            <!--<dt>-->
+                <!--<label>Whole Word</label>-->
+            <!--</dt>-->
+            <!--<dd>-->
+                <!--<input wicket:id="wholeWord" type="checkbox" class="input-sm"/>-->
+            <!--</dd>-->
+        <!--</dl>-->
 
-        <dl class="dl-horizontal">
-            <dt>
-                <label>As Regex</label>
-            </dt>
-            <dd>
-                <input wicket:id="asRegex" type="checkbox" class="input-sm"/>
-            </dd>
-        </dl>
-    </div>
+        <!--<dl class="dl-horizontal">-->
+            <!--<dt>-->
+                <!--<label>As Regex</label>-->
+            <!--</dt>-->
+            <!--<dd>-->
+                <!--<input wicket:id="asRegex" type="checkbox" class="input-sm"/>-->
+            <!--</dd>-->
+        <!--</dl>-->
+    <!--</div>-->
 
     <div class="col-lg-6">
         <span>Search In:</span>
@@ -55,6 +55,19 @@
 
         <dl class="dl-horizontal">
             <dt>
+                <label>Everything (default)</label>
+            </dt>
+            <dd>
+                <input wicket:id="everything" type="checkbox" class="input-sm"/>
+            </dd>
+        </dl>
+    </div>
+
+    <div class="col-lg-6">
+        <span><br></span>
+
+        <dl class="dl-horizontal">
+            <dt>
                 <label>Categories</label>
             </dt>
             <dd>
@@ -68,15 +81,6 @@
             </dt>
             <dd>
                 <input wicket:id="infoboxProperties" type="checkbox" class="input-sm"/>
-            </dd>
-        </dl>
-
-        <dl class="dl-horizontal">
-            <dt>
-                <label>Everything (default)</label>
-            </dt>
-            <dd>
-                <input wicket:id="everything" type="checkbox" class="input-sm"/>
             </dd>
         </dl>
     </div>

@@ -1,6 +1,7 @@
 package com.eriksuta.page;
 
-import com.eriksuta.data.SearchUtil;
+import com.eriksuta.search.SearchService;
+import com.eriksuta.search.SearchServiceImpl;
 import com.eriksuta.data.search.SearchResultType;
 import com.eriksuta.page.component.panel.SearchOptionsPanel;
 import com.eriksuta.page.component.panel.SearchResultPanel;
@@ -24,6 +25,11 @@ import com.eriksuta.page.component.behavior.VisibleEnableBehavior;
  * */
 public class SearchPage extends WebPage {
 
+    /**
+     *  A SearchService instance. This is used for all searches.
+     * */
+    private SearchService searchService;
+
     private static final String ID_FEEDBACK = "feedback";
     private static final String ID_MAIN_FORM = "mainForm";
     private static final String ID_SEARCH_TEXT = "searchText";
@@ -39,6 +45,8 @@ public class SearchPage extends WebPage {
 
 	public SearchPage(final PageParameters parameters) {
 		super(parameters);
+
+        searchService = SearchServiceImpl.getInstance();
 
         initLayout();
     }
@@ -143,15 +151,18 @@ public class SearchPage extends WebPage {
     }
 
     private void searchPerformed(AjaxRequestTarget target){
-        SearchUtil util = new SearchUtil();
-        SearchResultType result = util.basicSearch(searchText);
+        SearchResultType result = searchService.search(searchText);
 
         if(result != null){
             this.result = result;
-
             getSearchResultPanel().updateModel(result, target);
+        } else {
+            error("Search operation could not be performed. Something went terribly wrong. Try again later, please.");
         }
 
-        target.add(getFeedbackPanel(), getSearchOptionsLink(), getSearchOptionsContainer(), getSearchResultPanel());
+        target.add(getFeedbackPanel(),
+                getSearchOptionsLink(),
+                getSearchOptionsContainer(),
+                getSearchResultPanel());
     }
 }

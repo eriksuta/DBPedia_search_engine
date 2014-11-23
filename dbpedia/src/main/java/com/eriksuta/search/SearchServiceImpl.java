@@ -1,8 +1,10 @@
-package com.eriksuta.data;
+package com.eriksuta.search;
 
+import com.eriksuta.data.IndexLabelNames;
+import com.eriksuta.data.Indexer;
 import com.eriksuta.data.search.InfoboxPropertyType;
 import com.eriksuta.data.search.SearchResultType;
-import org.apache.lucene.document.Document;
+import com.eriksuta.page.SearchOptions;
 import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.queryparser.classic.QueryParser;
@@ -13,18 +15,41 @@ import org.apache.lucene.search.TopScoreDocCollector;
 import org.apache.lucene.store.Directory;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.io.Serializable;
 import java.util.List;
 
 /**
+ *  A simple implementation of SearchService interface for purposes
+ *  of search engine based on indexed dump of Slovak DBPedia
+ *
  *  @author shood
+ *
+ *  TODO - handle multiple word searches - League of Legenfs -> League_of_Legends
+ *  TODO - handle substring searches - not working correctly now
  * */
-public class SearchUtil {
+public class SearchServiceImpl implements SearchService, Serializable{
 
-    public SearchResultType basicSearch(String searchTerm){
+    /**
+     *  Right now, SearchService is implemented as a Singleton object,
+     *  we don't want several parallel searches to perform at once.
+     *  Will rework when current functionality is properly tested
+     *  and functional.
+     * */
+    private static SearchServiceImpl instance = null;
+
+    private SearchServiceImpl(){}
+
+    public static SearchServiceImpl getInstance(){
+        if(instance == null){
+            instance = new SearchServiceImpl();
+        }
+
+        return instance;
+    }
+
+    @Override
+    public SearchResultType search(String searchTerm) {
         long startTime = System.currentTimeMillis();
-
-        System.out.println("Searching for term: '" + searchTerm + "'.");
 
         SearchResultType result = new SearchResultType();
         result.setQueryTerm(searchTerm);
@@ -58,79 +83,79 @@ public class SearchUtil {
             IndexSearcher indexSearcher = new IndexSearcher(indexReader);
 
             ScoreDoc[] infoboxPropertiesHits = doQuery(indexSearcher, infoboxQuery);
-            List<InfoboxPropertyType> infoboxProperties = processInfoboxProperties(infoboxPropertiesHits, indexSearcher, IndexLabelNames.INFOBOX_PROPERTIES_CONTENT);
+            List<InfoboxPropertyType> infoboxProperties = SearchUtil.processInfoboxProperties(infoboxPropertiesHits, indexSearcher, IndexLabelNames.INFOBOX_PROPERTIES_CONTENT);
             result.getInfoboxProperties().addAll(infoboxProperties);
 
             ScoreDoc[] labelsHits = doQuery(indexSearcher, labelQuery);
-            List<String> labels = processStringListResult(labelsHits, indexSearcher, IndexLabelNames.LABEL_CONTENT);
+            List<String> labels = SearchUtil.processStringListResult(labelsHits, indexSearcher, IndexLabelNames.LABEL_CONTENT);
             result.getLabels().addAll(labels);
 
             ScoreDoc[] shortAbstractHits = doQuery(indexSearcher, shortAbstractQuery);
-            List<String> shortAbstracts = processStringListResult(shortAbstractHits, indexSearcher, IndexLabelNames.SHORT_ABSTRACT_CONTENT);
+            List<String> shortAbstracts = SearchUtil.processStringListResult(shortAbstractHits, indexSearcher, IndexLabelNames.SHORT_ABSTRACT_CONTENT);
             result.getShortAbstracts().addAll(shortAbstracts);
 
             ScoreDoc[] longAbstractHits = doQuery(indexSearcher, longAbstractQuery);
-            List<String> longAbstracts = processStringListResult(longAbstractHits, indexSearcher, IndexLabelNames.LONG_ABSTRACT_CONTENT);
+            List<String> longAbstracts = SearchUtil.processStringListResult(longAbstractHits, indexSearcher, IndexLabelNames.LONG_ABSTRACT_CONTENT);
             result.getLongAbstracts().addAll(longAbstracts);
 
             ScoreDoc[] redirectsHits = doQuery(indexSearcher, redirectQuery);
-            List<String> redirects = processStringListResult(redirectsHits, indexSearcher, IndexLabelNames.REDIRECTS_CONTENT);
+            List<String> redirects = SearchUtil.processStringListResult(redirectsHits, indexSearcher, IndexLabelNames.REDIRECTS_CONTENT);
             result.getRedirects().addAll(redirects);
 
             ScoreDoc[] redirectsTransitiveHits = doQuery(indexSearcher, redirectTransitiveQuery);
-            List<String> redirectsTransitive = processStringListResult(redirectsTransitiveHits, indexSearcher, IndexLabelNames.REDIRECTS_TRANSITIVE_CONTENT);
+            List<String> redirectsTransitive = SearchUtil.processStringListResult(redirectsTransitiveHits, indexSearcher, IndexLabelNames.REDIRECTS_TRANSITIVE_CONTENT);
             result.getRedirectsTransitive().addAll(redirectsTransitive);
 
             ScoreDoc[] articleCategoryHits = doQuery(indexSearcher, articleCategoryQuery);
-            List<String> articleCategories = processStringListResult(articleCategoryHits, indexSearcher, IndexLabelNames.ARTICLE_CATEGORY_CONTENT);
+            List<String> articleCategories = SearchUtil.processStringListResult(articleCategoryHits, indexSearcher, IndexLabelNames.ARTICLE_CATEGORY_CONTENT);
             result.getArticleCategories().addAll(articleCategories);
 
             ScoreDoc[] skosCategoriesHits = doQuery(indexSearcher, skosCategoryQuery);
-            List<String> skosCategories = processStringListResult(skosCategoriesHits, indexSearcher, IndexLabelNames.SKOS_CATEGORIES_CONTENT);
+            List<String> skosCategories = SearchUtil.processStringListResult(skosCategoriesHits, indexSearcher, IndexLabelNames.SKOS_CATEGORIES_CONTENT);
             result.getSkosCategories().addAll(skosCategories);
 
             ScoreDoc[] externalLinksHits = doQuery(indexSearcher, externalLinkQuery);
-            List<String> externalLinks = processStringListResult(externalLinksHits, indexSearcher, IndexLabelNames.EXTERNAL_LINK_CONTENT);
+            List<String> externalLinks = SearchUtil.processStringListResult(externalLinksHits, indexSearcher, IndexLabelNames.EXTERNAL_LINK_CONTENT);
             result.getExternalLinks().addAll(externalLinks);
 
             ScoreDoc[] freebaseLinksHits = doQuery(indexSearcher, freebaseLinkQuery);
-            List<String> freebaseLinks = processStringListResult(freebaseLinksHits, indexSearcher, IndexLabelNames.FREEBASE_LINK_CONTENT);
+            List<String> freebaseLinks = SearchUtil.processStringListResult(freebaseLinksHits, indexSearcher, IndexLabelNames.FREEBASE_LINK_CONTENT);
             result.getFreebaseLinks().addAll(freebaseLinks);
 
             ScoreDoc[] interLanguageLinksHits = doQuery(indexSearcher, interLanguageLinkQuery);
-            List<String> interLanguageLinks = processStringListResult(interLanguageLinksHits, indexSearcher, IndexLabelNames.INTER_LANGUAGE_LINKS_CONTENT);
+            List<String> interLanguageLinks = SearchUtil.processStringListResult(interLanguageLinksHits, indexSearcher, IndexLabelNames.INTER_LANGUAGE_LINKS_CONTENT);
             result.getInterLanguageLinks().addAll(interLanguageLinks);
 
             ScoreDoc[] pageLinkHits = doQuery(indexSearcher, pageLinkQuery);
-            List<String> pageLinks = processStringListResult(pageLinkHits, indexSearcher, IndexLabelNames.PAGE_LINKS_CONTENT);
+            List<String> pageLinks = SearchUtil.processStringListResult(pageLinkHits, indexSearcher, IndexLabelNames.PAGE_LINKS_CONTENT);
             result.getPageLinksSk().addAll(pageLinks);
 
             ScoreDoc[] pageLinkUnredirectedHits = doQuery(indexSearcher, pageLinkUnredirectedQuery);
-            List<String> pageLinksUnredirected = processStringListResult(pageLinkUnredirectedHits, indexSearcher, IndexLabelNames.PAGE_LINKS_UNREDIRECTED_CONTENT);
+            List<String> pageLinksUnredirected = SearchUtil.processStringListResult(pageLinkUnredirectedHits, indexSearcher, IndexLabelNames.PAGE_LINKS_UNREDIRECTED_CONTENT);
             result.getPageLinksEnUrisSk().addAll(pageLinksUnredirected);
 
             ScoreDoc[] wikipediaLinkHits = doQuery(indexSearcher, wikipediaLinkQuery);
-            List<String> wikipediaLinks = processStringListResult(wikipediaLinkHits, indexSearcher, IndexLabelNames.WIKIPEDIA_LINKS_CONTENT);
+            List<String> wikipediaLinks = SearchUtil.processStringListResult(wikipediaLinkHits, indexSearcher, IndexLabelNames.WIKIPEDIA_LINKS_CONTENT);
             result.getWikipediaLinks().addAll(wikipediaLinks);
 
             ScoreDoc[] revisionUriHits = doQuery(indexSearcher, revisionUriQuery);
-            String revisionUri = processStringProperty(revisionUriHits, indexSearcher, IndexLabelNames.REVISION_URI_CONTENT);
+            String revisionUri = SearchUtil.processStringProperty(revisionUriHits, indexSearcher, IndexLabelNames.REVISION_URI_CONTENT);
             result.setRevisionUri(revisionUri);
 
             ScoreDoc[] outDegreeHits = doQuery(indexSearcher, outDegreeQuery);
-            String outDegree = processIntegerProperty(outDegreeHits, indexSearcher, IndexLabelNames.OUT_DEGREE_CONTENT);
+            String outDegree = SearchUtil.processIntegerProperty(outDegreeHits, indexSearcher, IndexLabelNames.OUT_DEGREE_CONTENT);
             result.setOutDegree(outDegree);
 
             ScoreDoc[] pageIdHits = doQuery(indexSearcher, pageIdQuery);
-            String pageId = processIntegerProperty(pageIdHits, indexSearcher, IndexLabelNames.PAGE_ID_CONTENT);
+            String pageId = SearchUtil.processIntegerProperty(pageIdHits, indexSearcher, IndexLabelNames.PAGE_ID_CONTENT);
             result.setPageId(pageId);
 
             ScoreDoc[] pageLengthHits = doQuery(indexSearcher, pageLengthQuery);
-            String pageLength = processIntegerProperty(pageLengthHits, indexSearcher, IndexLabelNames.PAGE_LENGTH_CONTENT);
+            String pageLength = SearchUtil.processIntegerProperty(pageLengthHits, indexSearcher, IndexLabelNames.PAGE_LENGTH_CONTENT);
             result.setPageLength(pageLength);
 
             ScoreDoc[] revisionIdHits = doQuery(indexSearcher, revisionIdQuery);
-            String revisionId = processIntegerProperty(revisionIdHits, indexSearcher, IndexLabelNames.REVISION_ID_CONTENT);
+            String revisionId = SearchUtil.processIntegerProperty(revisionIdHits, indexSearcher, IndexLabelNames.REVISION_ID_CONTENT);
             result.setRevisionId(revisionId);
 
             indexReader.close();
@@ -144,86 +169,37 @@ public class SearchUtil {
         return result;
     }
 
-    private ScoreDoc[] doQuery(IndexSearcher indexSearcher, Query query) throws IOException{
+    @Override
+    public SearchResultType search(String searchTerm, SearchOptions searchOptions) {
+        return null;
+    }
+
+    @Override
+    public SearchResultType searchInLinks(String searchTerm) {
+        return null;
+    }
+
+    @Override
+    public SearchResultType searchInAbstracts(String searchTerm) {
+        return null;
+    }
+
+    @Override
+    public SearchResultType searchInCategories(String searchTerm) {
+        return null;
+    }
+
+    @Override
+    public SearchResultType searchInInfoboxProperties(String searchTerm) {
+        return null;
+    }
+
+    private ScoreDoc[] doQuery(IndexSearcher indexSearcher, Query query) throws IOException {
         //Perform the search
         int hitsPerPage = 10000;
         TopScoreDocCollector collector = TopScoreDocCollector.create(hitsPerPage, true);
         indexSearcher.search(query, collector);
 
         return collector.topDocs().scoreDocs;
-    }
-
-    public List<String> processStringListResult(ScoreDoc[] hits, IndexSearcher indexSearcher, String contentName) throws IOException{
-        List<String> stringResultList = new ArrayList<String>();
-
-        for(int i = 0; i < hits.length; i++){
-            int docId = hits[i].doc;
-            Document d = indexSearcher.doc(docId);
-
-            stringResultList.add(d.get(contentName));
-        }
-
-        return stringResultList;
-    }
-
-    public List<InfoboxPropertyType> processInfoboxProperties(ScoreDoc[] hits, IndexSearcher indexSearcher, String contentName) throws IOException{
-        List<InfoboxPropertyType> infoboxPropertyList = new ArrayList<InfoboxPropertyType>();
-
-        for(int i = 0; i < hits.length; i++){
-            int docId = hits[i].doc;
-            Document d = indexSearcher.doc(docId);
-
-            String retrievedValue = d.get(contentName);
-            String[] properties = retrievedValue.split("\t");
-
-            InfoboxPropertyType infoboxProperty;
-            for(String property: properties){
-                if(!property.isEmpty()){
-                    String[] propertyFields = property.split(":");
-
-                    if(propertyFields.length == 2){
-                        infoboxProperty = new InfoboxPropertyType();
-                        infoboxProperty.setName(propertyFields[0]);
-                        infoboxProperty.setValue(propertyFields[1]);
-
-                        infoboxPropertyList.add(infoboxProperty);
-                    }
-                }
-            }
-        }
-
-        return infoboxPropertyList;
-    }
-
-    public String processStringProperty(ScoreDoc[] hits, IndexSearcher indexSearcher, String contentName) throws IOException {
-        String property = null;
-
-        if(hits.length != 0){
-            int docId = hits[0].doc;
-            Document d = indexSearcher.doc(docId);
-
-            property = d.get(contentName);
-        }
-
-        return property;
-    }
-
-    public String processIntegerProperty(ScoreDoc[] hits, IndexSearcher indexSearcher, String contentName) throws IOException {
-        StringBuilder sb = new StringBuilder();
-
-        if(hits.length != 0){
-            for(ScoreDoc hit: hits){
-                int docId = hit.doc;
-                Document d = indexSearcher.doc(docId);
-
-                String actValue = d.get(contentName);
-                String afterTrim = actValue.replaceAll("\t", "");
-
-                sb.append(afterTrim);
-                sb.append(", ");
-            }
-        }
-
-        return sb.toString();
     }
 }
