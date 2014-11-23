@@ -105,7 +105,7 @@ public class SearchResultPanel extends Panel {
         };
         rawContainer.add(raw);
 
-        WebMarkupContainer resultPanel = new SearchResultClassicPanel(ID_RESULT);
+        WebMarkupContainer resultPanel = new SearchResultClassicPanel(ID_RESULT, model.getObject());
         resultPanel.setOutputMarkupId(true);
         resultPanel.setOutputMarkupPlaceholderTag(true);
         add(resultPanel);
@@ -116,7 +116,7 @@ public class SearchResultPanel extends Panel {
     }
 
     private void showClassicPerformed(AjaxRequestTarget target){
-        getResultPanel().replaceWith(new SearchResultClassicPanel(ID_RESULT));
+        getResultPanel().replaceWith(new SearchResultClassicPanel(ID_RESULT, model.getObject()));
         get(ID_CLASSIC_CONTAINER).add(new AttributeModifier("class", "active"));
         get(ID_XML_CONTAINER).add(new AttributeModifier("class", ""));
         get(ID_JSON_CONTAINER).add(new AttributeModifier("class", ""));
