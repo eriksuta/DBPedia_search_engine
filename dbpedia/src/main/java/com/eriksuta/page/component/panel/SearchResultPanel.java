@@ -1,6 +1,7 @@
 package com.eriksuta.page.component.panel;
 
 import com.eriksuta.data.search.SearchResultType;
+import com.eriksuta.page.SearchOptions;
 import com.eriksuta.page.component.model.LoadableModel;
 import org.apache.wicket.AttributeModifier;
 import org.apache.wicket.ajax.AjaxRequestTarget;
@@ -25,6 +26,7 @@ public class SearchResultPanel extends Panel {
     private static final String ID_RESULT = "result";
 
     private IModel<SearchResultType> model;
+    private SearchOptions options;
 
     public SearchResultPanel(String id, final SearchResultType result){
         super(id);
@@ -48,8 +50,10 @@ public class SearchResultPanel extends Panel {
         return model;
     }
 
-    public void updateModel(SearchResultType result, AjaxRequestTarget target){
+    public void updateModel(SearchResultType result, AjaxRequestTarget target, SearchOptions options){
         model.setObject(result);
+        this.options = options;
+
         showClassicPerformed(target);
 
         target.add(getResultPanel());
@@ -108,7 +112,7 @@ public class SearchResultPanel extends Panel {
         };
         rawContainer.add(raw);
 
-        WebMarkupContainer resultPanel = new SearchResultClassicPanel(ID_RESULT, model.getObject());
+        WebMarkupContainer resultPanel = new SearchResultClassicPanel(ID_RESULT, model.getObject(), options);
         resultPanel.setOutputMarkupId(true);
         resultPanel.setOutputMarkupPlaceholderTag(true);
         add(resultPanel);
@@ -119,7 +123,7 @@ public class SearchResultPanel extends Panel {
     }
 
     private void showClassicPerformed(AjaxRequestTarget target){
-        getResultPanel().replaceWith(new SearchResultClassicPanel(ID_RESULT, model.getObject()));
+        getResultPanel().replaceWith(new SearchResultClassicPanel(ID_RESULT, model.getObject(), options));
         get(ID_CLASSIC_CONTAINER).add(new AttributeModifier("class", "active"));
         get(ID_XML_CONTAINER).add(new AttributeModifier("class", ""));
         get(ID_JSON_CONTAINER).add(new AttributeModifier("class", ""));

@@ -13,22 +13,6 @@ import com.eriksuta.page.SearchOptions;
 public interface SearchService {
 
     /**
-     *  Basic search method - use for default search in entire
-     *  data. This search assumes, that no special search options
-     *  were selected
-     *
-     *  @param searchTerm String
-     *          A String representation of search term, e.g. term,
-     *          upon which the search operation is performed.
-     *
-     *  @return SearchResultType
-     *          A special object containing all data retrieved
-     *          from indexed dump
-     *
-     * */
-    public SearchResultType search(String searchTerm);
-
-    /**
      *  This search method takes another parameter, search options.
      *  Search options contain options for search algorithm, e.g. if
      *  provided search term should be processed as regular expression,

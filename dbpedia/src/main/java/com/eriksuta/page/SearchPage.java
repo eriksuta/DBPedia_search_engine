@@ -5,6 +5,7 @@ import com.eriksuta.search.SearchServiceImpl;
 import com.eriksuta.data.search.SearchResultType;
 import com.eriksuta.page.component.panel.SearchOptionsPanel;
 import com.eriksuta.page.component.panel.SearchResultPanel;
+import org.apache.log4j.Logger;
 import org.apache.wicket.Component;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxLink;
@@ -25,10 +26,12 @@ import com.eriksuta.page.component.behavior.VisibleEnableBehavior;
  * */
 public class SearchPage extends WebPage {
 
+    private static Logger LOGGER = Logger.getLogger(SearchPage.class);
+
     /**
      *  A SearchService instance. This is used for all searches.
      * */
-    private SearchService searchService;
+    private transient SearchService searchService;
 
     private static final String ID_FEEDBACK = "feedback";
     private static final String ID_MAIN_FORM = "mainForm";
@@ -151,12 +154,23 @@ public class SearchPage extends WebPage {
     }
 
     private void searchPerformed(AjaxRequestTarget target){
-        SearchResultType result = searchService.search(searchText);
+        if(getSearchOptionsContainer() == null || getSearchOptionsContainer().getModel() == null ||
+                getSearchOptionsContainer().getModel().getObject() == null){
+
+            LOGGER.error("Search operation could not be performed. Search options not found. Try again later, please.");
+            error("Search operation could not be performed. Search options not found. Try again later, please.");
+            target.add(getFeedbackPanel());
+            return;
+        }
+
+        SearchOptions options = getSearchOptionsContainer().getModel().getObject();
+        SearchResultType result = searchService.search(searchText, options);
 
         if(result != null){
             this.result = result;
-            getSearchResultPanel().updateModel(result, target);
+            getSearchResultPanel().updateModel(result, target, options);
         } else {
+            LOGGER.error("Search operation could not be performed. Something went terribly wrong. Try again later, please.");
             error("Search operation could not be performed. Something went terribly wrong. Try again later, please.");
         }
 

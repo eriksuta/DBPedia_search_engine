@@ -3,6 +3,7 @@ package com.eriksuta.parser;
 
 import com.eriksuta.data.Indexer;
 import com.eriksuta.data.ParserImpl;
+import com.eriksuta.page.SearchOptions;
 import com.eriksuta.search.SearchService;
 import com.eriksuta.search.SearchServiceImpl;
 import com.eriksuta.data.search.SearchResultType;
@@ -59,31 +60,31 @@ public class BasicTest {
 
     @Test
     public void testBratislava(){
-        SearchResultType result = searchService.search("Bratislava");
+        SearchResultType result = searchService.search("Bratislava", new SearchOptions());
         System.out.println(result.toString());
     }
 
     @Test
     public void testBioware(){
-        SearchResultType result = searchService.search("Bioware");
+        SearchResultType result = searchService.search("Bioware", new SearchOptions());
         System.out.println(result.toString());
     }
 
     @Test
     public void testMassEffect(){
-        SearchResultType result = searchService.search("Mass Effect");
+        SearchResultType result = searchService.search("Mass Effect", new SearchOptions());
         System.out.println(result.toString());
     }
 
     @Test
     public void testStarWars(){
-        SearchResultType result = searchService.search("Star_Wars");
+        SearchResultType result = searchService.search("Star_Wars", new SearchOptions());
         System.out.println(result.toString());
     }
 
     @Test
     public void test_01_basicSearch_Bratislava(){
-        SearchResultType result = searchService.search("Bratislava");
+        SearchResultType result = searchService.search("Bratislava", new SearchOptions());
 
         String expectedResult = readFile(F_TEST_01_BASIC_SEARCH_BRATISLAVA);
 
@@ -92,7 +93,7 @@ public class BasicTest {
 
     @Test
      public void test_02_basicSearch_Bioware(){
-        SearchResultType result = searchService.search("Bioware");
+        SearchResultType result = searchService.search("Bioware", new SearchOptions());
 
         String expectedResult = readFile(F_TEST_02_BASIC_SEARCH_BIOWARE);
 
@@ -101,7 +102,7 @@ public class BasicTest {
 
     @Test
     public void test_03_basicSearch_MassEffect(){
-        SearchResultType result = searchService.search("Mass Effect");
+        SearchResultType result = searchService.search("Mass Effect", new SearchOptions());
 
         String expectedResult = readFile(F_TEST_03_BASIC_SEARCH_MASS_EFFECT);
 
@@ -110,7 +111,7 @@ public class BasicTest {
 
     @Test
     public void test_04_basicSearch_StarWars(){
-        SearchResultType result = searchService.search("Star_Wars");
+        SearchResultType result = searchService.search("Star_Wars", new SearchOptions());
 
         String expectedResult = readFile(F_TEST_04_BASIC_SEARCH_STAR_WARS);
 
@@ -136,5 +137,4 @@ public class BasicTest {
 
         return stringBuilder.toString();
     }
-
 }

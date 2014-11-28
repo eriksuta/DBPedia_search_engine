@@ -14,17 +14,15 @@ public class SearchOptions implements Serializable{
     public static final String F_ABSTRACTS = "abstracts";
     public static final String F_CATEGORIES = "categories";
     public static final String F_INFO_PROPERTIES = "infoboxProperties";
-    public static final String F_EVERYTHING = "everything";
 
     private boolean matchCase;
     private boolean wholeWord;
     private boolean asRegex;
 
-    private boolean links;
-    private boolean abstracts;
-    private boolean categories;
-    private boolean infoboxProperties;
-    private boolean everything = true;
+    private boolean links = true;
+    private boolean abstracts = true;
+    private boolean categories = true;
+    private boolean infoboxProperties = true;
 
     public SearchOptions(){}
 
@@ -84,14 +82,6 @@ public class SearchOptions implements Serializable{
         this.infoboxProperties = infoboxProperties;
     }
 
-    public boolean isEverything() {
-        return everything;
-    }
-
-    public void setEverything(boolean everything) {
-        this.everything = everything;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -102,7 +92,6 @@ public class SearchOptions implements Serializable{
         if (abstracts != that.abstracts) return false;
         if (asRegex != that.asRegex) return false;
         if (categories != that.categories) return false;
-        if (everything != that.everything) return false;
         if (infoboxProperties != that.infoboxProperties) return false;
         if (links != that.links) return false;
         if (matchCase != that.matchCase) return false;
@@ -120,7 +109,6 @@ public class SearchOptions implements Serializable{
         result = 31 * result + (abstracts ? 1 : 0);
         result = 31 * result + (categories ? 1 : 0);
         result = 31 * result + (infoboxProperties ? 1 : 0);
-        result = 31 * result + (everything ? 1 : 0);
         return result;
     }
 }

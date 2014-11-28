@@ -2,6 +2,8 @@ package com.eriksuta.page.component.panel;
 
 import com.eriksuta.data.search.InfoboxPropertyType;
 import com.eriksuta.data.search.SearchResultType;
+import com.eriksuta.page.SearchOptions;
+import com.eriksuta.page.component.behavior.VisibleEnableBehavior;
 import com.eriksuta.page.component.model.LoadableModel;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
@@ -48,12 +50,18 @@ public class SearchResultClassicPanel extends Panel {
     private static final String ID_REDIRECTS = "redirects";
     private static final String ID_REDIRECTS_TRANSITIVE = "redirectsTransitive";
     private static final String ID_INFOBOX = "infoboxProperties";
+    private static final String ID_CONTAINER_ABSTRACTS = "abstractsContainer";
+    private static final String ID_CONTAINER_CATEGORIES = "categoriesContainer";
+    private static final String ID_CONTAINER_LINKS = "linksContainer";
+    private static final String ID_CONTAINER_INFOBOX = "infoboxContainer";
 
     private IModel<SearchResultType> model;
+    private SearchOptions options;
 
-    public SearchResultClassicPanel(String id, final SearchResultType result){
+    public SearchResultClassicPanel(String id, final SearchResultType result, SearchOptions options){
         super(id);
 
+        this.options = options;
         model = new LoadableModel<SearchResultType>(false) {
 
             @Override
@@ -63,10 +71,6 @@ public class SearchResultClassicPanel extends Panel {
         };
 
         initLayout();
-    }
-
-    public void updateModel(SearchResultType result){
-        //TODO
     }
 
     private void initLayout(){
@@ -138,6 +142,18 @@ public class SearchResultClassicPanel extends Panel {
         revisionUri.setEscapeModelStrings(false);
         wrapper.add(revisionUri);
 
+        WebMarkupContainer abstractsContainer = new WebMarkupContainer(ID_CONTAINER_ABSTRACTS);
+        abstractsContainer.setOutputMarkupId(true);
+        abstractsContainer.setOutputMarkupPlaceholderTag(true);
+        abstractsContainer.add(new VisibleEnableBehavior(){
+
+            @Override
+            public boolean isVisible() {
+                return options != null && options.isAbstracts();
+            }
+        });
+        wrapper.add(abstractsContainer);
+
         Label shortAbstracts = new Label(ID_ABSTRACT_SHORT, new AbstractReadOnlyModel<String>() {
 
             @Override
@@ -152,7 +168,7 @@ public class SearchResultClassicPanel extends Panel {
                 return sb.toString();
             }
         });
-        wrapper.add(shortAbstracts);
+        abstractsContainer.add(shortAbstracts);
 
         Label longAbstracts = new Label(ID_ABSTRACT_LONG, new AbstractReadOnlyModel<String>() {
 
@@ -168,7 +184,19 @@ public class SearchResultClassicPanel extends Panel {
                 return sb.toString();
             }
         });
-        wrapper.add(longAbstracts);
+        abstractsContainer.add(longAbstracts);
+
+        WebMarkupContainer categoriesContainer = new WebMarkupContainer(ID_CONTAINER_CATEGORIES);
+        categoriesContainer.setOutputMarkupId(true);
+        categoriesContainer.setOutputMarkupPlaceholderTag(true);
+        categoriesContainer.add(new VisibleEnableBehavior(){
+
+            @Override
+            public boolean isVisible() {
+                return options != null && options.isCategories();
+            }
+        });
+        wrapper.add(categoriesContainer);
 
         Label articleCategories = new Label(ID_CATEGORIES_ARTICLE, new AbstractReadOnlyModel<String>() {
 
@@ -184,7 +212,7 @@ public class SearchResultClassicPanel extends Panel {
                 return sb.toString();
             }
         });
-        wrapper.add(articleCategories);
+        categoriesContainer.add(articleCategories);
 
         Label skosCategories = new Label(ID_CATEGORIES_SKOS, new AbstractReadOnlyModel<String>() {
 
@@ -200,35 +228,59 @@ public class SearchResultClassicPanel extends Panel {
                 return sb.toString();
             }
         });
-        wrapper.add(skosCategories);
+        categoriesContainer.add(skosCategories);
+
+        WebMarkupContainer linksContainer = new WebMarkupContainer(ID_CONTAINER_LINKS);
+        linksContainer.setOutputMarkupId(true);
+        linksContainer.setOutputMarkupPlaceholderTag(true);
+        linksContainer.add(new VisibleEnableBehavior(){
+
+            @Override
+            public boolean isVisible() {
+                return options != null && options.isLinks();
+            }
+        });
+        wrapper.add(linksContainer);
 
         Label freebaseLinks = new Label(ID_LINK_FREEBASE, prepareLinksReadOnlyModel(LinkType.FREEBASE));
         freebaseLinks.setEscapeModelStrings(false);
-        wrapper.add(freebaseLinks);
+        linksContainer.add(freebaseLinks);
 
         Label wikiLinks = new Label(ID_LINK_WIKI, prepareLinksReadOnlyModel(LinkType.WIKI));
         wikiLinks.setEscapeModelStrings(false);
-        wrapper.add(wikiLinks);
+        linksContainer.add(wikiLinks);
 
         Label externalLinks = new Label(ID_LINK_EXT, prepareLinksReadOnlyModel(LinkType.EXTERNAL));
         externalLinks.setEscapeModelStrings(false);
-        wrapper.add(externalLinks);
+        linksContainer.add(externalLinks);
 
         Label interLanguageLinks = new Label(ID_LINK_INTER_LANGUAGE, prepareLinksReadOnlyModel(LinkType.INTER_LANGUAGE));
         interLanguageLinks.setEscapeModelStrings(false);
-        wrapper.add(interLanguageLinks);
+        linksContainer.add(interLanguageLinks);
 
         Label pageLinks = new Label(ID_LINK_PAGE, prepareLinksReadOnlyModel(LinkType.PAGE));
         pageLinks.setEscapeModelStrings(false);
-        wrapper.add(pageLinks);
+        linksContainer.add(pageLinks);
 
         Label redirects = new Label(ID_REDIRECTS, prepareLinksReadOnlyModel(LinkType.REDIRECT));
         redirects.setEscapeModelStrings(false);
-        wrapper.add(redirects);
+        linksContainer.add(redirects);
 
         Label redirectsTransitive = new Label(ID_REDIRECTS_TRANSITIVE, prepareLinksReadOnlyModel(LinkType.REDIRECT_TRANSITIVE));
         redirectsTransitive.setEscapeModelStrings(false);
-        wrapper.add(redirectsTransitive);
+        linksContainer.add(redirectsTransitive);
+
+        WebMarkupContainer infoboxContainer = new WebMarkupContainer(ID_CONTAINER_INFOBOX);
+        infoboxContainer.setOutputMarkupId(true);
+        infoboxContainer.setOutputMarkupPlaceholderTag(true);
+        infoboxContainer.add(new VisibleEnableBehavior(){
+
+            @Override
+            public boolean isVisible() {
+                return options != null && options.isInfoboxProperties();
+            }
+        });
+        wrapper.add(infoboxContainer);
 
         Label infoboxProperties = new Label(ID_INFOBOX, new AbstractReadOnlyModel<String>() {
 
@@ -247,7 +299,7 @@ public class SearchResultClassicPanel extends Panel {
             }
         });
         infoboxProperties.setEscapeModelStrings(false);
-        wrapper.add(infoboxProperties);
+        infoboxContainer.add(infoboxProperties);
     }
 
     private AbstractReadOnlyModel<String> prepareLinksReadOnlyModel(final LinkType type){
@@ -298,9 +350,5 @@ public class SearchResultClassicPanel extends Panel {
                 return sb.toString();
             }
         };
-    }
-
-    public WebMarkupContainer getWrapper(){
-        return (WebMarkupContainer) get(ID_WRAPPER);
     }
 }
