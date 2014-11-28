@@ -25,7 +25,7 @@ public class SearchResultType implements Serializable{
     private List<String> wikipediaLinks = new ArrayList<String>();
     private List<String> interLanguageLinks = new ArrayList<String>();
     private List<String> pageLinksSk = new ArrayList<String>();
-    private List<String> pageLinksEnUrisSk = new ArrayList<String>();
+    private List<String> pageLinksUnredirected = new ArrayList<String>();
 
     private List<String> redirects = new ArrayList<String>();
     private List<String> redirectsTransitive = new ArrayList<String>();
@@ -126,12 +126,12 @@ public class SearchResultType implements Serializable{
         this.pageLinksSk = pageLinksSk;
     }
 
-    public List<String> getPageLinksEnUrisSk() {
-        return pageLinksEnUrisSk;
+    public List<String> getPageLinksUnredirected() {
+        return pageLinksUnredirected;
     }
 
-    public void setPageLinksEnUrisSk(List<String> pageLinksEnUrisSk) {
-        this.pageLinksEnUrisSk = pageLinksEnUrisSk;
+    public void setPageLinksUnredirected(List<String> pageLinksEnUrisSk) {
+        this.pageLinksUnredirected = pageLinksEnUrisSk;
     }
 
     public List<String> getRedirects() {
@@ -238,7 +238,7 @@ public class SearchResultType implements Serializable{
         if (outDegree != null ? !outDegree.equals(that.outDegree) : that.outDegree != null) return false;
         if (pageId != null ? !pageId.equals(that.pageId) : that.pageId != null) return false;
         if (pageLength != null ? !pageLength.equals(that.pageLength) : that.pageLength != null) return false;
-        if (pageLinksEnUrisSk != null ? !pageLinksEnUrisSk.equals(that.pageLinksEnUrisSk) : that.pageLinksEnUrisSk != null)
+        if (pageLinksUnredirected != null ? !pageLinksUnredirected.equals(that.pageLinksUnredirected) : that.pageLinksUnredirected != null)
             return false;
         if (pageLinksSk != null ? !pageLinksSk.equals(that.pageLinksSk) : that.pageLinksSk != null) return false;
         if (queryTerm != null ? !queryTerm.equals(that.queryTerm) : that.queryTerm != null) return false;
@@ -269,7 +269,7 @@ public class SearchResultType implements Serializable{
         result = 31 * result + (wikipediaLinks != null ? wikipediaLinks.hashCode() : 0);
         result = 31 * result + (interLanguageLinks != null ? interLanguageLinks.hashCode() : 0);
         result = 31 * result + (pageLinksSk != null ? pageLinksSk.hashCode() : 0);
-        result = 31 * result + (pageLinksEnUrisSk != null ? pageLinksEnUrisSk.hashCode() : 0);
+        result = 31 * result + (pageLinksUnredirected != null ? pageLinksUnredirected.hashCode() : 0);
         result = 31 * result + (redirects != null ? redirects.hashCode() : 0);
         result = 31 * result + (redirectsTransitive != null ? redirectsTransitive.hashCode() : 0);
         result = 31 * result + (infoboxProperties != null ? infoboxProperties.hashCode() : 0);
@@ -402,7 +402,7 @@ public class SearchResultType implements Serializable{
         sb.append("\n");
 
         sb.append("Page Links (EN): \n");
-        for(String link: pageLinksEnUrisSk){
+        for(String link: pageLinksUnredirected){
             sb.append(link);
             sb.append(", ");
         }

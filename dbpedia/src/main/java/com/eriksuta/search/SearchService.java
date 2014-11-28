@@ -111,4 +111,25 @@ public interface SearchService {
      *
      * */
     public SearchResultType searchInInfoboxProperties(String searchTerm);
+
+    /**
+     *  This method performs search on a subset of indexed dump of DBPedia.
+     *  Basic information subset is defined by:
+     *     - labels
+     *     - outDegree
+     *     - page ID
+     *     - page length
+     *     - revision ID
+     *     - revision uri
+     *
+     *  @param searchTerm String
+     *          A String representation of search term, e.g. term,
+     *          upon which the search operation is performed.
+     *
+     *  @return SearchResultType
+     *          A special object containing all data retrieved
+     *          from indexed dump
+     *
+     * */
+    public SearchResultType searchInBasicInformation(String searchTerm);
 }
