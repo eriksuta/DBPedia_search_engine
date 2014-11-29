@@ -27,7 +27,14 @@ public class SearchResultClassicPanel extends Panel {
         PAGE,
         EXTERNAL,
         REDIRECT,
-        REDIRECT_TRANSITIVE
+        REDIRECT_TRANSITIVE,
+        FREEBASE_CZ,
+        WIKI_CZ,
+        INTER_LANGUAGE_CZ,
+        PAGE_CZ,
+        EXTERNAL_CZ,
+        REDIRECT_CZ,
+        REDIRECT_TRANSITIVE_CZ
     }
 
     private static final String ID_WRAPPER = "resultWrapper";
@@ -54,6 +61,14 @@ public class SearchResultClassicPanel extends Panel {
     private static final String ID_CONTAINER_CATEGORIES = "categoriesContainer";
     private static final String ID_CONTAINER_LINKS = "linksContainer";
     private static final String ID_CONTAINER_INFOBOX = "infoboxContainer";
+    private static final String ID_CONTAINER_LINKS_CZ = "linksCzContainer";
+    private static final String ID_FREEBASE_LINKS_CZ = "freebaseLinksCz";
+    private static final String ID_WIKI_LINKS_CZ = "wikiLinksCz";
+    private static final String ID_EXT_LINKS_CZ = "externalLinksCz";
+    private static final String ID_INTER_LANGUAGE_LINKS_CZ = "interLanguageLinksCz";
+    private static final String ID_PAGE_LINKS_CZ = "pageLinksCz";
+    private static final String ID_REDIRECTS_CZ = "redirectsCz";
+    private static final String ID_REDIRECTS_TRANSITIVE_CZ = "redirectsTransitiveCz";
 
     private IModel<SearchResultType> model;
     private SearchOptions options;
@@ -270,6 +285,46 @@ public class SearchResultClassicPanel extends Panel {
         redirectsTransitive.setEscapeModelStrings(false);
         linksContainer.add(redirectsTransitive);
 
+        WebMarkupContainer linksCzContainer = new WebMarkupContainer(ID_CONTAINER_LINKS_CZ);
+        linksCzContainer.setOutputMarkupId(true);
+        linksCzContainer.setOutputMarkupPlaceholderTag(true);
+        linksCzContainer.add(new VisibleEnableBehavior(){
+
+            @Override
+            public boolean isVisible() {
+                return options != null && options.isLinkMappingCz();
+            }
+        });
+        wrapper.add(linksCzContainer);
+
+        Label freebaseLinksCz = new Label(ID_FREEBASE_LINKS_CZ, prepareLinksReadOnlyModel(LinkType.FREEBASE_CZ));
+        freebaseLinksCz.setEscapeModelStrings(false);
+        linksCzContainer.add(freebaseLinksCz);
+
+        Label wikiLinksCz = new Label(ID_WIKI_LINKS_CZ, prepareLinksReadOnlyModel(LinkType.WIKI_CZ));
+        wikiLinksCz.setEscapeModelStrings(false);
+        linksCzContainer.add(wikiLinksCz);
+
+        Label externalLinksCz = new Label(ID_EXT_LINKS_CZ, prepareLinksReadOnlyModel(LinkType.EXTERNAL_CZ));
+        externalLinksCz.setEscapeModelStrings(false);
+        linksCzContainer.add(externalLinksCz);
+
+        Label interLanguageLinksCz = new Label(ID_INTER_LANGUAGE_LINKS_CZ, prepareLinksReadOnlyModel(LinkType.INTER_LANGUAGE_CZ));
+        interLanguageLinksCz.setEscapeModelStrings(false);
+        linksCzContainer.add(interLanguageLinksCz);
+
+        Label pageLinksCz = new Label(ID_PAGE_LINKS_CZ, prepareLinksReadOnlyModel(LinkType.PAGE_CZ));
+        pageLinksCz.setEscapeModelStrings(false);
+        linksCzContainer.add(pageLinksCz);
+
+        Label redirectsCz = new Label(ID_REDIRECTS_CZ, prepareLinksReadOnlyModel(LinkType.REDIRECT_CZ));
+        redirectsCz.setEscapeModelStrings(false);
+        linksCzContainer.add(redirectsCz);
+
+        Label redirectsTransitiveCz = new Label(ID_REDIRECTS_TRANSITIVE_CZ, prepareLinksReadOnlyModel(LinkType.REDIRECT_TRANSITIVE_CZ));
+        redirectsTransitiveCz.setEscapeModelStrings(false);
+        linksCzContainer.add(redirectsTransitiveCz);
+
         WebMarkupContainer infoboxContainer = new WebMarkupContainer(ID_CONTAINER_INFOBOX);
         infoboxContainer.setOutputMarkupId(true);
         infoboxContainer.setOutputMarkupPlaceholderTag(true);
@@ -311,23 +366,52 @@ public class SearchResultClassicPanel extends Panel {
 
                 List<String> links = new ArrayList<String>();
 
-                if(LinkType.FREEBASE.equals(type)){
-                    links = model.getObject().getFreebaseLinks();
-                } else if(LinkType.WIKI.equals(type)){
-                    links = model.getObject().getWikipediaLinks();
-                } else if(LinkType.EXTERNAL.equals(type)){
-                    links = model.getObject().getExternalLinks();
-                } else if (LinkType.PAGE.equals(type)){
-                    links = model.getObject().getPageLinksSk();
-                } else if (LinkType.INTER_LANGUAGE.equals(type)){
-                    links = model.getObject().getInterLanguageLinks();
-                } else if(LinkType.REDIRECT.equals(type)){
-                    links = model.getObject().getRedirects();
-                } else if(LinkType.REDIRECT_TRANSITIVE.equals(type)){
-                    links = model.getObject().getRedirectsTransitive();
+                switch (type){
+                    case FREEBASE:
+                        links = model.getObject().getFreebaseLinks();
+                        break;
+                    case WIKI:
+                        links = model.getObject().getWikipediaLinks();
+                        break;
+                    case EXTERNAL:
+                        links = model.getObject().getExternalLinks();
+                        break;
+                    case PAGE:
+                        links = model.getObject().getPageLinksSk();
+                        break;
+                    case INTER_LANGUAGE:
+                        links = model.getObject().getInterLanguageLinks();
+                        break;
+                    case REDIRECT:
+                        links = model.getObject().getRedirects();
+                        break;
+                    case REDIRECT_TRANSITIVE:
+                        links = model.getObject().getRedirectsTransitive();
+                        break;
+                    case FREEBASE_CZ:
+                        links = model.getObject().getFreebaseLinksCz();
+                        break;
+                    case WIKI_CZ:
+                        links = model.getObject().getWikipediaLinksCz();
+                        break;
+                    case EXTERNAL_CZ:
+                        links = model.getObject().getExternalLinksCz();
+                        break;
+                    case PAGE_CZ:
+                        links = model.getObject().getPageLinksCz();
+                        break;
+                    case INTER_LANGUAGE_CZ:
+                        links = model.getObject().getInterLanguageLinksCz();
+                        break;
+                    case REDIRECT_CZ:
+                        links = model.getObject().getRedirectsCz();
+                        break;
+                    case REDIRECT_TRANSITIVE_CZ:
+                        links = model.getObject().getRedirectsTransitiveCz();
+                        break;
                 }
 
-                for(String s: links){
+               for(String s: links){
                     if(s.contains("\t")){
                         String[] separatedLinks = s.split("\t");
 

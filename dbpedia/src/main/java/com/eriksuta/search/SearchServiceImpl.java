@@ -41,7 +41,6 @@ public class SearchServiceImpl implements SearchService, Serializable{
 
     private Indexer indexer;
     private IndexSearcher indexSearcher;
-    private IndexReader indexReader;
 
     private SearchServiceImpl(){
         if(indexer == null){
@@ -51,7 +50,7 @@ public class SearchServiceImpl implements SearchService, Serializable{
         Directory directory = indexer.getDirectory();
 
         try {
-            indexReader = DirectoryReader.open(directory);
+            IndexReader indexReader = DirectoryReader.open(directory);
 
             indexSearcher = new IndexSearcher(indexReader);
         } catch (Exception e){
@@ -103,6 +102,18 @@ public class SearchServiceImpl implements SearchService, Serializable{
             result.setRedirectsTransitive(linkSearchResult.getRedirectsTransitive());
         }
 
+        if(searchOptions.isLinkMappingCz()){
+            SearchResultType linkSearchResultCz = searchInCzLinks(searchTerm);
+            result.setExternalLinksCz(linkSearchResultCz.getExternalLinksCz());
+            result.setFreebaseLinksCz(linkSearchResultCz.getFreebaseLinksCz());
+            result.setWikipediaLinksCz(linkSearchResultCz.getWikipediaLinksCz());
+            result.setInterLanguageLinksCz(linkSearchResultCz.getInterLanguageLinksCz());
+            result.setPageLinksCz(linkSearchResultCz.getPageLinksCz());
+            result.setPageLinksUnredirectedCz(linkSearchResultCz.getPageLinksUnredirectedCz());
+            result.setRedirectsCz(linkSearchResultCz.getRedirectsCz());
+            result.setRedirectsTransitiveCz(linkSearchResultCz.getRedirectsTransitiveCz());
+        }
+
         SearchResultType basicSearch = searchInBasicInformation(searchTerm);
         result.setLabels(basicSearch.getLabels());
         result.setOutDegree(basicSearch.getOutDegree());
@@ -121,15 +132,15 @@ public class SearchServiceImpl implements SearchService, Serializable{
         SearchResultType result = new SearchResultType();
 
         try {
-            Query externalLinkQuery = new QueryParser(IndexLabelNames.EXTERNAL_LINK_LABEL ,indexer.getAnalyzer()).parse(searchTerm);
-            Query freebaseLinkQuery = new QueryParser(IndexLabelNames.FREEBASE_LINK_LABEL ,indexer.getAnalyzer()).parse(searchTerm);
-            Query interLanguageLinkQuery = new QueryParser(IndexLabelNames.INTER_LANGUAGE_LINKS_LABEL ,indexer.getAnalyzer()).parse(searchTerm);
-            Query pageLinkQuery = new QueryParser(IndexLabelNames.PAGE_LINKS_LABEL ,indexer.getAnalyzer()).parse(searchTerm);
-            Query pageLinkUnredirectedQuery = new QueryParser(IndexLabelNames.PAGE_LINKS_UNREDIRECTED_LABEL ,indexer.getAnalyzer()).parse(searchTerm);
-            Query wikipediaLinkQuery = new QueryParser(IndexLabelNames.WIKIPEDIA_LINKS_LABEL ,indexer.getAnalyzer()).parse(searchTerm);
+            Query externalLinkQuery = new QueryParser(IndexLabelNames.EXTERNAL_LINK_LABEL, indexer.getAnalyzer()).parse(searchTerm);
+            Query freebaseLinkQuery = new QueryParser(IndexLabelNames.FREEBASE_LINK_LABEL, indexer.getAnalyzer()).parse(searchTerm);
+            Query interLanguageLinkQuery = new QueryParser(IndexLabelNames.INTER_LANGUAGE_LINKS_LABEL, indexer.getAnalyzer()).parse(searchTerm);
+            Query pageLinkQuery = new QueryParser(IndexLabelNames.PAGE_LINKS_LABEL, indexer.getAnalyzer()).parse(searchTerm);
+            Query pageLinkUnredirectedQuery = new QueryParser(IndexLabelNames.PAGE_LINKS_UNREDIRECTED_LABEL, indexer.getAnalyzer()).parse(searchTerm);
+            Query wikipediaLinkQuery = new QueryParser(IndexLabelNames.WIKIPEDIA_LINKS_LABEL, indexer.getAnalyzer()).parse(searchTerm);
 
-            Query redirectQuery = new QueryParser(IndexLabelNames.REDIRECTS_LABEL ,indexer.getAnalyzer()).parse(searchTerm);
-            Query redirectTransitiveQuery = new QueryParser(IndexLabelNames.REDIRECTS_TRANSITIVE_LABEL ,indexer.getAnalyzer()).parse(searchTerm);
+            Query redirectQuery = new QueryParser(IndexLabelNames.REDIRECTS_LABEL, indexer.getAnalyzer()).parse(searchTerm);
+            Query redirectTransitiveQuery = new QueryParser(IndexLabelNames.REDIRECTS_TRANSITIVE_LABEL, indexer.getAnalyzer()).parse(searchTerm);
 
             ScoreDoc[] externalLinksHits = doQuery(indexSearcher, externalLinkQuery);
             List<String> externalLinks = SearchUtil.processStringListResult(externalLinksHits, indexSearcher, IndexLabelNames.EXTERNAL_LINK_CONTENT);
@@ -170,12 +181,65 @@ public class SearchServiceImpl implements SearchService, Serializable{
     }
 
     @Override
+    public SearchResultType searchInCzLinks(String searchTerm) {
+        SearchResultType result = new SearchResultType();
+
+        try {
+            Query externalLinkQueryCz = new QueryParser(IndexLabelNames.EXTERNAL_LINK_LABEL_CZ, indexer.getAnalyzer()).parse(searchTerm);
+            Query freebaseLinkQueryCz = new QueryParser(IndexLabelNames.FREEBASE_LINK_LABEL_CZ, indexer.getAnalyzer()).parse(searchTerm);
+            Query interLanguageLinkQueryCz = new QueryParser(IndexLabelNames.INTER_LANGUAGE_LINKS_LABEL_CZ, indexer.getAnalyzer()).parse(searchTerm);
+            Query pageLinkQueryCz = new QueryParser(IndexLabelNames.PAGE_LINKS_LABEL_CZ, indexer.getAnalyzer()).parse(searchTerm);
+            Query pageLinkUnredirectedQueryCz = new QueryParser(IndexLabelNames.PAGE_LINKS_UNREDIRECTED_LABEL_CZ, indexer.getAnalyzer()).parse(searchTerm);
+            Query wikipediaLinkQueryCz = new QueryParser(IndexLabelNames.WIKIPEDIA_LINKS_LABEL_CZ, indexer.getAnalyzer()).parse(searchTerm);
+
+            Query redirectQueryCz = new QueryParser(IndexLabelNames.REDIRECTS_LABEL_CZ ,indexer.getAnalyzer()).parse(searchTerm);
+            Query redirectTransitiveQueryCz = new QueryParser(IndexLabelNames.REDIRECTS_TRANSITIVE_LABEL_CZ ,indexer.getAnalyzer()).parse(searchTerm);
+
+            ScoreDoc[] externalLinksHits = doQuery(indexSearcher, externalLinkQueryCz);
+            List<String> externalLinks = SearchUtil.processStringListResult(externalLinksHits, indexSearcher, IndexLabelNames.EXTERNAL_LINK_CONTENT_CZ);
+            result.getExternalLinksCz().addAll(externalLinks);
+
+            ScoreDoc[] freebaseLinksHits = doQuery(indexSearcher, freebaseLinkQueryCz);
+            List<String> freebaseLinks = SearchUtil.processStringListResult(freebaseLinksHits, indexSearcher, IndexLabelNames.FREEBASE_LINK_CONTENT_CZ);
+            result.getFreebaseLinksCz().addAll(freebaseLinks);
+
+            ScoreDoc[] interLanguageLinksHits = doQuery(indexSearcher, interLanguageLinkQueryCz);
+            List<String> interLanguageLinks = SearchUtil.processStringListResult(interLanguageLinksHits, indexSearcher, IndexLabelNames.INTER_LANGUAGE_LINKS_CONTENT_CZ);
+            result.getInterLanguageLinksCz().addAll(interLanguageLinks);
+
+            ScoreDoc[] pageLinkHits = doQuery(indexSearcher, pageLinkQueryCz);
+            List<String> pageLinks = SearchUtil.processStringListResult(pageLinkHits, indexSearcher, IndexLabelNames.PAGE_LINKS_CONTENT_CZ);
+            result.getPageLinksCz().addAll(pageLinks);
+
+            ScoreDoc[] pageLinkUnredirectedHits = doQuery(indexSearcher, pageLinkUnredirectedQueryCz);
+            List<String> pageLinksUnredirected = SearchUtil.processStringListResult(pageLinkUnredirectedHits, indexSearcher, IndexLabelNames.PAGE_LINKS_UNREDIRECTED_CONTENT_CZ);
+            result.getPageLinksUnredirectedCz().addAll(pageLinksUnredirected);
+
+            ScoreDoc[] wikipediaLinkHits = doQuery(indexSearcher, wikipediaLinkQueryCz);
+            List<String> wikipediaLinks = SearchUtil.processStringListResult(wikipediaLinkHits, indexSearcher, IndexLabelNames.WIKIPEDIA_LINKS_CONTENT_CZ);
+            result.getWikipediaLinksCz().addAll(wikipediaLinks);
+
+            ScoreDoc[] redirectsHits = doQuery(indexSearcher, redirectQueryCz);
+            List<String> redirects = SearchUtil.processStringListResult(redirectsHits, indexSearcher, IndexLabelNames.REDIRECTS_CONTENT_CZ);
+            result.getRedirectsCz().addAll(redirects);
+
+            ScoreDoc[] redirectsTransitiveHits = doQuery(indexSearcher, redirectTransitiveQueryCz);
+            List<String> redirectsTransitive = SearchUtil.processStringListResult(redirectsTransitiveHits, indexSearcher, IndexLabelNames.REDIRECTS_TRANSITIVE_CONTENT_CZ);
+            result.getRedirectsTransitiveCz().addAll(redirectsTransitive);
+        } catch (Exception e){
+            LOGGER.error("Could not perform search operation. Reason: " +  e.getMessage());
+        }
+
+        return result;
+    }
+
+    @Override
     public SearchResultType searchInAbstracts(String searchTerm) {
         SearchResultType result = new SearchResultType();
 
         try {
-            Query longAbstractQuery = new QueryParser(IndexLabelNames.LONG_ABSTRACT_LABEL ,indexer.getAnalyzer()).parse(searchTerm);
-            Query shortAbstractQuery = new QueryParser(IndexLabelNames.SHORT_ABSTRACT_LABEL ,indexer.getAnalyzer()).parse(searchTerm);
+            Query longAbstractQuery = new QueryParser(IndexLabelNames.LONG_ABSTRACT_LABEL, indexer.getAnalyzer()).parse(searchTerm);
+            Query shortAbstractQuery = new QueryParser(IndexLabelNames.SHORT_ABSTRACT_LABEL, indexer.getAnalyzer()).parse(searchTerm);
 
             ScoreDoc[] shortAbstractHits = doQuery(indexSearcher, shortAbstractQuery);
             List<String> shortAbstracts = SearchUtil.processStringListResult(shortAbstractHits, indexSearcher, IndexLabelNames.SHORT_ABSTRACT_CONTENT);
@@ -196,8 +260,8 @@ public class SearchServiceImpl implements SearchService, Serializable{
         SearchResultType result = new SearchResultType();
 
         try {
-            Query articleCategoryQuery = new QueryParser(IndexLabelNames.ARTICLE_CATEGORY_LABEL ,indexer.getAnalyzer()).parse(searchTerm);
-            Query skosCategoryQuery = new QueryParser(IndexLabelNames.SKOS_CATEGORIES_LABEL ,indexer.getAnalyzer()).parse(searchTerm);
+            Query articleCategoryQuery = new QueryParser(IndexLabelNames.ARTICLE_CATEGORY_LABEL, indexer.getAnalyzer()).parse(searchTerm);
+            Query skosCategoryQuery = new QueryParser(IndexLabelNames.SKOS_CATEGORIES_LABEL, indexer.getAnalyzer()).parse(searchTerm);
 
             ScoreDoc[] articleCategoryHits = doQuery(indexSearcher, articleCategoryQuery);
             List<String> articleCategories = SearchUtil.processStringListResult(articleCategoryHits, indexSearcher, IndexLabelNames.ARTICLE_CATEGORY_CONTENT);
@@ -218,7 +282,7 @@ public class SearchServiceImpl implements SearchService, Serializable{
         SearchResultType result = new SearchResultType();
 
         try {
-            Query infoboxQuery = new QueryParser(IndexLabelNames.INFOBOX_PROPERTIES_LABEL ,indexer.getAnalyzer()).parse(searchTerm);
+            Query infoboxQuery = new QueryParser(IndexLabelNames.INFOBOX_PROPERTIES_LABEL, indexer.getAnalyzer()).parse(searchTerm);
 
             ScoreDoc[] infoboxPropertiesHits = doQuery(indexSearcher, infoboxQuery);
             List<InfoboxPropertyType> infoboxProperties = SearchUtil.processInfoboxProperties(infoboxPropertiesHits, indexSearcher, IndexLabelNames.INFOBOX_PROPERTIES_CONTENT);
@@ -236,12 +300,12 @@ public class SearchServiceImpl implements SearchService, Serializable{
         SearchResultType result = new SearchResultType();
 
         try {
-            Query labelQuery = new QueryParser(IndexLabelNames.LABEL_LABEL ,indexer.getAnalyzer()).parse(searchTerm);
-            Query outDegreeQuery = new QueryParser(IndexLabelNames.OUT_DEGREE_LABEL ,indexer.getAnalyzer()).parse(searchTerm);
-            Query pageIdQuery = new QueryParser(IndexLabelNames.PAGE_ID_LABEL ,indexer.getAnalyzer()).parse(searchTerm);
-            Query pageLengthQuery = new QueryParser(IndexLabelNames.PAGE_LENGTH_LABEL ,indexer.getAnalyzer()).parse(searchTerm);
-            Query revisionIdQuery = new QueryParser(IndexLabelNames.REVISION_ID_LABEL ,indexer.getAnalyzer()).parse(searchTerm);
-            Query revisionUriQuery = new QueryParser(IndexLabelNames.REVISION_URI_LABEL ,indexer.getAnalyzer()).parse(searchTerm);
+            Query labelQuery = new QueryParser(IndexLabelNames.LABEL_LABEL, indexer.getAnalyzer()).parse(searchTerm);
+            Query outDegreeQuery = new QueryParser(IndexLabelNames.OUT_DEGREE_LABEL, indexer.getAnalyzer()).parse(searchTerm);
+            Query pageIdQuery = new QueryParser(IndexLabelNames.PAGE_ID_LABEL, indexer.getAnalyzer()).parse(searchTerm);
+            Query pageLengthQuery = new QueryParser(IndexLabelNames.PAGE_LENGTH_LABEL, indexer.getAnalyzer()).parse(searchTerm);
+            Query revisionIdQuery = new QueryParser(IndexLabelNames.REVISION_ID_LABEL, indexer.getAnalyzer()).parse(searchTerm);
+            Query revisionUriQuery = new QueryParser(IndexLabelNames.REVISION_URI_LABEL, indexer.getAnalyzer()).parse(searchTerm);
 
             ScoreDoc[] labelsHits = doQuery(indexSearcher, labelQuery);
             List<String> labels = SearchUtil.processStringListResult(labelsHits, indexSearcher, IndexLabelNames.LABEL_CONTENT);

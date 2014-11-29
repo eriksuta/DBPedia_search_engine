@@ -19,6 +19,7 @@ public class SearchOptionsPanel extends Panel {
     public static final String ID_ABSTRACTS = "abstracts";
     public static final String ID_CATEGORIES = "categories";
     public static final String ID_INFO_PROPERTIES = "infoboxProperties";
+    public static final String ID_MAPPING_CZ = "mappingCz";
 
     private IModel<SearchOptions> model;
 
@@ -61,5 +62,8 @@ public class SearchOptionsPanel extends Panel {
 
         CheckBox infoboxProperties = new CheckBox(ID_INFO_PROPERTIES, new PropertyModel<Boolean>(model, SearchOptions.F_INFO_PROPERTIES));
         add(infoboxProperties);
+
+        CheckBox linkMappingCz = new CheckBox(ID_MAPPING_CZ, new PropertyModel<Boolean>(model, SearchOptions.F_LINK_MAPPING_CZ));
+        add(linkMappingCz);
     }
 }

@@ -30,6 +30,16 @@ public class SearchResultType implements Serializable{
     private List<String> redirects = new ArrayList<String>();
     private List<String> redirectsTransitive = new ArrayList<String>();
 
+    private List<String> externalLinksCz = new ArrayList<String>();
+    private List<String> freebaseLinksCz = new ArrayList<String>();
+    private List<String> wikipediaLinksCz = new ArrayList<String>();
+    private List<String> interLanguageLinksCz = new ArrayList<String>();
+    private List<String> pageLinksCz = new ArrayList<String>();
+    private List<String> pageLinksUnredirectedCz = new ArrayList<String>();
+
+    private List<String> redirectsCz = new ArrayList<String>();
+    private List<String> redirectsTransitiveCz = new ArrayList<String>();
+
     private List<InfoboxPropertyType> infoboxProperties = new ArrayList<InfoboxPropertyType>();
 
     private List<String> longAbstracts = new ArrayList<String>();
@@ -214,6 +224,70 @@ public class SearchResultType implements Serializable{
         this.revisionUri = revisionUri;
     }
 
+    public List<String> getExternalLinksCz() {
+        return externalLinksCz;
+    }
+
+    public void setExternalLinksCz(List<String> externalLinksCz) {
+        this.externalLinksCz = externalLinksCz;
+    }
+
+    public List<String> getFreebaseLinksCz() {
+        return freebaseLinksCz;
+    }
+
+    public void setFreebaseLinksCz(List<String> freebaseLinksCz) {
+        this.freebaseLinksCz = freebaseLinksCz;
+    }
+
+    public List<String> getWikipediaLinksCz() {
+        return wikipediaLinksCz;
+    }
+
+    public void setWikipediaLinksCz(List<String> wikipediaLinksCz) {
+        this.wikipediaLinksCz = wikipediaLinksCz;
+    }
+
+    public List<String> getInterLanguageLinksCz() {
+        return interLanguageLinksCz;
+    }
+
+    public void setInterLanguageLinksCz(List<String> interLanguageLinksCz) {
+        this.interLanguageLinksCz = interLanguageLinksCz;
+    }
+
+    public List<String> getPageLinksCz() {
+        return pageLinksCz;
+    }
+
+    public void setPageLinksCz(List<String> pageLinksCz) {
+        this.pageLinksCz = pageLinksCz;
+    }
+
+    public List<String> getPageLinksUnredirectedCz() {
+        return pageLinksUnredirectedCz;
+    }
+
+    public void setPageLinksUnredirectedCz(List<String> pageLinksUnredirectedCz) {
+        this.pageLinksUnredirectedCz = pageLinksUnredirectedCz;
+    }
+
+    public List<String> getRedirectsCz() {
+        return redirectsCz;
+    }
+
+    public void setRedirectsCz(List<String> redirectsCz) {
+        this.redirectsCz = redirectsCz;
+    }
+
+    public List<String> getRedirectsTransitiveCz() {
+        return redirectsTransitiveCz;
+    }
+
+    public void setRedirectsTransitiveCz(List<String> redirectsTransitiveCz) {
+        this.redirectsTransitiveCz = redirectsTransitiveCz;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -226,11 +300,17 @@ public class SearchResultType implements Serializable{
             return false;
         if (externalLinks != null ? !externalLinks.equals(that.externalLinks) : that.externalLinks != null)
             return false;
+        if (externalLinksCz != null ? !externalLinksCz.equals(that.externalLinksCz) : that.externalLinksCz != null)
+            return false;
         if (freebaseLinks != null ? !freebaseLinks.equals(that.freebaseLinks) : that.freebaseLinks != null)
+            return false;
+        if (freebaseLinksCz != null ? !freebaseLinksCz.equals(that.freebaseLinksCz) : that.freebaseLinksCz != null)
             return false;
         if (infoboxProperties != null ? !infoboxProperties.equals(that.infoboxProperties) : that.infoboxProperties != null)
             return false;
         if (interLanguageLinks != null ? !interLanguageLinks.equals(that.interLanguageLinks) : that.interLanguageLinks != null)
+            return false;
+        if (interLanguageLinksCz != null ? !interLanguageLinksCz.equals(that.interLanguageLinksCz) : that.interLanguageLinksCz != null)
             return false;
         if (labels != null ? !labels.equals(that.labels) : that.labels != null) return false;
         if (longAbstracts != null ? !longAbstracts.equals(that.longAbstracts) : that.longAbstracts != null)
@@ -238,12 +318,19 @@ public class SearchResultType implements Serializable{
         if (outDegree != null ? !outDegree.equals(that.outDegree) : that.outDegree != null) return false;
         if (pageId != null ? !pageId.equals(that.pageId) : that.pageId != null) return false;
         if (pageLength != null ? !pageLength.equals(that.pageLength) : that.pageLength != null) return false;
+        if (pageLinksSk != null ? !pageLinksSk.equals(that.pageLinksSk) : that.pageLinksSk != null) return false;
+        if (pageLinksCz != null ? !pageLinksCz.equals(that.pageLinksCz) : that.pageLinksCz != null)
+            return false;
         if (pageLinksUnredirected != null ? !pageLinksUnredirected.equals(that.pageLinksUnredirected) : that.pageLinksUnredirected != null)
             return false;
-        if (pageLinksSk != null ? !pageLinksSk.equals(that.pageLinksSk) : that.pageLinksSk != null) return false;
+        if (pageLinksUnredirectedCz != null ? !pageLinksUnredirectedCz.equals(that.pageLinksUnredirectedCz) : that.pageLinksUnredirectedCz != null)
+            return false;
         if (queryTerm != null ? !queryTerm.equals(that.queryTerm) : that.queryTerm != null) return false;
         if (redirects != null ? !redirects.equals(that.redirects) : that.redirects != null) return false;
+        if (redirectsCz != null ? !redirectsCz.equals(that.redirectsCz) : that.redirectsCz != null) return false;
         if (redirectsTransitive != null ? !redirectsTransitive.equals(that.redirectsTransitive) : that.redirectsTransitive != null)
+            return false;
+        if (redirectsTransitiveCz != null ? !redirectsTransitiveCz.equals(that.redirectsTransitiveCz) : that.redirectsTransitiveCz != null)
             return false;
         if (revisionId != null ? !revisionId.equals(that.revisionId) : that.revisionId != null) return false;
         if (revisionUri != null ? !revisionUri.equals(that.revisionUri) : that.revisionUri != null) return false;
@@ -252,6 +339,8 @@ public class SearchResultType implements Serializable{
         if (skosCategories != null ? !skosCategories.equals(that.skosCategories) : that.skosCategories != null)
             return false;
         if (wikipediaLinks != null ? !wikipediaLinks.equals(that.wikipediaLinks) : that.wikipediaLinks != null)
+            return false;
+        if (wikipediaLinksCz != null ? !wikipediaLinksCz.equals(that.wikipediaLinksCz) : that.wikipediaLinksCz != null)
             return false;
 
         return true;
@@ -272,6 +361,14 @@ public class SearchResultType implements Serializable{
         result = 31 * result + (pageLinksUnredirected != null ? pageLinksUnredirected.hashCode() : 0);
         result = 31 * result + (redirects != null ? redirects.hashCode() : 0);
         result = 31 * result + (redirectsTransitive != null ? redirectsTransitive.hashCode() : 0);
+        result = 31 * result + (externalLinksCz != null ? externalLinksCz.hashCode() : 0);
+        result = 31 * result + (freebaseLinksCz != null ? freebaseLinksCz.hashCode() : 0);
+        result = 31 * result + (wikipediaLinksCz != null ? wikipediaLinksCz.hashCode() : 0);
+        result = 31 * result + (interLanguageLinksCz != null ? interLanguageLinksCz.hashCode() : 0);
+        result = 31 * result + (pageLinksCz != null ? pageLinksCz.hashCode() : 0);
+        result = 31 * result + (pageLinksUnredirectedCz != null ? pageLinksUnredirectedCz.hashCode() : 0);
+        result = 31 * result + (redirectsCz != null ? redirectsCz.hashCode() : 0);
+        result = 31 * result + (redirectsTransitiveCz != null ? redirectsTransitiveCz.hashCode() : 0);
         result = 31 * result + (infoboxProperties != null ? infoboxProperties.hashCode() : 0);
         result = 31 * result + (longAbstracts != null ? longAbstracts.hashCode() : 0);
         result = 31 * result + (shortAbstracts != null ? shortAbstracts.hashCode() : 0);
@@ -401,7 +498,7 @@ public class SearchResultType implements Serializable{
         }
         sb.append("\n");
 
-        sb.append("Page Links (EN): \n");
+        sb.append("Page Links - Unredirected: \n");
         for(String link: pageLinksUnredirected){
             sb.append(link);
             sb.append(", ");
@@ -417,6 +514,62 @@ public class SearchResultType implements Serializable{
 
         sb.append("Redirects (Transitive): \n");
         for(String link: redirectsTransitive){
+            sb.append(link);
+            sb.append(", ");
+        }
+        sb.append("\n");
+
+        sb.append("External Links (Cz): \n");
+        for(String link: externalLinksCz){
+            sb.append(link);
+            sb.append(", ");
+        }
+        sb.append("\n");
+
+        sb.append("Freebase Links (Cz): \n");
+        for(String link: freebaseLinksCz){
+            sb.append(link);
+            sb.append(", ");
+        }
+        sb.append("\n");
+
+        sb.append("Wikipedia Links (Cz): \n");
+        for(String link: wikipediaLinksCz){
+            sb.append(link);
+            sb.append(", ");
+        }
+        sb.append("\n");
+
+        sb.append("Inter-Language Links (Cz): \n");
+        for(String link: interLanguageLinksCz){
+            sb.append(link);
+            sb.append(", ");
+        }
+        sb.append("\n");
+
+        sb.append("Page Links (CZ): \n");
+        for(String link: pageLinksCz){
+            sb.append(link);
+            sb.append(", ");
+        }
+        sb.append("\n");
+
+        sb.append("Page Links - Unredirected (CZ): \n");
+        for(String link: pageLinksUnredirectedCz){
+            sb.append(link);
+            sb.append(", ");
+        }
+        sb.append("\n");
+
+        sb.append("Redirects (CZ): \n");
+        for(String link: redirectsCz){
+            sb.append(link);
+            sb.append(", ");
+        }
+        sb.append("\n");
+
+        sb.append("Redirects (Transitive) (CZ): \n");
+        for(String link: redirectsTransitiveCz){
             sb.append(link);
             sb.append(", ");
         }

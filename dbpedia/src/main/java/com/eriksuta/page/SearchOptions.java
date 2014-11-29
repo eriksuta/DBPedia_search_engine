@@ -14,6 +14,7 @@ public class SearchOptions implements Serializable{
     public static final String F_ABSTRACTS = "abstracts";
     public static final String F_CATEGORIES = "categories";
     public static final String F_INFO_PROPERTIES = "infoboxProperties";
+    public static final String F_LINK_MAPPING_CZ = "linkMappingCz";
 
     private boolean matchCase;
     private boolean wholeWord;
@@ -23,6 +24,8 @@ public class SearchOptions implements Serializable{
     private boolean abstracts = true;
     private boolean categories = true;
     private boolean infoboxProperties = true;
+
+    private boolean linkMappingCz;
 
     public SearchOptions(){}
 
@@ -82,20 +85,29 @@ public class SearchOptions implements Serializable{
         this.infoboxProperties = infoboxProperties;
     }
 
+    public boolean isLinkMappingCz() {
+        return linkMappingCz;
+    }
+
+    public void setLinkMappingCz(boolean linkMappingCz) {
+        this.linkMappingCz = linkMappingCz;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof SearchOptions)) return false;
 
-        SearchOptions that = (SearchOptions) o;
+        SearchOptions options = (SearchOptions) o;
 
-        if (abstracts != that.abstracts) return false;
-        if (asRegex != that.asRegex) return false;
-        if (categories != that.categories) return false;
-        if (infoboxProperties != that.infoboxProperties) return false;
-        if (links != that.links) return false;
-        if (matchCase != that.matchCase) return false;
-        if (wholeWord != that.wholeWord) return false;
+        if (abstracts != options.abstracts) return false;
+        if (asRegex != options.asRegex) return false;
+        if (categories != options.categories) return false;
+        if (infoboxProperties != options.infoboxProperties) return false;
+        if (linkMappingCz != options.linkMappingCz) return false;
+        if (links != options.links) return false;
+        if (matchCase != options.matchCase) return false;
+        if (wholeWord != options.wholeWord) return false;
 
         return true;
     }
@@ -109,6 +121,7 @@ public class SearchOptions implements Serializable{
         result = 31 * result + (abstracts ? 1 : 0);
         result = 31 * result + (categories ? 1 : 0);
         result = 31 * result + (infoboxProperties ? 1 : 0);
+        result = 31 * result + (linkMappingCz ? 1 : 0);
         return result;
     }
 }

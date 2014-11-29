@@ -52,6 +52,23 @@ public interface SearchService {
 
     /**
      *  This method performs search on a subset of indexed dump of DBPedia.
+     *  Link subset is defined by all kinds of links found in CZ DBPedia,
+     *  specifically wikipedia links, freebase links, inter-language links,
+     *  page links, redirects and transitive redirects.
+     *
+     *  @param searchTerm String
+     *          A String representation of search term, e.g. term,
+     *          upon which the search operation is performed.
+     *
+     *  @return SearchResultType
+     *          A special object containing all data retrieved
+     *          from indexed dump
+     *
+     * */
+    public SearchResultType searchInCzLinks(String searchTerm);
+
+    /**
+     *  This method performs search on a subset of indexed dump of DBPedia.
      *  Abstract subset is defined by short and long abstracts.
      *
      *  @param searchTerm String
