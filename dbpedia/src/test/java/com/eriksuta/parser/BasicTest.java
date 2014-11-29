@@ -46,6 +46,7 @@ public class BasicTest {
     public void performParseProcess(){
         ParserImpl parser = new ParserImpl();
         parser.parseSlovakDBPedia();
+        parser.parseCzechDBPedia();
     }
 
     /**

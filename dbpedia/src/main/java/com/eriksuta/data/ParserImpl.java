@@ -1,6 +1,7 @@
 package com.eriksuta.data;
 
 import com.eriksuta.data.handler.*;
+import org.apache.log4j.Logger;
 import org.openrdf.rio.RDFFormat;
 import org.openrdf.rio.RDFParser;
 import org.openrdf.rio.Rio;
@@ -16,10 +17,22 @@ import java.util.List;
  * */
 public class ParserImpl implements IParser{
 
+    private static final Logger LOGGER = Logger.getLogger(ParserImpl.class);
+
     private static ParserImpl parser;
 
     public static final String OUT_DIR = "src/main/webapp/parsed/";
     public static final String TTL_DIR = "src/main/resources/rdf/";
+    public static final String TTL_DIR_CZ = "src/main/resources/rdf/cz/";
+
+    public static final String TTL_EXTERNAL_LINKS_CZ = TTL_DIR_CZ + "external_links_cs.ttl";
+    public static final String TTL_FREEBASE_LINKS_CZ = TTL_DIR_CZ + "freebase_links_cs.ttl";
+    public static final String TTL_INTER_LANGUAGE_LINKS_CZ = TTL_DIR_CZ + "interlanguage_links_cs.ttl";
+    public static final String TTL_PAGE_LINKS_CZ = TTL_DIR_CZ + "page_links_cs.ttl";
+    public static final String TTL_PAGE_LINKS_UNREDIRECTED_CZ = TTL_DIR_CZ + "page_links_unredirected_cs.ttl";
+    public static final String TTL_WIKIPEDIA_LINKS_CZ = TTL_DIR_CZ + "wikipedia_links_cs.ttl";
+    public static final String TTL_REDIRECTS_CZ = TTL_DIR_CZ + "redirects_cs.ttl";
+    public static final String TTL_REDIRECTS_TRANSITIVE_CZ = TTL_DIR_CZ + "redirects_transitive_cs.ttl";
 
     public static final String TTL_ARTICLE_CATEGORIES_EN_URIS_SK = TTL_DIR + "article_categories_en_uris_sk.ttl";
     public static final String TTL_ARTICLE_CATEGORIES_SK = TTL_DIR + "article_categories_sk.ttl";
@@ -42,6 +55,15 @@ public class ParserImpl implements IParser{
     public static final String TTL_WIKIPEDIA_LINKS_SK = TTL_DIR + "wikipedia_links_sk.ttl";
     public static final String TTL_SKOS_CATEGORIES_EN_URIS_SK = TTL_DIR + "skos_categories_en_uris_sk.ttl";
     public static final String TTL_SKOS_CATEGORIES_SK = TTL_DIR + "skos_categories_sk.ttl";
+
+    public static final String EXTERNAL_LINKS_CZ = OUT_DIR + "external_links_cs.txt";
+    public static final String FREEBASE_LINKS_CZ = OUT_DIR + "freebase_links_cs.txt";
+    public static final String INTER_LANGUAGE_LINKS_CZ = OUT_DIR + "interlanguage_links_cs.txt";
+    public static final String PAGE_LINKS_CZ = OUT_DIR + "page_links_cs.txt";
+    public static final String PAGE_LINKS_UNREDIRECTED_CZ = OUT_DIR + "page_links_unredirected_cs.txt";
+    public static final String WIKIPEDIA_LINKS_CZ = OUT_DIR + "wikipedia_links_cs.txt";
+    public static final String REDIRECTS_CZ = OUT_DIR + "redirects_cs.txt";
+    public static final String REDIRECTS_TRANSITIVE_CZ = OUT_DIR + "redirects_transitive_cs.txt";
 
     public static final String ARTICLE_CATEGORIES_EN_URIS_SK = OUT_DIR + "article_categories_en_uris_sk.txt";
     public static final String ARTICLE_CATEGORIES_SK = OUT_DIR + "article_categories_sk.txt";
@@ -72,6 +94,7 @@ public class ParserImpl implements IParser{
 
         long startTime = System.currentTimeMillis();
         System.out.println("Started parsing entire Slovak DBPedia dump at: " + new Date());
+        LOGGER.info("Started parsing entire Slovak DBPedia dump at: " + new Date());
 
         //Article Categories
         parseArticleCategories(new File(TTL_ARTICLE_CATEGORIES_SK), new File(ARTICLE_CATEGORIES_SK));
@@ -152,7 +175,56 @@ public class ParserImpl implements IParser{
         sortStatementsInFile(new File(SKOS_CATEGORIES_EN_URIS_SK));
 
         long endTime = System.currentTimeMillis();
-        System.out.println("Parsing took: " + (endTime - startTime) + " milliseconds");
+        System.out.println("Parsing took: " + (endTime - startTime) + " milliseconds, resp.: " + (endTime - startTime)/1000.0 + " seconds.");
+        LOGGER.info("Parsing took: " + (endTime - startTime) + " milliseconds, resp.: " + (endTime - startTime)/1000.0 + " seconds.");
+    }
+
+    /**
+     *  In this implementation, we are only parsing links and redirects from
+     *  Czech dump of DB-Pedia. However, adding further parts to parse is
+     *  very simple with usage of existing and implemented mechanisms
+     * */
+    @Override
+    public void parseCzechDBPedia() {
+
+        long startTime = System.currentTimeMillis();
+        System.out.println("Started parsing entire Slovak DBPedia dump at: " + new Date());
+        LOGGER.info("Started parsing entire Slovak DBPedia dump at: " + new Date());
+
+        //Redirects and Transitive Redirects
+        parseLinks(new File(TTL_REDIRECTS_CZ), new File(REDIRECTS_CZ));
+        sortStatementsInFile(new File(REDIRECTS_CZ));
+
+        parseLinks(new File(TTL_REDIRECTS_TRANSITIVE_CZ), new File(REDIRECTS_TRANSITIVE_CZ));
+        sortStatementsInFile(new File(REDIRECTS_TRANSITIVE_CZ));
+
+        //External Links
+        parseLinks(new File(TTL_EXTERNAL_LINKS_CZ), new File(EXTERNAL_LINKS_CZ));
+        sortStatementsInFile(new File(EXTERNAL_LINKS_CZ));
+
+        //Page Links
+        parseLinks(new File(TTL_PAGE_LINKS_CZ), new File(PAGE_LINKS_CZ));
+        sortStatementsInFile(new File(PAGE_LINKS_CZ));
+
+        //Page Links - Unredirected
+        parseLinks(new File(TTL_PAGE_LINKS_UNREDIRECTED_CZ), new File(PAGE_LINKS_UNREDIRECTED_CZ));
+        sortStatementsInFile(new File(PAGE_LINKS_UNREDIRECTED_CZ));
+
+        //Freebase Links
+        parseLinks(new File(TTL_FREEBASE_LINKS_CZ), new File(FREEBASE_LINKS_CZ));
+        sortStatementsInFile(new File(FREEBASE_LINKS_CZ));
+
+        //Inter-Language Links
+        parseLinks(new File(TTL_INTER_LANGUAGE_LINKS_CZ), new File(INTER_LANGUAGE_LINKS_CZ));
+        sortStatementsInFile(new File(INTER_LANGUAGE_LINKS_CZ));
+
+        //Wikipedia Links
+        parseWikipediaLinks(new File(TTL_WIKIPEDIA_LINKS_CZ), new File(WIKIPEDIA_LINKS_CZ));
+        sortStatementsInFile(new File(WIKIPEDIA_LINKS_CZ));
+
+        long endTime = System.currentTimeMillis();
+        System.out.println("Parsing took: " + (endTime - startTime) + " milliseconds, resp.: " + (endTime - startTime)/1000.0 + " seconds.");
+        LOGGER.info("Parsing took: " + (endTime - startTime) + " milliseconds, resp.: " + (endTime - startTime)/1000.0 + " seconds.");
     }
 
     public static ParserImpl getParserInstance(){
