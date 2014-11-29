@@ -4,6 +4,7 @@ import com.eriksuta.data.index.IndexAlgorithm;
 import com.eriksuta.data.index.LinkIndexAlgorithm;
 import com.eriksuta.data.index.PropertyIndexAlgorithm;
 import com.eriksuta.data.index.SimpleIndexAlgorithm;
+import org.apache.log4j.Logger;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.index.IndexWriter;
@@ -19,6 +20,8 @@ import java.util.Date;
  *  @author shood
  * */
 public class Indexer {
+
+    private static final Logger LOGGER = Logger.getLogger(Indexer.class);
 
     public static final String INDEX_DIR = "src/main/webapp/parsed/index";
 
@@ -44,6 +47,15 @@ public class Indexer {
     public static final String WIKIPEDIA_LINKS_SK = DATA_DIR + "wikipedia_links_sk.txt";
     public static final String SKOS_CATEGORIES_EN_URIS_SK = DATA_DIR + "skos_categories_en_uris_sk.txt";
     public static final String SKOS_CATEGORIES_SK = DATA_DIR + "skos_categories_sk.txt";
+
+    public static final String EXTERNAL_LINKS_CZ = DATA_DIR + "external_links_cs.txt";
+    public static final String FREEBASE_LINKS_CZ = DATA_DIR + "freebase_links_cs.txt";
+    public static final String INTER_LANGUAGE_LINKS_CZ = DATA_DIR + "interlanguage_links_cs.txt";
+    public static final String PAGE_LINKS_CZ = DATA_DIR + "page_links_cs.txt";
+    public static final String PAGE_LINKS_UNREDIRECTED_CZ = DATA_DIR + "page_links_unredirected_cs.txt";
+    public static final String WIKIPEDIA_LINKS_CZ = DATA_DIR + "wikipedia_links_cs.txt";
+    public static final String REDIRECTS_CZ = DATA_DIR + "redirects_cs.txt";
+    public static final String REDIRECTS_TRANSITIVE_CZ = DATA_DIR + "redirects_transitive_cs.txt";
 
     private Directory directory;
     private Analyzer analyzer;
@@ -76,6 +88,7 @@ public class Indexer {
         IndexAlgorithm algorithm;
 
         System.out.println("Starting indexing process, at: " + new Date());
+        LOGGER.info("Starting indexing process, at: " + new Date());
         long startTime = System.currentTimeMillis();
 
         try {
@@ -158,13 +171,46 @@ public class Indexer {
             createIndexes(new File(SKOS_CATEGORIES_SK), algorithm);
             createIndexes(new File(SKOS_CATEGORIES_EN_URIS_SK), algorithm);
 
+            //External Links - CZ
+            algorithm = new LinkIndexAlgorithm(IndexLabelNames.EXTERNAL_LINK_LABEL_CZ, IndexLabelNames.EXTERNAL_LINK_CONTENT_CZ);
+            createIndexes(new File(EXTERNAL_LINKS_CZ), algorithm);
+
+            //Freebase Links - CZ
+            algorithm = new LinkIndexAlgorithm(IndexLabelNames.FREEBASE_LINK_LABEL_CZ, IndexLabelNames.FREEBASE_LINK_CONTENT_CZ);
+            createIndexes(new File(FREEBASE_LINKS_CZ), algorithm);
+
+            //Interlanguage Links - CZ
+            algorithm = new LinkIndexAlgorithm(IndexLabelNames.INTER_LANGUAGE_LINKS_LABEL_CZ, IndexLabelNames.INTER_LANGUAGE_LINKS_CONTENT_CZ);
+            createIndexes(new File(INTER_LANGUAGE_LINKS_CZ), algorithm);
+
+            //Page Links - CZ
+            algorithm = new LinkIndexAlgorithm(IndexLabelNames.PAGE_LINKS_LABEL_CZ, IndexLabelNames.PAGE_LINKS_CONTENT_CZ);
+            createIndexes(new File(PAGE_LINKS_CZ), algorithm);
+
+            //Page Links - Unredirected - CZ
+            algorithm = new LinkIndexAlgorithm(IndexLabelNames.PAGE_LINKS_UNREDIRECTED_LABEL_CZ, IndexLabelNames.PAGE_LINKS_UNREDIRECTED_CONTENT_CZ);
+            createIndexes(new File(PAGE_LINKS_UNREDIRECTED_CZ), algorithm);
+
+            //Wikipedia Links - CZ
+            algorithm = new SimpleIndexAlgorithm(IndexLabelNames.WIKIPEDIA_LINKS_LABEL_CZ, IndexLabelNames.WIKIPEDIA_LINKS_CONTENT_CZ);
+            createIndexes(new File(WIKIPEDIA_LINKS_CZ), algorithm);
+
+            //Redirects - CZ
+            algorithm = new LinkIndexAlgorithm(IndexLabelNames.REDIRECTS_LABEL_CZ, IndexLabelNames.REDIRECTS_CONTENT_CZ);
+            createIndexes(new File(REDIRECTS_CZ), algorithm);
+
+            //Redirects - Transitive - CZ
+            algorithm = new LinkIndexAlgorithm(IndexLabelNames.REDIRECTS_TRANSITIVE_LABEL_CZ, IndexLabelNames.REDIRECTS_TRANSITIVE_CONTENT_CZ);
+            createIndexes(new File(REDIRECTS_TRANSITIVE_CZ), algorithm);
+
             indexWriter.close();
         } catch (Exception e){
             e.printStackTrace();
         }
 
         long endTime = System.currentTimeMillis();
-        System.out.println("Indexing process finished after: " + (endTime - startTime) + " milliseconds.");
+        System.out.println("Indexing process finished after: " + (endTime - startTime) + " milliseconds, resp.: " + (endTime - startTime)/1000.0 + " seconds.");
+        LOGGER.info("Indexing process finished after: " + (endTime - startTime) + " milliseconds, resp.: " + (endTime - startTime)/1000.0 + " seconds.");
     }
 
     public void createIndexes(File file, IndexAlgorithm algorithm) throws IOException {

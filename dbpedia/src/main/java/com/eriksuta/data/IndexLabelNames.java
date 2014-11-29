@@ -18,20 +18,38 @@ public class IndexLabelNames {
     public static final String EXTERNAL_LINK_LABEL = "external_link";
     public static final String EXTERNAL_LINK_CONTENT = "link";
 
+    public static final String EXTERNAL_LINK_LABEL_CZ = "external_link_cz";
+    public static final String EXTERNAL_LINK_CONTENT_CZ = "link";
+
     public static final String FREEBASE_LINK_LABEL = "freebase_link";
     public static final String FREEBASE_LINK_CONTENT = "link";
+
+    public static final String FREEBASE_LINK_LABEL_CZ = "freebase_link_cz";
+    public static final String FREEBASE_LINK_CONTENT_CZ = "link";
 
     public static final String INTER_LANGUAGE_LINKS_LABEL = "inter_language_link";
     public static final String INTER_LANGUAGE_LINKS_CONTENT = "link";
 
+    public static final String INTER_LANGUAGE_LINKS_LABEL_CZ = "inter_language_link_cz";
+    public static final String INTER_LANGUAGE_LINKS_CONTENT_CZ = "link";
+
     public static final String PAGE_LINKS_LABEL = "page_link";
     public static final String PAGE_LINKS_CONTENT = "link";
+
+    public static final String PAGE_LINKS_LABEL_CZ = "page_link_cz";
+    public static final String PAGE_LINKS_CONTENT_CZ = "link";
 
     public static final String PAGE_LINKS_UNREDIRECTED_LABEL = "page_link_unredirected";
     public static final String PAGE_LINKS_UNREDIRECTED_CONTENT = "link";
 
+    public static final String PAGE_LINKS_UNREDIRECTED_LABEL_CZ = "page_link_unredirected_cz";
+    public static final String PAGE_LINKS_UNREDIRECTED_CONTENT_CZ = "link";
+
     public static final String WIKIPEDIA_LINKS_LABEL = "wikipedia_link";
     public static final String WIKIPEDIA_LINKS_CONTENT = "link";
+
+    public static final String WIKIPEDIA_LINKS_LABEL_CZ = "wikipedia_link_cz";
+    public static final String WIKIPEDIA_LINKS_CONTENT_CZ = "link";
 
     public static final String INFOBOX_PROPERTIES_LABEL = "infobox";
     public static final String INFOBOX_PROPERTIES_CONTENT = "properties";
@@ -57,8 +75,14 @@ public class IndexLabelNames {
     public static final String REDIRECTS_LABEL = "redirect";
     public static final String REDIRECTS_CONTENT = "value";
 
+    public static final String REDIRECTS_LABEL_CZ = "redirect_cz";
+    public static final String REDIRECTS_CONTENT_CZ = "value";
+
     public static final String REDIRECTS_TRANSITIVE_LABEL = "redirect_transitive";
     public static final String REDIRECTS_TRANSITIVE_CONTENT = "value";
+
+    public static final String REDIRECTS_TRANSITIVE_LABEL_CZ = "redirect_transitive_cz";
+    public static final String REDIRECTS_TRANSITIVE_CONTENT_CZ = "value";
 
     public static final String REVISION_ID_LABEL = "revision_id";
     public static final String REVISION_ID_CONTENT = "id";
