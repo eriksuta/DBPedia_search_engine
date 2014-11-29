@@ -67,8 +67,11 @@ public class SearchServiceImpl implements SearchService, Serializable{
     }
 
     @Override
-    public SearchResultType search(String searchTerm, SearchOptions searchOptions) {
+    public SearchResultType search(String searchTermUntrimmed, SearchOptions searchOptions) {
         long startTime = System.currentTimeMillis();
+
+        //some search term corrections
+        String searchTerm = searchTermUntrimmed.trim().replace(" ", "_");
 
         SearchResultType result = new SearchResultType();
         result.setQueryTerm(searchTerm);
