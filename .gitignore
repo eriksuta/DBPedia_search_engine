@@ -4,6 +4,7 @@
 
 # Indexes, source RDF files and parsed files exclusion
 **/resources/rdf/*.ttl
+**/resources/rdf/cz/*.ttl
 **/parsed/index/*
 **/parsed/*.txt
 
