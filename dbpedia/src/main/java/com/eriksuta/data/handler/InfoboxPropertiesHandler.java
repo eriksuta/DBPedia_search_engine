@@ -7,7 +7,7 @@ import com.google.gson.Gson;
 import org.openrdf.model.Statement;
 
 /**
- *  @author shood
+ *  @author Erik Suta
  * */
 public class InfoboxPropertiesHandler extends BasicRdfHandler{
 

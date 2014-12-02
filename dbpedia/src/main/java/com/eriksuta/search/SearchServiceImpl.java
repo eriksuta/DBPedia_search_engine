@@ -23,9 +23,8 @@ import org.apache.log4j.Logger;
  *  A simple implementation of SearchService interface for purposes
  *  of search engine based on indexed dump of Slovak DBPedia
  *
- *  @author shood
+ *  @author Erik Suta
  *
- *  TODO - handle multiple word searches - League of Legends -> League_of_Legends
  * */
 public class SearchServiceImpl implements SearchService, Serializable{
 

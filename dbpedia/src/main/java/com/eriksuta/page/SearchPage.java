@@ -22,7 +22,7 @@ import org.apache.wicket.markup.html.WebPage;
 import com.eriksuta.page.component.behavior.VisibleEnableBehavior;
 
 /**
- *  @author shood
+ *  @author Erik Suta
  * */
 public class SearchPage extends WebPage {
 

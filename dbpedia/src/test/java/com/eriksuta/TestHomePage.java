@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- *  @author shood
+ *  @author Erik Suta
  * */
 public class TestHomePage{
 

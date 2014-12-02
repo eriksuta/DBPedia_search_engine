@@ -4,7 +4,7 @@ import org.apache.wicket.Component;
 import org.apache.wicket.behavior.Behavior;
 
 /**
- *  @author shood
+ *  @author Erik Suta
  * */
 public class VisibleEnableBehavior extends Behavior {
 

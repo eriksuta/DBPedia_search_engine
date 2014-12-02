@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *  @author shood
+ *  @author Erik Suta
  * */
 public class SearchResultClassicPanel extends Panel {
 

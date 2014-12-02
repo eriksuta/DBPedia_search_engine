@@ -12,7 +12,7 @@ import org.apache.lucene.index.IndexWriter;
 import java.io.IOException;
 
 /**
- *  @author shood
+ *  @author Erik Suta
  * */
 public class PropertyIndexAlgorithm implements IndexAlgorithm{
 

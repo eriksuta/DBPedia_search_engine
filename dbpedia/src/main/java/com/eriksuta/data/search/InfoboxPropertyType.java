@@ -3,7 +3,7 @@ package com.eriksuta.data.search;
 import java.io.Serializable;
 
 /**
- *  @author shood
+ *  @author Erik Suta
  * */
 public class InfoboxPropertyType implements Serializable{
 

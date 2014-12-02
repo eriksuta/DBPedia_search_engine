@@ -5,7 +5,7 @@ import com.eriksuta.data.handler.BasicRdfHandler;
 import java.io.File;
 
 /**
- *  @author shood
+ *  @author Erik Suta
  *
  * */
 public interface IParser {

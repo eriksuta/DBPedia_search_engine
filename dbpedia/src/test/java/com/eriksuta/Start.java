@@ -9,7 +9,7 @@ import org.eclipse.jetty.util.ssl.SslContextFactory;
 import org.eclipse.jetty.webapp.WebAppContext;
 
 /**
- *  @author shood
+ *  @author Erik Suta
  * */
 public class Start {
 

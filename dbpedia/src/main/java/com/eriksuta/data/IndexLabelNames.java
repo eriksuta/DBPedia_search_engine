@@ -6,7 +6,7 @@ package com.eriksuta.data;
  *  but also during search operations, so we decided to put them into
  *  separate class
  *
- *  @author shood
+ *  @author Erik Suta
  *
  *
  * */

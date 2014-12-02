@@ -20,7 +20,7 @@ import java.io.File;
 import java.io.FileReader;
 
 /**
- *  @author shood
+ *  @author Erik Suta
  *
  *  !!!!!IMPORTANT - read before launching!!!!!
  *

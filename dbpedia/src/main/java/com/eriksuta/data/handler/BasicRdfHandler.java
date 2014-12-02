@@ -4,7 +4,7 @@ import org.openrdf.model.Statement;
 import org.openrdf.rio.helpers.RDFHandlerBase;
 
 /**
- *  @author shood
+ *  @author Erik Suta
  * */
 public class BasicRdfHandler extends RDFHandlerBase {
 

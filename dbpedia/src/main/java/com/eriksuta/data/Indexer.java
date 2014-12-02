@@ -17,7 +17,7 @@ import java.io.*;
 import java.util.Date;
 
 /**
- *  @author shood
+ *  @author Erik Suta
  * */
 public class Indexer {
 

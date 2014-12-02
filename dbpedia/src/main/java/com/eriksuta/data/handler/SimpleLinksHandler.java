@@ -6,7 +6,7 @@ import com.google.gson.Gson;
 import org.openrdf.model.Statement;
 
 /**
- *  @author shood
+ *  @author Erik Suta
  * */
 public class SimpleLinksHandler extends BasicRdfHandler {
 

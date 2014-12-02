@@ -31,7 +31,7 @@ import java.io.ByteArrayInputStream;
 import java.io.StringWriter;
 
 /**
- *  @author shood
+ *  @author Erik Suta
  * */
 public class SearchResultTextAreaPanel extends Panel {
 

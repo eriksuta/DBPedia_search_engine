@@ -3,7 +3,7 @@ package com.eriksuta.page.component.model;
 import org.apache.wicket.model.IModel;
 
 /**
- *  @author shood
+ *  @author Erik Suta
  *
  *  This IModel implementation is loosely based on LoadableModel
  *  class from Evolveum/MidPoint (https://github.com/Evolveum/midpoint/blob/a6c023945dbea34db69a8ff17c9a61b7184c42cc/gui/admin-gui/src/main/java/com/evolveum/midpoint/web/component/util/LoadableModel.java)

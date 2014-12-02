@@ -15,7 +15,7 @@ import org.testng.Assert;
 import java.io.*;
 
 /**
- *  @author shood
+ *  @author Erik Suta
  * */
 public class BasicTest {
 

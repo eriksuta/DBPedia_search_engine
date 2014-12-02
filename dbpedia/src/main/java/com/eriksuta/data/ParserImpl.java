@@ -13,7 +13,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- *  @author shood
+ *  @author Erik Suta
  * */
 public class ParserImpl implements IParser{
 

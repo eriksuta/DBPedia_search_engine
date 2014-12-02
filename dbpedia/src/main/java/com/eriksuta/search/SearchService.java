@@ -8,7 +8,7 @@ import com.eriksuta.page.SearchOptions;
  *  for main supported search methods. Feel free to add new types of search
  *  options and capabilities.
  *
- *  @author shood
+ *  @author Erik Suta
  * */
 public interface SearchService {
 

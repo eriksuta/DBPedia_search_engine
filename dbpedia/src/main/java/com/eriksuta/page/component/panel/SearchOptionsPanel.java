@@ -8,7 +8,7 @@ import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.PropertyModel;
 
 /**
- *  @author shood
+ *  @author Erik Suta
  * */
 public class SearchOptionsPanel extends Panel {
 

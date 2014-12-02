@@ -11,7 +11,7 @@ import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.IModel;
 
 /**
- *  @author shood
+ *  @author Erik Suta
  * */
 public class SearchResultPanel extends Panel {
 

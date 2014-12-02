@@ -3,7 +3,7 @@ package com.eriksuta.page;
 import java.io.Serializable;
 
 /**
- *  @author shood
+ *  @author Erik Suta
  * */
 public class SearchOptions implements Serializable{
 
