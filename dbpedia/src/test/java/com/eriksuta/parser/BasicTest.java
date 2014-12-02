@@ -30,12 +30,12 @@ public class BasicTest {
 
     @BeforeClass
     public static void beforeClass(){
-        System.out.println("==========|BASIC PARSER TEST SUIT START|==========");
+        System.out.println("==========|BASIC SEARCH TEST SUIT START|==========");
     }
 
     @AfterClass
     public static void afterClass(){
-        System.out.println("==========|BASIC PARSER TEST SUIT END|==========");
+        System.out.println("==========|BASIC SEARCH TEST SUIT END|==========");
     }
 
     /**

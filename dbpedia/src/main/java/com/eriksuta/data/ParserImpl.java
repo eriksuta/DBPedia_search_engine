@@ -235,6 +235,7 @@ public class ParserImpl implements IParser{
         return parser;
     }
 
+    @Override
     public void parseRdfFile(File input, File output, BasicRdfHandler handler){
         if(input == null || output == null || handler == null){
             return;
@@ -323,7 +324,8 @@ public class ParserImpl implements IParser{
         parseRdfFile(input, output, infoboxPropertiesHandler);
     }
 
-    private void sortStatementsInFile(File fileToSort){
+    @Override
+    public void sortStatementsInFile(File fileToSort){
         if(fileToSort == null){
             return;
         }
